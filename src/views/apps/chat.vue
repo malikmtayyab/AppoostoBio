@@ -523,7 +523,7 @@ export default {
         </div>
       </div>
     </div>
-    <BOffcanvas v-model="showOffcanvas" body-class="border-0 p-0 overflow-hidden" header-class="border-bottom">
+    <BOffcanvas v-model="showOffcanvas" placement="end" body-class="border-0 p-0 overflow-hidden" header-class="border-bottom">
       <div class="offcanvas-body profile-offcanvas p-0">
         <div class="team-cover">
           <img src="@/assets/images/small/img-9.jpg" alt="" class="img-fluid" />
