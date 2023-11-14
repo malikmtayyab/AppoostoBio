@@ -65,6 +65,80 @@ export default [
     },
     component: () => import("../views/dashboard/ecommerce/index.vue"),
   },
+  // New Pages Under the dashboard
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    meta: {
+      title: "Dashboard",
+      authRequired: true,
+    },
+    component: () => import("../views/dashboard/index"),
+  },
+  {
+    path: "/biolink-pages",
+    name: "biolink-pages",
+    meta: {
+      title: "Biolink Pages",
+      authRequired: true,
+    },
+    component: () => import("../views/biolink-pages/index"),
+  },
+  {
+    path: "/shortened-links",
+    name: "shortened-links",
+    meta: {
+      title: "Shortened Links",
+      authRequired: true,
+    },
+    component: () => import("../views/shortened-links/index"),
+  },
+  {
+    path: "/file-links",
+    name: "file-links",
+    meta: {
+      title: "File Links",
+      authRequired: true,
+    },
+    component: () => import("../views/file-links/index"),
+  },
+  {
+    path: "/vcard-links",
+    name: "vcard-links",
+    meta: {
+      title: "VCard Links",
+      authRequired: true,
+    },
+    component: () => import("../views/vcard-links/index"),
+  },
+  {
+    path: "/event-links",
+    name: "event-links",
+    meta: {
+      title: "Event Links",
+      authRequired: true,
+    },
+    component: () => import("../views/event-links/index"),
+  },
+  {
+    path: "/static-sites",
+    name: "static-sites",
+    meta: {
+      title: "Static Sites",
+      authRequired: true,
+    },
+    component: () => import("../views/static-sites/index"),
+  },
+  {
+    path: "/qr-codes",
+    name: "qr-codes",
+    meta: {
+      title: "Static Sites",
+      authRequired: true,
+    },
+    component: () => import("../views/qr-codes/index"),
+  },
+  // New Pages Under the Dashboard End
   {
     path: "/dashboard/crypto",
     name: "dashboard-crypto",
@@ -127,6 +201,47 @@ export default [
     },
     component: () => import("../views/auth/logout/basic")
   },
+  // AI Pages Start From Here
+  {
+    path: "/ai-documents",
+    name: "ai-documents",
+    meta: {
+      title: "AI Documents",
+      authRequired: true,
+    },
+    component: () => import("../views/ai-documents/index"),
+  },
+  {
+    path: "/ai-images",
+    name: "ai-images",
+    meta: {
+      title: "AI Images",
+      authRequired: true,
+    },
+    component: () => import("../views/ai-images/index"),
+  },
+  {
+    path: "/ai-speech-to-text",
+    name: "ai-speech-to-text",
+    meta: {
+      title: "AI Speech To Text",
+      authRequired: true,
+    },
+    component: () => import("../views/ai-speech-to-text/index"),
+  },
+  {
+    path: "/ai-chat",
+    name: "AI Chat",
+    meta: { title: "AI Chat", authRequired: true },
+    component: () => import("../views/ai-chat/index"),
+  },
+  {
+    path: "/tools",
+    name: "Tools",
+    meta: { title: "Tools", authRequired: true },
+    component: () => import("../views/tools/index"),
+  },
+  // AI Pages Ends Here
   {
     path: "/main-calendar",
     name: "main-calendar",
@@ -774,6 +889,62 @@ export default [
     meta: { title: "Job Landing", authRequired: true },
     component: () => import("../views/landing/job-landing"),
   },
+  // Others Pages Start From Here
+  {
+    path: "/custom-domains",
+    name: "custom-domains",
+    meta: {
+      title: "Custom Domain",
+      authRequired: true,
+    },
+    component: () => import("../views/custom-domains/index"),
+  },
+  {
+    path: "/pixels",
+    name: "pixels",
+    meta: {
+      title: "Pixels",
+      authRequired: true,
+    },
+    component: () => import("../views/pixels/index"),
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    meta: {
+      title: "Projects",
+      authRequired: true,
+    },
+    component: () => import("../views/projects/index"),
+  },
+  {
+    path: "/data",
+    name: "data",
+    meta: {
+      title: "Data",
+      authRequired: true,
+    },
+    component: () => import("../views/data/index"),
+  },
+  {
+    path: "/payment-processors",
+    name: "payment-processors",
+    meta: {
+      title: "Payment Processors",
+      authRequired: true,
+    },
+    component: () => import("../views/payment-processors/index"),
+  },
+  {
+    path: "/guests-payments",
+    name: "guests-payments",
+    meta: {
+      title: "Guests Payments",
+      authRequired: true,
+    },
+    component: () => import("../views/guests-payments/index"),
+  },
+  // Others Pages End Here
   {
     path: "/pages/starter",
     name: "starter",

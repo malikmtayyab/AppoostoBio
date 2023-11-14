@@ -248,8 +248,8 @@ export default {
                       </div>
                     </li>
                     <li class="nav-item">
-                      <router-link to="/chat" class="nav-link" data-key="t-chat">
-                        {{ $t("t-chat") }}
+                      <router-link to="/chat" class="nav-link" data-key="t-ai-chat">
+                        {{ $t("t-ai-chat") }}
                       </router-link>
                     </li>
                     <li class="nav-item">

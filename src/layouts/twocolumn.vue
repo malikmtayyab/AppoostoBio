@@ -404,6 +404,52 @@ export default {
                   <div class="collapse menu-dropdown" id="sidebarDashboards">
 
                     <ul class="nav nav-sm flex-column">
+                      <!-- New Pages Start From Here -->
+                      <li class="nav-item">
+                        <router-link to="/dashboard" class="nav-link custom-abc" data-key="t-dashboard">
+                          {{ $t("t-dashboard") }}
+                        </router-link>
+                      </li>
+
+                      <li class="nav-item">
+                        <router-link to="/biolink-pages" class="nav-link custom-abc" data-key="t-biolink-pages">
+                          {{ $t("t-biolink-pages") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/shortened-links" class="nav-link custom-abc" data-key="t-shortened-links">
+                          {{ $t("t-shortened-links") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/file-links" class="nav-link custom-abc" data-key="t-file-links">
+                          {{ $t("t-file-links") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/vcard-links" class="nav-link custom-abc" data-key="t-vcard-links">
+                          {{ $t("t-vcard-links") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/event-links" class="nav-link custom-abc" data-key="t-event-links">
+                          {{ $t("t-event-links") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/static-sites" class="nav-link custom-abc" data-key="t-static-sites">
+                          {{ $t("t-static-sites") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/qr-codes" class="nav-link custom-abc" data-key="t-qr-codes">
+                          {{ $t("t-qr-codes") }}
+                        </router-link>
+                      </li>
+
+                      
+                      <!-- New Pages Start From Here -->
+                      
                       <li class="nav-item">
                         <router-link to="/dashboard/analytics" class="nav-link custom-abc" data-key="t-analytics">
                           {{ $t("t-analytics") }}
@@ -448,6 +494,28 @@ export default {
                   <div class="collapse menu-dropdown" id="sidebarApps">
 
                     <ul class="nav nav-sm flex-column">
+                       <!-- AI pages starts from here -->
+                       <li class="nav-item">
+                              <router-link to="/ai-documents" class="nav-link" data-key="t-ai-documents"> {{
+                                $t("t-ai-documents") }}
+                              </router-link>
+                        </li>   
+                        <li class="nav-item">
+                              <router-link to="/ai-images" class="nav-link" data-key="t-ai-images"> {{
+                                $t("t-ai-images") }}
+                              </router-link>
+                        </li>
+                      <li class="nav-item">
+                        <router-link to="/ai-chat" class="nav-link" data-key="t-ai-chat">
+                          {{ $t("t-ai-chat") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/tools" class="nav-link" data-key="t-tools">
+                          {{ $t("t-tools") }}
+                        </router-link>
+                      </li>
+                        <!-- AI pages End Here -->
                       <li class="nav-item">
                         <a class="nav-link" href="#sidebarCalendar" data-bs-toggle="collapse" role="button"
                           aria-expanded="false" aria-controls="sidebaremail" data-key="t-calendar">
@@ -468,8 +536,8 @@ export default {
                         </div>
                       </li>
                       <li class="nav-item">
-                        <router-link to="/chat" class="nav-link" data-key="t-chat">
-                          {{ $t("t-chat") }}
+                        <router-link to="/chat" class="nav-link" data-key="t-ai-chat">
+                          {{ $t("t-ai-chat") }}
                         </router-link>
                       </li>
 
@@ -1006,7 +1074,6 @@ export default {
                         </div>
                       </li>
                       <li class="nav-item">
-
                         <a class="nav-link" href="#sidebarLockScreen" data-bs-toggle="collapse" role="button"
                           aria-expanded="false" aria-controls="sidebarLockScreen" data-key="t-lock-screen">
                           {{ $t("t-lock-screen") }}
@@ -1027,9 +1094,7 @@ export default {
                           </ul>
                         </div>
                       </li>
-
                       <li class="nav-item">
-
                         <a class="nav-link" href="#sidebarLogout" data-bs-toggle="collapse" role="button"
                           aria-expanded="false" aria-controls="sidebarLogout" data-key="t-logout">
                           {{ $t("t-logout") }}
@@ -1051,7 +1116,6 @@ export default {
                         </div>
                       </li>
                       <li class="nav-item">
-
                         <a class="nav-link" href="#sidebarSuccessMsg" data-bs-toggle="collapse" role="button"
                           aria-expanded="false" aria-controls="sidebarSuccessMsg" data-key="t-success-message">
                           {{ $t("t-success-message") }}
@@ -1138,6 +1202,38 @@ export default {
                 <li class="nav-item">
                   <div class="collapse menu-dropdown" id="sidebarPages">
                     <ul class="nav nav-sm flex-column">
+                      <!-- Other Pages Start From Here -->
+                      <li class="nav-item">
+                        <router-link to="/custom-domains" class="nav-link" data-key="t-custom-domains">
+                          {{ $t("t-custom-domains") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/pixels" class="nav-link" data-key="t-pixels">
+                          {{ $t("t-pixels") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/projects" class="nav-link" data-key="t-projects">
+                          {{ $t("t-projects") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/data" class="nav-link" data-key="t-data">
+                          {{ $t("t-data") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/payment-processors" class="nav-link" data-key="t-payment-processors">
+                          {{ $t("t-payment-processors") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link to="/guests-payments" class="nav-link" data-key="t-guests-payments">
+                          {{ $t("t-guests-payments") }}
+                        </router-link>
+                      </li>
+                      <!-- Other Pages Start Ends Here -->
                       <li class="nav-item">
                         <router-link to="/pages/starter" class="nav-link" data-key="t-starter">{{ $t("t-starter") }}
                         </router-link>
