@@ -56,18 +56,9 @@ export default [
       },
     },
   },
-  {
-    path: "/",
-    name: "default",
-    meta: {
-      title: "Dashboard",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/ecommerce/index.vue"),
-  },
   // New Pages Under the dashboard
   {
-    path: "/dashboard",
+    path: "/",
     name: "dashboard",
     meta: {
       title: "Dashboard",
@@ -129,61 +120,7 @@ export default [
     },
     component: () => import("../views/hosting/index"),
   },
-  // New Pages Under the Dashboard End
-  {
-    path: "/dashboard/crypto",
-    name: "dashboard-crypto",
-    meta: {
-      title: "Crypto",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/crypto/index"),
-  },
-  {
-    path: "/dashboard/projects",
-    name: "dashboard-projects",
-    meta: {
-      title: "Projects",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/projects/index"),
-  },
-  {
-    path: "/dashboard/crm",
-    name: "dashboard-crm",
-    meta: {
-      title: "CRM",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/crm/index"),
-  },
-  {
-    path: "/dashboard/analytics",
-    name: "dashboard-analytics",
-    meta: {
-      title: "Analytics",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/analytics/index"),
-  },
-  {
-    path: "/dashboard/nft",
-    name: "dashboard-nft",
-    meta: {
-      title: "NFT Dashboard",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/nft/index"),
-  },
-  {
-    path: "/dashboard/job",
-    name: "dashboard-job",
-    meta: {
-      title: "Job Dashboard",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/job/index"),
-  },
+
   {
     path: "/logout",
     name: "logout",

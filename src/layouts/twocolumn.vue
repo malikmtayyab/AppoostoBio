@@ -444,7 +444,7 @@ export default {
                       <!-- New Pages Start From Here -->
                       <li class="nav-item">
                         <router-link
-                          to="/dashboard"
+                          to="/"
                           class="nav-link custom-abc"
                           data-key="t-dashboard"
                         >
