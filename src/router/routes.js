@@ -191,84 +191,12 @@ export default [
     },
     component: () => import("../views/data/index"),
   },
-  // Others Pages End Here
-  {
-    path: "/pages/starter",
-    name: "starter",
-    meta: { title: "Starter", authRequired: true },
-    component: () => import("../views/pages/starter"),
-  },
-  {
-    path: "/pages/profile",
-    name: "profile",
-    meta: { title: "Profile", authRequired: true },
-    component: () => import("../views/pages/profile/simple"),
-  },
+
   {
     path: "/pages/profile-setting",
     name: "profile-setting",
     meta: { title: "Setting", authRequired: true },
     component: () => import("../views/pages/profile/setting"),
-  },
-  {
-    path: "/pages/maintenance",
-    name: "maintenance",
-    meta: { title: "Maintanance", authRequired: true },
-    component: () => import("../views/pages/maintenance"),
-  },
-  {
-    path: "/pages/coming-soon",
-    name: "coming-soon",
-    meta: { title: "Comming Soon", authRequired: true },
-    component: () => import("../views/pages/coming-soon"),
-  },
-  {
-    path: "/pages/timeline",
-    name: "timeline",
-    meta: { title: "Timeline", authRequired: true },
-    component: () => import("../views/pages/timeline"),
-  },
-  {
-    path: "/pages/faqs",
-    name: "FAQs",
-    meta: { title: "FAQs", authRequired: true },
-    component: () => import("../views/pages/faqs"),
-  },
-  {
-    path: "/pages/pricing",
-    name: "pricing",
-    meta: { title: "Pricing", authRequired: true },
-    component: () => import("../views/pages/pricing"),
-  },
-  {
-    path: "/pages/team",
-    name: "team",
-    meta: { title: "Team", authRequired: true },
-    component: () => import("../views/pages/team"),
-  },
-  {
-    path: "/pages/search-results",
-    name: "search-results",
-    meta: { title: "Search Results", authRequired: true },
-    component: () => import("../views/pages/search-results"),
-  },
-  {
-    path: "/pages/sitemap",
-    name: "sitemap",
-    meta: { title: "Sitemap", authRequired: true },
-    component: () => import("../views/pages/sitemap"),
-  },
-  {
-    path: "/pages/privacy-policy",
-    name: "privacy-policy",
-    meta: { title: "Privacy Policy", authRequired: true },
-    component: () => import("../views/pages/privacy-policy"),
-  },
-  {
-    path: "/pages/term-conditions",
-    name: "term-conditions",
-    meta: { title: "Term Conditions", authRequired: true },
-    component: () => import("../views/pages/term-conditions"),
   },
   {
     path: "/auth/signin-basic",
