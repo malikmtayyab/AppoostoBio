@@ -461,23 +461,31 @@ export default {
                           {{ $t("t-dashboard") }}
                         </router-link>
                       </li>
+                    </ul>
+                  </div>
+                </li>
+                <!-- end Dashboard Menu -->
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="sidebarApps">
+                    <ul class="nav nav-sm flex-column">
+                      <!-- AI pages starts from here -->
 
                       <li class="nav-item">
                         <router-link
-                          to="/biolink-pages"
+                          to="/images"
                           class="nav-link custom-abc"
-                          data-key="t-biolink-pages"
+                          data-key="t-images"
                         >
-                          {{ $t("t-biolink-pages") }}
+                          {{ $t("t-images") }}
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/shortened-links"
+                          to="/templates"
                           class="nav-link custom-abc"
-                          data-key="t-shortened-links"
+                          data-key="t-templates"
                         >
-                          {{ $t("t-shortened-links") }}
+                          {{ $t("t-templates") }}
                         </router-link>
                       </li>
                       <li class="nav-item">
@@ -525,14 +533,7 @@ export default {
                           {{ $t("t-qr-codes") }}
                         </router-link>
                       </li>
-                    </ul>
-                  </div>
-                </li>
-                <!-- end Dashboard Menu -->
-                <li class="nav-item">
-                  <div class="collapse menu-dropdown" id="sidebarApps">
-                    <ul class="nav nav-sm flex-column">
-                      <!-- AI pages starts from here -->
+
                       <li class="nav-item">
                         <router-link
                           to="/ai-chat"
