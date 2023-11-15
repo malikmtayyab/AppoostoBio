@@ -1,17 +1,12 @@
 <script>
-import {
-  required,
-  email,
-  helpers
-} from "@vuelidate/validators";
-import axios from 'axios';
+import { required, email, helpers } from "@vuelidate/validators";
+import axios from "axios";
 
 import {
   authMethods,
   authFackMethods,
   notificationMethods,
 } from "@/state/helpers";
-
 
 export default {
   data() {
@@ -34,9 +29,7 @@ export default {
       required: helpers.withMessage("Password is required", required),
     },
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
     ...authMethods,
     ...authFackMethods,
@@ -44,16 +37,19 @@ export default {
 
     async signinapi() {
       this.processing = true;
-      const result = await axios.post('https://api-node.themesbrand.website/auth/signin', {
-        email: this.email,
-        password: this.password
-      });
-      if (result.data.status == 'errors') {
-        return this.authError = result.data.data;
+      const result = await axios.post(
+        "https://api-node.themesbrand.website/auth/signin",
+        {
+          email: this.email,
+          password: this.password,
+        }
+      );
+      if (result.data.status == "errors") {
+        return (this.authError = result.data.data);
       }
-      localStorage.setItem('jwt', result.data.token);
+      localStorage.setItem("jwt", result.data.token);
       this.$router.push({
-        path: '/'
+        path: "/",
       });
     },
 
@@ -83,7 +79,7 @@ export default {
                 this.isAuthError = false;
                 // Redirect to the originally requested page, or to the home page
                 this.$router.push({
-                  path: '/'
+                  path: "/",
                 });
               })
               .catch((error) => {
@@ -113,7 +109,6 @@ export default {
         }
       }
     },
-
   },
 };
 </script>
@@ -124,10 +119,15 @@ export default {
       <div class="bg-overlay"></div>
 
       <div class="shape">
-
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 0 1440 120">
-          <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1440 120"
+        >
+          <path
+            d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"
+          ></path>
         </svg>
       </div>
     </div>
@@ -139,7 +139,11 @@ export default {
             <div class="text-center mt-sm-5 mb-4 text-white-50">
               <div>
                 <router-link to="/" class="d-inline-block auth-logo">
-                  <img src="@/assets/images/logo-light.png" alt="" height="20" />
+                  <img
+                    src="@/assets/images/logo-light.png"
+                    alt=""
+                    height="20"
+                  />
                 </router-link>
               </div>
               <p class="mt-3 fs-15 fw-medium">
@@ -158,16 +162,26 @@ export default {
                   <p class="text-muted">Sign in to continue to Velzon.</p>
                 </div>
                 <div class="p-2 mt-4">
-                  <b-alert v-model="authError" variant="danger" class="mt-3" dismissible>{{ authError }}</b-alert>
+                  <b-alert
+                    v-model="authError"
+                    variant="danger"
+                    class="mt-3"
+                    dismissible
+                    >{{ authError }}</b-alert
+                  >
 
-                  <div>
-
-                  </div>
+                  <div></div>
 
                   <form @submit.prevent="tryToLogIn">
                     <div class="mb-3">
                       <label for="email" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="Enter email" v-model="email" />
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Enter email"
+                        v-model="email"
+                      />
                       <div class="invalid-feedback">
                         <span></span>
                       </div>
@@ -175,15 +189,27 @@ export default {
 
                     <div class="mb-3">
                       <div class="float-end">
-                        <router-link to="/forgot-password" class="text-muted">Forgot
-                          password?</router-link>
+                        <router-link to="/forgot-password" class="text-muted"
+                          >Forgot password?</router-link
+                        >
                       </div>
-                      <label class="form-label" for="password-input">Password</label>
+                      <label class="form-label" for="password-input"
+                        >Password</label
+                      >
                       <div class="position-relative auth-pass-inputgroup mb-3">
-                        <input type="password" v-model="password" class="form-control pe-5" placeholder="Enter password"
-                          id="password-input" />
-                        <BButton variant="link" class="position-absolute end-0 top-0 text-decoration-none text-muted"
-                          type="button" id="password-addon">
+                        <input
+                          type="password"
+                          v-model="password"
+                          class="form-control pe-5"
+                          placeholder="Enter password"
+                          id="password-input"
+                        />
+                        <BButton
+                          variant="link"
+                          class="position-absolute end-0 top-0 text-decoration-none text-muted"
+                          type="button"
+                          id="password-addon"
+                        >
                           <i class="ri-eye-fill align-middle"></i>
                         </BButton>
                         <div class="invalid-feedback">
@@ -193,13 +219,25 @@ export default {
                     </div>
 
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="auth-remember-check" />
-                      <label class="form-check-label" for="auth-remember-check">Remember
-                        me</label>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="auth-remember-check"
+                      />
+                      <label class="form-check-label" for="auth-remember-check"
+                        >Remember me</label
+                      >
                     </div>
 
                     <div class="mt-4">
-                      <BButton variant="success" class="w-100" type="submit" @click="signinapi" :disabled="processing">
+                      <BButton
+                        variant="success"
+                        class="w-100"
+                        type="submit"
+                        @click="signinapi"
+                        :disabled="processing"
+                      >
                         {{ processing ? "Please wait" : "Sign In" }}
                       </BButton>
                     </div>
@@ -209,16 +247,32 @@ export default {
                         <h5 class="fs-13 mb-4 title">Sign In with</h5>
                       </div>
                       <div>
-                        <BButton variant="primary" type="button" class="btn btn-primary btn-icon">
+                        <BButton
+                          variant="primary"
+                          type="button"
+                          class="btn btn-primary btn-icon"
+                        >
                           <i class="ri-facebook-fill fs-16"></i>
                         </BButton>
-                        <BButton variant="danger" type="button" class="btn btn-danger btn-icon ms-1">
+                        <BButton
+                          variant="danger"
+                          type="button"
+                          class="btn btn-danger btn-icon ms-1"
+                        >
                           <i class="ri-google-fill fs-16"></i>
                         </BButton>
-                        <BButton variant="dark" type="button" class="btn btn-dark btn-icon ms-1">
+                        <BButton
+                          variant="dark"
+                          type="button"
+                          class="btn btn-dark btn-icon ms-1"
+                        >
                           <i class="ri-github-fill fs-16"></i>
                         </BButton>
-                        <BButton variant="info" type="button" class="btn btn-info btn-icon ms-1">
+                        <BButton
+                          variant="info"
+                          type="button"
+                          class="btn btn-info btn-icon ms-1"
+                        >
                           <i class="ri-twitter-fill fs-16"></i>
                         </BButton>
                       </div>
@@ -231,8 +285,10 @@ export default {
             <div class="mt-4 text-center">
               <p class="mb-0">
                 Don't have an account ?
-                <router-link to="/register" class="fw-semibold text-primary
-                  text-decoration-underline">
+                <router-link
+                  to="/register"
+                  class="fw-semibold text-primary text-decoration-underline"
+                >
                   Signup
                 </router-link>
               </p>
