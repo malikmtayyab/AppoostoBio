@@ -1,56 +1,50 @@
 const chatData = [
     {
         id: 1,
-        image: require('@/assets/images/users/avatar-2.jpg'),
-        name: 'Steven Franklin',
+        image: require('@/assets/images/users/appoostoo_assitant.png'),
+        name: 'General Queries',
         message: 'Hey! there I\'m available',
         time: '',
-        color: 'secondary'  
+        color: 'secondary'
     },
     {
         id: 2,
-        image: require('@/assets/images/users/avatar-3.jpg'),
-        name: 'Adam Miller',
+        image: require('@/assets/images/users/seoking.png'),
+        name: 'Search Engine Optimization',
         message: 'I\'ve finished it! See you so',
         time: '5',
         color: 'success'
     },
     {
         id: 3,
-        name: 'Keith Gonzales',
+        name: 'Technical chat',
+        image: require('@/assets/images/users/appoostoo_assitant.png'),
         message: 'This theme is awesome!',
         time: '2',
         color: 'success'
     },
     {
         id: 4,
-        image: require('@/assets/images/users/avatar-4.jpg'),
-        name: 'Jose Vickery',
+        image: require('@/assets/images/users/seoking.png'),
+        name: 'Off Page SEO',
         message: 'Nice to meet you',
         time: '',
         color: 'warning'
     },
     {
         id: 5,
-        name: 'Mitchel Givens',
+        name: 'Content Chat',
+        image: require('@/assets/images/users/appoostoo_assitant.png'),
         message: 'Hey! there I\'m available',
         time: '',
         color: 'secondary'
     },
     {
         id: 6,
-        image: require('@/assets/images/users/avatar-4.jpg'),
-        name: 'Stephen Hadley',
+        image: require('@/assets/images/users/seoking.png'),
+        name: 'Mobile SEO',
         message: 'I\'ve finished it! See you so',
         time: '7',
-        color: 'success'
-    },
-    {
-        id: 7,
-        image: require('@/assets/images/users/avatar-2.jpg'),
-        name: 'Leord Joseph',
-        message: 'This theme is awesome!',
-        time: '',
         color: 'success'
     },
 ];
