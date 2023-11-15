@@ -178,7 +178,7 @@ export default {
   <Layout>
 
     <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
-      <div class="chat-leftsidebar">
+      <div class="custom chat-leftsidebar">
 
         <BCard no-body>
           <BCardBody>
@@ -604,5 +604,9 @@ export default {
 <style scoped>
 .suggestion {
   cursor: pointer;
+}
+
+.custom {
+  height: calc(100vh - 50px - 8px);
 }
 </style>
