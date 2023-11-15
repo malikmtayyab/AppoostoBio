@@ -19,7 +19,7 @@ export default {
 <template>
   <Layout>
     <BRow>
-      <BCol xxl="12" class="h-100" style="height: 100vh;">
+      <BCol xxl="12" class="vh-75">
         <BCard no-body>
           <BCardBody>
             <BTabs
@@ -41,14 +41,14 @@ export default {
                 </div>
               </BTab>
               <BTab title="Developers">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="2"></Form>
 
                   <Response></Response>
                 </div>
               </BTab>
               <BTab title="Social Media">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="3"></Form>
 
                   <Response></Response>
@@ -58,7 +58,7 @@ export default {
             
 
               <BTab title="Email">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="4"></Form>
 
                   <Response></Response>
@@ -66,7 +66,7 @@ export default {
               </BTab>
 
               <BTab title="Text">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="5"></Form>
 
                   <Response></Response>
@@ -74,7 +74,7 @@ export default {
               </BTab>
 
               <BTab title="Others">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="6"></Form>
 
                   <Response></Response>
