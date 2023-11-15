@@ -196,7 +196,7 @@ export default {
         <BCard no-body>
           <BCardBody>
             <BTabs nav-class="nav-tabs-custom nav-success mb-3" justified>
-              <BTab title="Chats" :active="activeTab === 'chat'" @click="handleActiveTab('chat')">
+              <BTab title="Chats"  :active="activeTab === 'chat'" @click="handleActiveTab('chat')">
               </BTab>
               <BTab title="Bots" :active="activeTab === 'bot'" @click="handleActiveTab('bot')">
               </BTab>

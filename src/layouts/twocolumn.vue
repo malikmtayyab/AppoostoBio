@@ -280,19 +280,19 @@ export default {
           <!-- Dark Logo-->
           <router-link to="/" class="logo logo-dark">
             <span class="logo-sm">
-              <img src="@/assets/images/logo-sm.png" alt="" height="22" />
+              <img src="@/assets/images/appoostoo_dark.png" alt="" height="22" />
             </span>
             <span class="logo-lg">
-              <img src="@/assets/images/logo-dark.png" alt="" height="17" />
+              <img src="@/assets/images/appoostoo_dark.png" alt="" height="17" />
             </span>
           </router-link>
           <!-- Light Logo-->
           <router-link to="/" class="logo logo-light">
             <span class="logo-sm">
-              <img src="@/assets/images/logo-sm.png" alt="" height="22" />
+              <img src="@/assets/images/appoostoo_light.png" alt="" height="60" />
             </span>
             <span class="logo-lg">
-              <img src="@/assets/images/logo-light.png" alt="" height="17" />
+              <img src="@/assets/images/appoostoo_light.png" alt="" height="50" />
             </span>
           </router-link>
           <button type="button" class=" btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -305,7 +305,7 @@ export default {
           <BContainer fluid>
             <div id="two-column-menu">
               <simplebar class="twocolumn-iconview list-unstyled">
-                <a class="logo"><img src="@/assets/images/logo-sm.png" alt="Logo" height="22" /></a>
+                <a class="logo"><img src="@/assets/images/apposotoo_icon.png" alt="Logo" height="50" /></a>
                 <li>
                   <a href="#sidebarDashboards" class="nav-icon" role="button"
                     @click.prevent="updateMenu('sidebarDashboards', $event)">
@@ -496,6 +496,11 @@ export default {
                     <ul class="nav nav-sm flex-column">
                        <!-- AI pages starts from here -->
                        <li class="nav-item">
+                        <router-link to="/ai-chat" class="nav-link" data-key="t-ai-chat">
+                          {{ $t("t-ai-chat") }}
+                        </router-link>
+                      </li>
+                       <li class="nav-item">
                               <router-link to="/ai-documents" class="nav-link" data-key="t-ai-documents"> {{
                                 $t("t-ai-documents") }}
                               </router-link>
@@ -505,11 +510,7 @@ export default {
                                 $t("t-ai-images") }}
                               </router-link>
                         </li>
-                      <li class="nav-item">
-                        <router-link to="/ai-chat" class="nav-link" data-key="t-ai-chat">
-                          {{ $t("t-ai-chat") }}
-                        </router-link>
-                      </li>
+                    
                       <li class="nav-item">
                         <router-link to="/tools" class="nav-link" data-key="t-tools">
                           {{ $t("t-tools") }}
@@ -535,11 +536,11 @@ export default {
                           </ul>
                         </div>
                       </li>
-                      <li class="nav-item">
+                      <!-- <li class="nav-item">
                         <router-link to="/chat" class="nav-link" data-key="t-ai-chat">
                           {{ $t("t-ai-chat") }}
                         </router-link>
-                      </li>
+                      </li> -->
 
                       <li class="nav-item">
                         <a class="nav-link" href="#sidebaremail" data-bs-toggle="collapse" role="button"
