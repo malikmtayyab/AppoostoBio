@@ -6,12 +6,13 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/autoplay";
-import 'swiper/css/navigation';
+import "swiper/css/navigation";
 
 export default {
   data() {
     return {
-      Autoplay, Navigation
+      Autoplay,
+      Navigation,
     };
   },
   components: {
@@ -26,27 +27,40 @@ export default {
   <Layout>
     <div class="profile-foreground position-relative mx-n4 mt-n4">
       <div class="profile-wid-bg">
-        <img src="@/assets/images/profile-bg.jpg" alt="" class="profile-wid-img" />
+        <img
+          src="@/assets/images/profile-bg.jpg"
+          alt=""
+          class="profile-wid-img"
+        />
       </div>
     </div>
     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4 profile-wrapper">
       <BRow class="g-4">
         <BCol cols="auto">
           <div class="avatar-lg">
-            <img src="@/assets/images/users/avatar-1.jpg" alt="user-img" class="img-thumbnail rounded-circle" />
+            <img
+              src="@/assets/images/users/avatar-1.jpg"
+              alt="user-img"
+              class="img-thumbnail rounded-circle"
+            />
           </div>
         </BCol>
         <BCol>
           <div class="p-2">
-            <h3 class="text-white mb-1">Anna Adame</h3>
+            <h3 class="text-white mb-1">Ezio Grieco</h3>
             <p class="text-white text-opacity-75">Owner & Founder</p>
             <div class="hstack text-white-50 gap-1">
               <div class="me-2">
-                <i class="ri-map-pin-user-line me-1 text-white text-opacity-75 fs-16 align-middle"></i>California, United
-                States
+                <i
+                  class="ri-map-pin-user-line me-1 text-white text-opacity-75 fs-16 align-middle"
+                ></i
+                >California, United States
               </div>
               <div>
-                <i class="ri-building-line me-1 text-white text-opacity-75 fs-16 align-middle"></i>Themesbrand
+                <i
+                  class="ri-building-line me-1 text-white text-opacity-75 fs-16 align-middle"
+                ></i
+                >Themesbrand
               </div>
             </div>
           </div>
@@ -73,24 +87,34 @@ export default {
     <BRow>
       <BCol lg="12">
         <div>
-          <div class="d-flex profile-wrapper" style="position: absolute; right: 13px; top: 26px; ">
+          <div
+            class="d-flex profile-wrapper"
+            style="position: absolute; right: 13px; top: 26px"
+          >
             <div class="d-flex justify-content-end">
-              <router-link to="/pages/profile-setting" class="btn btn-success"><i
-                  class="ri-edit-box-line align-bottom"></i> Edit Profile</router-link>
+              <router-link to="/pages/profile-setting" class="btn btn-success"
+                ><i class="ri-edit-box-line align-bottom"></i> Edit
+                Profile</router-link
+              >
             </div>
           </div>
-          <BTabs nav-class=" animation-nav profile-nav gap-2 gap-lg-3  pt-4 text-muted" pills>
+          <BTabs
+            nav-class=" animation-nav profile-nav gap-2 gap-lg-3  pt-4 text-muted"
+            pills
+          >
             <BTab title="Overview" class="nav-item pt-4">
               <template #title>
                 <i class="ri-airplay-fill d-inline-block d-md-none"></i>
                 <span class="d-none d-md-inline-block">Overview</span>
               </template>
-              <BRow >
+              <BRow>
                 <BCol xxl="3">
                   <BCard no-body>
                     <BCardBody>
                       <h5 class="card-title mb-5">Complete Your Profile</h5>
-                      <BProgress class="animated-progress custom-progress progress-label">
+                      <BProgress
+                        class="animated-progress custom-progress progress-label"
+                      >
                         <BProgressBar :value="30" variant="danger">
                           <div class="label">30%</div>
                         </BProgressBar>
@@ -106,7 +130,7 @@ export default {
                           <tbody>
                             <tr>
                               <th class="ps-0" scope="row">Full Name :</th>
-                              <td class="text-muted">Anna Adame</td>
+                              <td class="text-muted">Ezio Grieco</td>
                             </tr>
                             <tr>
                               <th class="ps-0" scope="row">Mobile :</th>
@@ -137,29 +161,49 @@ export default {
                       <h5 class="card-title mb-4">Portfolio</h5>
                       <div class="d-flex flex-wrap gap-2">
                         <div>
-                          <BLink href="javascript:void(0);" class="avatar-xs d-block">
-                            <span class="avatar-title rounded-circle fs-16 bg-body text-body">
+                          <BLink
+                            href="javascript:void(0);"
+                            class="avatar-xs d-block"
+                          >
+                            <span
+                              class="avatar-title rounded-circle fs-16 bg-body text-body"
+                            >
                               <i class="ri-github-fill"></i>
                             </span>
                           </BLink>
                         </div>
                         <div>
-                          <BLink href="javascript:void(0);" class="avatar-xs d-block">
-                            <span class="avatar-title rounded-circle fs-16 bg-primary">
+                          <BLink
+                            href="javascript:void(0);"
+                            class="avatar-xs d-block"
+                          >
+                            <span
+                              class="avatar-title rounded-circle fs-16 bg-primary"
+                            >
                               <i class="ri-global-fill"></i>
                             </span>
                           </BLink>
                         </div>
                         <div>
-                          <BLink href="javascript:void(0);" class="avatar-xs d-block">
-                            <span class="avatar-title rounded-circle fs-16 bg-success">
+                          <BLink
+                            href="javascript:void(0);"
+                            class="avatar-xs d-block"
+                          >
+                            <span
+                              class="avatar-title rounded-circle fs-16 bg-success"
+                            >
                               <i class="ri-dribbble-fill"></i>
                             </span>
                           </BLink>
                         </div>
                         <div>
-                          <BLink href="javascript:void(0);" class="avatar-xs d-block">
-                            <span class="avatar-title rounded-circle fs-16 bg-danger">
+                          <BLink
+                            href="javascript:void(0);"
+                            class="avatar-xs d-block"
+                          >
+                            <span
+                              class="avatar-title rounded-circle fs-16 bg-danger"
+                            >
                               <i class="ri-pinterest-fill"></i>
                             </span>
                           </BLink>
@@ -172,13 +216,41 @@ export default {
                     <BCardBody>
                       <h5 class="card-title mb-4">Skills</h5>
                       <div class="d-flex flex-wrap gap-2 fs-15">
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">Photoshop</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">illustrator</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">HTML</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">CSS</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">Javascript</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">Php</BLink>
-                        <BLink href="javascript:void(0);" class="badge bg-primary-subtle text-primary">Python</BLink>
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >Photoshop</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >illustrator</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >HTML</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >CSS</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >Javascript</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >Php</BLink
+                        >
+                        <BLink
+                          href="javascript:void(0);"
+                          class="badge bg-primary-subtle text-primary"
+                          >Python</BLink
+                        >
                       </div>
                     </BCardBody>
                   </BCard>
@@ -190,25 +262,29 @@ export default {
                           <h5 class="card-title mb-0">Suggestions</h5>
                         </div>
                         <div class="flex-shrink-0">
-                          <BDropdown variant="link" right toggle-class="arrow-none p-0" no-caret>
-                            <template #button-content><i class="ri-more-2-fill fs-14"></i>
+                          <BDropdown
+                            variant="link"
+                            right
+                            toggle-class="arrow-none p-0"
+                            no-caret
+                          >
+                            <template #button-content
+                              ><i class="ri-more-2-fill fs-14"></i>
                             </template>
-                            <BDropdownItem href="#">
-                              View
-                            </BDropdownItem>
-                            <BDropdownItem href="#">
-                              Download
-                            </BDropdownItem>
-                            <BDropdownItem href="#">
-                              Delete
-                            </BDropdownItem>
+                            <BDropdownItem href="#"> View </BDropdownItem>
+                            <BDropdownItem href="#"> Download </BDropdownItem>
+                            <BDropdownItem href="#"> Delete </BDropdownItem>
                           </BDropdown>
                         </div>
                       </div>
                       <div>
                         <div class="d-flex align-items-center py-3">
                           <div class="avatar-xs flex-shrink-0 me-3">
-                            <img src="@/assets/images/users/avatar-3.jpg" alt="" class="img-fluid rounded-circle" />
+                            <img
+                              src="@/assets/images/users/avatar-3.jpg"
+                              alt=""
+                              class="img-fluid rounded-circle"
+                            />
                           </div>
                           <div class="flex-grow-1">
                             <div>
@@ -219,14 +295,22 @@ export default {
                             </div>
                           </div>
                           <div class="flex-shrink-0 ms-2">
-                            <BButton type="button" variant="outline-success" size="sm">
+                            <BButton
+                              type="button"
+                              variant="outline-success"
+                              size="sm"
+                            >
                               <i class="ri-user-add-line align-middle"></i>
                             </BButton>
                           </div>
                         </div>
                         <div class="d-flex align-items-center py-3">
                           <div class="avatar-xs flex-shrink-0 me-3">
-                            <img src="@/assets/images/users/avatar-4.jpg" alt="" class="img-fluid rounded-circle" />
+                            <img
+                              src="@/assets/images/users/avatar-4.jpg"
+                              alt=""
+                              class="img-fluid rounded-circle"
+                            />
                           </div>
                           <div class="flex-grow-1">
                             <div>
@@ -237,14 +321,22 @@ export default {
                             </div>
                           </div>
                           <div class="flex-shrink-0 ms-2">
-                            <BButton type="button" variant="outline-success" size="sm">
+                            <BButton
+                              type="button"
+                              variant="outline-success"
+                              size="sm"
+                            >
                               <i class="ri-user-add-line align-middle"></i>
                             </BButton>
                           </div>
                         </div>
                         <div class="d-flex align-items-center py-3">
                           <div class="avatar-xs flex-shrink-0 me-3">
-                            <img src="@/assets/images/users/avatar-5.jpg" alt="" class="img-fluid rounded-circle" />
+                            <img
+                              src="@/assets/images/users/avatar-5.jpg"
+                              alt=""
+                              class="img-fluid rounded-circle"
+                            />
                           </div>
                           <div class="flex-grow-1">
                             <div>
@@ -255,7 +347,11 @@ export default {
                             </div>
                           </div>
                           <div class="flex-shrink-0 ms-2">
-                            <BButton type="button" variant="outline-success" size="sm">
+                            <BButton
+                              type="button"
+                              variant="outline-success"
+                              size="sm"
+                            >
                               <i class="ri-user-add-line align-middle"></i>
                             </BButton>
                           </div>
@@ -271,24 +367,29 @@ export default {
                           <h5 class="card-title mb-0">Popular Posts</h5>
                         </div>
                         <div class="flex-shrink-0">
-                          <BDropdown variant="link" right toggle-class="arrow-none p-0" no-caret>
-                            <template #button-content><i class="ri-more-2-fill fs-14"></i>
+                          <BDropdown
+                            variant="link"
+                            right
+                            toggle-class="arrow-none p-0"
+                            no-caret
+                          >
+                            <template #button-content
+                              ><i class="ri-more-2-fill fs-14"></i>
                             </template>
-                            <BDropdownItem href="#">
-                              View
-                            </BDropdownItem>
-                            <BDropdownItem href="#">
-                              Download
-                            </BDropdownItem>
-                            <BDropdownItem href="#">
-                              Delete
-                            </BDropdownItem>
+                            <BDropdownItem href="#"> View </BDropdownItem>
+                            <BDropdownItem href="#"> Download </BDropdownItem>
+                            <BDropdownItem href="#"> Delete </BDropdownItem>
                           </BDropdown>
                         </div>
                       </div>
                       <div class="d-flex mb-4">
                         <div class="flex-shrink-0">
-                          <img src="@/assets/images/small/img-4.jpg" alt="" height="50" class="rounded" />
+                          <img
+                            src="@/assets/images/small/img-4.jpg"
+                            alt=""
+                            height="50"
+                            class="rounded"
+                          />
                         </div>
                         <div class="flex-grow-1 ms-3 overflow-hidden">
                           <BLink href="javascript:void(0);">
@@ -301,7 +402,12 @@ export default {
                       </div>
                       <div class="d-flex mb-4">
                         <div class="flex-shrink-0">
-                          <img src="@/assets/images/small/img-5.jpg" alt="" height="50" class="rounded" />
+                          <img
+                            src="@/assets/images/small/img-5.jpg"
+                            alt=""
+                            height="50"
+                            class="rounded"
+                          />
                         </div>
                         <div class="flex-grow-1 ms-3 overflow-hidden">
                           <BLink href="javascript:void(0);">
@@ -314,7 +420,12 @@ export default {
                       </div>
                       <div class="d-flex">
                         <div class="flex-shrink-0">
-                          <img src="@/assets/images/small/img-6.jpg" alt="" height="50" class="rounded" />
+                          <img
+                            src="@/assets/images/small/img-6.jpg"
+                            alt=""
+                            height="50"
+                            class="rounded"
+                          />
                         </div>
                         <div class="flex-grow-1 ms-3 overflow-hidden">
                           <BLink href="javascript:void(0);">
@@ -333,7 +444,7 @@ export default {
                     <BCardBody>
                       <h5 class="card-title mb-3">About</h5>
                       <p>
-                        Hi I'm Anna Adame, It will be as simple as Occidental;
+                        Hi I'm Ezio Grieco, It will be as simple as Occidental;
                         in fact, it will be Occidental. To an English person, it
                         will seem like simplified English, as a skeptical
                         Cambridge friend of mine told me what Occidental is
@@ -353,8 +464,12 @@ export default {
                       <BRow>
                         <BCol cols="6" md="4">
                           <div class="d-flex mt-4">
-                            <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                              <div class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                            <div
+                              class="flex-shrink-0 avatar-xs align-self-center me-3"
+                            >
+                              <div
+                                class="avatar-title bg-light rounded-circle fs-16 text-primary"
+                              >
                                 <i class="ri-user-2-fill"></i>
                               </div>
                             </div>
@@ -368,14 +483,20 @@ export default {
                         </BCol>
                         <BCol cols="6" md="4">
                           <div class="d-flex mt-4">
-                            <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                              <div class="avatar-title bg-light rounded-circle fs-16 text-primary">
+                            <div
+                              class="flex-shrink-0 avatar-xs align-self-center me-3"
+                            >
+                              <div
+                                class="avatar-title bg-light rounded-circle fs-16 text-primary"
+                              >
                                 <i class="ri-global-line"></i>
                               </div>
                             </div>
                             <div class="flex-grow-1 overflow-hidden">
                               <p class="mb-1">Website :</p>
-                              <BLink href="#" class="fw-semibold">www.velzon.com</BLink>
+                              <BLink href="#" class="fw-semibold"
+                                >www.velzon.com</BLink
+                              >
                             </div>
                           </div>
                         </BCol>
@@ -385,9 +506,11 @@ export default {
 
                   <BRow>
                     <BCol lg="12">
-                      <BCard no-body >
+                      <BCard no-body>
                         <BCardHeader class="align-items-center d-flex">
-                          <BCardTitle class="mb-0 me-2">Recent Activity</BCardTitle>
+                          <BCardTitle class="mb-0 me-2"
+                            >Recent Activity</BCardTitle
+                          >
                           <div class="flex-shrink-0 ms-auto">
                             <!-- <ul class="nav justify-content-end nav-tabs-custom rounded card-header-tabs border-bottom-0"
                               role="tablist">
@@ -410,24 +533,40 @@ export default {
                           </div>
                         </BCardHeader>
                         <BCardBody>
-                          <BTabs nav-class="text-muted nav-tabs-custom rounded card-header-tabs border-bottom-0 tamp">
+                          <BTabs
+                            nav-class="text-muted nav-tabs-custom rounded card-header-tabs border-bottom-0 tamp"
+                          >
                             <BTab title="Today">
                               <div class="profile-timeline">
-                                <div class="accordion accordion-flush" id="todayExample">
+                                <div
+                                  class="accordion accordion-flush"
+                                  id="todayExample"
+                                >
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="headingOne">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapseOne>
+                                    <div
+                                      class="accordion-header"
+                                      id="headingOne"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapseOne
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-2.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Jacqueline Steve
                                             </h6>
-                                            <small class="text-muted">We has changed 2 attributes on
-                                              05:16PM</small>
+                                            <small class="text-muted"
+                                              >We has changed 2 attributes on
+                                              05:16PM</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -450,11 +589,19 @@ export default {
                                     </BCollapse>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="headingTwo">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapseTwo>
+                                    <div
+                                      class="accordion-header"
+                                      id="headingTwo"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapseTwo
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
+                                            <div
+                                              class="avatar-title bg-light text-success rounded-circle"
+                                            >
                                               M
                                             </div>
                                           </div>
@@ -462,8 +609,10 @@ export default {
                                             <h6 class="fs-14 mb-1">
                                               Megan Elmore
                                             </h6>
-                                            <small class="text-muted">Adding a new event with
-                                              attachments - 04:45PM</small>
+                                            <small class="text-muted"
+                                              >Adding a new event with
+                                              attachments - 04:45PM</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -472,32 +621,44 @@ export default {
                                       <div class="accordion-body ms-2 ps-5">
                                         <BRow class="g-2">
                                           <BCol cols="auto">
-                                            <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                            <div
+                                              class="d-flex border border-dashed p-2 rounded position-relative"
+                                            >
                                               <div class="flex-shrink-0">
-                                                <i class="ri-image-2-line fs-17 text-danger"></i>
+                                                <i
+                                                  class="ri-image-2-line fs-17 text-danger"
+                                                ></i>
                                               </div>
                                               <div class="flex-grow-1 ms-2">
                                                 <h6 class="mb-0">
-                                                  <BLink href="javascript:void(0);" class="stretched-link">Business
-                                                    Template
-                                                    - UI/UX
-                                                    design</BLink>
+                                                  <BLink
+                                                    href="javascript:void(0);"
+                                                    class="stretched-link"
+                                                    >Business Template - UI/UX
+                                                    design</BLink
+                                                  >
                                                 </h6>
                                                 <small>685 KB</small>
                                               </div>
                                             </div>
                                           </BCol>
                                           <BCol cols="auto">
-                                            <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                            <div
+                                              class="d-flex border border-dashed p-2 rounded position-relative"
+                                            >
                                               <div class="flex-shrink-0">
-                                                <i class="ri-file-zip-line fs-17 text-info"></i>
+                                                <i
+                                                  class="ri-file-zip-line fs-17 text-info"
+                                                ></i>
                                               </div>
                                               <div class="flex-grow-1 ms-2">
                                                 <h6>
-                                                  <BLink href="javascript:void(0);" class="stretched-link">Bank
-                                                    Management
-                                                    System -
-                                                    PSD</BLink>
+                                                  <BLink
+                                                    href="javascript:void(0);"
+                                                    class="stretched-link"
+                                                    >Bank Management System -
+                                                    PSD</BLink
+                                                  >
                                                 </h6>
                                                 <small>8.78 MB</small>
                                               </div>
@@ -508,33 +669,55 @@ export default {
                                     </BCollapse>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="headingThree">
-                                      <BLink class="accordion-button p-2 shadow-none" data-bs-toggle="collapse"
-                                        href="#collapsethree" aria-expanded="false">
+                                    <div
+                                      class="accordion-header"
+                                      id="headingThree"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        data-bs-toggle="collapse"
+                                        href="#collapsethree"
+                                        aria-expanded="false"
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-5.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               New ticket received
                                             </h6>
-                                            <small class="text-muted mb-2">User
-                                              <span class="text-secondary">Erica245</span>
+                                            <small class="text-muted mb-2"
+                                              >User
+                                              <span class="text-secondary"
+                                                >Erica245</span
+                                              >
                                               submitted a ticket -
-                                              02:33PM</small>
+                                              02:33PM</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="headingFour">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapseFour>
+                                    <div
+                                      class="accordion-header"
+                                      id="headingFour"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapseFour
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-muted rounded-circle">
+                                            <div
+                                              class="avatar-title bg-light text-muted rounded-circle"
+                                            >
                                               <i class="ri-user-3-fill"></i>
                                             </div>
                                           </div>
@@ -542,13 +725,17 @@ export default {
                                             <h6 class="fs-14 mb-1">
                                               Nancy Martino
                                             </h6>
-                                            <small class="text-muted">Commented on 12:57PM</small>
+                                            <small class="text-muted"
+                                              >Commented on 12:57PM</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
                                     <BCollapse id="collapseFour" visible>
-                                      <div class="accordion-body ms-2 ps-5 fst-italic">
+                                      <div
+                                        class="accordion-body ms-2 ps-5 fst-italic"
+                                      >
                                         " A wonderful serenity has taken
                                         possession of my entire soul, like these
                                         sweet mornings of spring which I enjoy
@@ -559,22 +746,32 @@ export default {
                                         own style choices. "
                                       </div>
                                     </BCollapse>
-
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="headingFive">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapseFive>
+                                    <div
+                                      class="accordion-header"
+                                      id="headingFive"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapseFive
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-7.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Lewis Arnold
                                             </h6>
-                                            <small class="text-muted">Create new project Building
-                                              product - 10:05AM</small>
+                                            <small class="text-muted"
+                                              >Create new project Building
+                                              product - 10:05AM</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -589,28 +786,54 @@ export default {
                                           contribute to your project.
                                         </p>
                                         <div class="avatar-group">
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="Christi">
-                                            <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                              class="rounded-circle avatar-xs" />
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="Christi"
+                                          >
+                                            <img
+                                              src="@/assets/images/users/avatar-4.jpg"
+                                              alt=""
+                                              class="rounded-circle avatar-xs"
+                                            />
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="Frank Hook">
-                                            <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                              class="rounded-circle avatar-xs" />
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="Frank Hook"
+                                          >
+                                            <img
+                                              src="@/assets/images/users/avatar-3.jpg"
+                                              alt=""
+                                              class="rounded-circle avatar-xs"
+                                            />
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="Ruby">
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="Ruby"
+                                          >
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle bg-light text-primary">
+                                              <div
+                                                class="avatar-title rounded-circle bg-light text-primary"
+                                              >
                                                 R
                                               </div>
                                             </div>
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="more">
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="more"
+                                          >
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle">
+                                              <div
+                                                class="avatar-title rounded-circle"
+                                              >
                                                 2+
                                               </div>
                                             </div>
@@ -624,21 +847,32 @@ export default {
                             </BTab>
                             <BTab title="Weekly">
                               <div class="profile-timeline">
-                                <div class="accordion accordion-flush" id="weeklyExample">
+                                <div
+                                  class="accordion accordion-flush"
+                                  id="weeklyExample"
+                                >
                                   <div class="accordion-item border-0">
                                     <div class="accordion-header" id="heading6">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse6>
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse6
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-3.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Joseph Parker
                                             </h6>
-                                            <small class="text-muted">New people joined with our
-                                              company - Yesterday</small>
+                                            <small class="text-muted"
+                                              >New people joined with our
+                                              company - Yesterday</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -653,27 +887,39 @@ export default {
                                         perfect spot of its own.
                                       </div>
                                     </BCollapse>
-
                                   </div>
                                   <div class="accordion-item border-0">
                                     <div class="accordion-header" id="heading7">
-                                      <BLink class="accordion-button p-2 shadow-none" data-bs-toggle="collapse"
-                                        href="#collapse7" aria-expanded="false">
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        data-bs-toggle="collapse"
+                                        href="#collapse7"
+                                        aria-expanded="false"
+                                      >
                                         <div class="d-flex">
                                           <div class="avatar-xs">
-                                            <div class="avatar-title rounded-circle bg-light text-danger">
-                                              <i class="ri-shopping-bag-line"></i>
+                                            <div
+                                              class="avatar-title rounded-circle bg-light text-danger"
+                                            >
+                                              <i
+                                                class="ri-shopping-bag-line"
+                                              ></i>
                                             </div>
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Your order is placed
-                                              <BBadge variant="success-subtle"
-                                                class="bg-success-subtle text-success align-middle">Completed</BBadge>
+                                              <BBadge
+                                                variant="success-subtle"
+                                                class="bg-success-subtle text-success align-middle"
+                                                >Completed</BBadge
+                                              >
                                             </h6>
-                                            <small class="text-muted">These customers can rest assured
+                                            <small class="text-muted"
+                                              >These customers can rest assured
                                               their order has been placed - 1
-                                              week Ago</small>
+                                              week Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -681,10 +927,15 @@ export default {
                                   </div>
                                   <div class="accordion-item border-0">
                                     <div class="accordion-header" id="heading8">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse8>
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse8
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
+                                            <div
+                                              class="avatar-title bg-light text-success rounded-circle"
+                                            >
                                               <i class="ri-home-3-line"></i>
                                             </div>
                                           </div>
@@ -693,79 +944,119 @@ export default {
                                               Velzon admin dashboard templates
                                               layout upload
                                             </h6>
-                                            <small class="text-muted">We talked about a project on
-                                              linkedin - 1 week Ago</small>
+                                            <small class="text-muted"
+                                              >We talked about a project on
+                                              linkedin - 1 week Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
 
                                     <BCollapse id="collapse8" visible>
-                                      <div class="accordion-body ms-2 ps-5 fst-italic">
+                                      <div
+                                        class="accordion-body ms-2 ps-5 fst-italic"
+                                      >
                                         Powerful, clean & modern responsive
                                         bootstrap 5 admin template. The maximum
                                         file size for uploads in this demo :
                                         <BRow class="mt-2">
                                           <BCol xxl="6">
-                                            <BRow class="border border-dashed gx-2 p-2">
+                                            <BRow
+                                              class="border border-dashed gx-2 p-2"
+                                            >
                                               <BCol cols="3">
-                                                <img src="@/assets/images/small/img-3.jpg" alt=""
-                                                  class="img-fluid rounded" />
+                                                <img
+                                                  src="@/assets/images/small/img-3.jpg"
+                                                  alt=""
+                                                  class="img-fluid rounded"
+                                                />
                                               </BCol>
                                               <BCol cols="3">
-                                                <img src="@/assets/images/small/img-5.jpg" alt=""
-                                                  class="img-fluid rounded" />
+                                                <img
+                                                  src="@/assets/images/small/img-5.jpg"
+                                                  alt=""
+                                                  class="img-fluid rounded"
+                                                />
                                               </BCol>
                                               <BCol cols="3">
-                                                <img src="@/assets/images/small/img-7.jpg" alt=""
-                                                  class="img-fluid rounded" />
+                                                <img
+                                                  src="@/assets/images/small/img-7.jpg"
+                                                  alt=""
+                                                  class="img-fluid rounded"
+                                                />
                                               </BCol>
                                               <BCol cols="3">
-                                                <img src="@/assets/images/small/img-9.jpg" alt=""
-                                                  class="img-fluid rounded" />
+                                                <img
+                                                  src="@/assets/images/small/img-9.jpg"
+                                                  alt=""
+                                                  class="img-fluid rounded"
+                                                />
                                               </BCol>
                                             </BRow>
                                           </BCol>
                                         </BRow>
                                       </div>
                                     </BCollapse>
-
                                   </div>
                                   <div class="accordion-item border-0">
                                     <div class="accordion-header" id="heading9">
-                                      <BLink class="accordion-button p-2 shadow-none">
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-6.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               New ticket created
-                                              <BBadge class="bg-info-subtle text-info align-middle">Inprogress</BBadge>
+                                              <BBadge
+                                                class="bg-info-subtle text-info align-middle"
+                                                >Inprogress</BBadge
+                                              >
                                             </h6>
-                                            <small class="text-muted mb-2">User
-                                              <span class="text-secondary">Jack365</span>
+                                            <small class="text-muted mb-2"
+                                              >User
+                                              <span class="text-secondary"
+                                                >Jack365</span
+                                              >
                                               submitted a ticket - 2 week
-                                              Ago</small>
+                                              Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading10">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse10>
+                                    <div
+                                      class="accordion-header"
+                                      id="heading10"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse10
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-5.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Jennifer Carter
                                             </h6>
-                                            <small class="text-muted">Commented - 4 week Ago</small>
+                                            <small class="text-muted"
+                                              >Commented - 4 week Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -791,13 +1082,24 @@ export default {
                             </BTab>
                             <BTab title="Monthly">
                               <div class="profile-timeline">
-                                <div class="accordion accordion-flush" id="monthlyExample">
+                                <div
+                                  class="accordion accordion-flush"
+                                  id="monthlyExample"
+                                >
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading11">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse11>
+                                    <div
+                                      class="accordion-header"
+                                      id="heading11"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse11
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-success rounded-circle">
+                                            <div
+                                              class="avatar-title bg-light text-success rounded-circle"
+                                            >
                                               M
                                             </div>
                                           </div>
@@ -805,8 +1107,10 @@ export default {
                                             <h6 class="fs-14 mb-1">
                                               Megan Elmore
                                             </h6>
-                                            <small class="text-muted">Adding a new event with
-                                              attachments - 1 month Ago.</small>
+                                            <small class="text-muted"
+                                              >Adding a new event with
+                                              attachments - 1 month Ago.</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -816,48 +1120,66 @@ export default {
                                       <div class="accordion-body ms-2 ps-5">
                                         <BRow class="g-2">
                                           <BCol cols="auto">
-                                            <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                            <div
+                                              class="d-flex border border-dashed p-2 rounded position-relative"
+                                            >
                                               <div class="flex-shrink-0">
-                                                <i class="ri-image-2-line fs-17 text-danger"></i>
+                                                <i
+                                                  class="ri-image-2-line fs-17 text-danger"
+                                                ></i>
                                               </div>
                                               <div class="flex-grow-1 ms-2">
                                                 <h6 class="mb-0">
-                                                  <BLink href="javascript:void(0);" class="stretched-link">Business
-                                                    Template
-                                                    - UI/UX
-                                                    design</BLink>
+                                                  <BLink
+                                                    href="javascript:void(0);"
+                                                    class="stretched-link"
+                                                    >Business Template - UI/UX
+                                                    design</BLink
+                                                  >
                                                 </h6>
                                                 <small>685 KB</small>
                                               </div>
                                             </div>
                                           </BCol>
                                           <BCol cols="auto">
-                                            <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                            <div
+                                              class="d-flex border border-dashed p-2 rounded position-relative"
+                                            >
                                               <div class="flex-shrink-0">
-                                                <i class="ri-file-zip-line fs-17 text-info"></i>
+                                                <i
+                                                  class="ri-file-zip-line fs-17 text-info"
+                                                ></i>
                                               </div>
                                               <div class="flex-grow-1 ms-2">
                                                 <h6 class="mb-0">
-                                                  <BLink href="javascript:void(0);" class="stretched-link">Bank
-                                                    Management
-                                                    System -
-                                                    PSD</BLink>
+                                                  <BLink
+                                                    href="javascript:void(0);"
+                                                    class="stretched-link"
+                                                    >Bank Management System -
+                                                    PSD</BLink
+                                                  >
                                                 </h6>
                                                 <small>8.78 MB</small>
                                               </div>
                                             </div>
                                           </BCol>
                                           <BCol cols="auto">
-                                            <div class="d-flex border border-dashed p-2 rounded position-relative">
+                                            <div
+                                              class="d-flex border border-dashed p-2 rounded position-relative"
+                                            >
                                               <div class="flex-shrink-0">
-                                                <i class="ri-file-zip-line fs-17 text-info"></i>
+                                                <i
+                                                  class="ri-file-zip-line fs-17 text-info"
+                                                ></i>
                                               </div>
                                               <div class="flex-grow-1 ms-2">
                                                 <h6 class="mb-0">
-                                                  <BLink href="javascript:void(0);" class="stretched-link">Bank
-                                                    Management
-                                                    System -
-                                                    PSD</BLink>
+                                                  <BLink
+                                                    href="javascript:void(0);"
+                                                    class="stretched-link"
+                                                    >Bank Management System -
+                                                    PSD</BLink
+                                                  >
                                                 </h6>
                                                 <small>8.78 MB</small>
                                               </div>
@@ -868,19 +1190,30 @@ export default {
                                     </BCollapse>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading12">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse12>
+                                    <div
+                                      class="accordion-header"
+                                      id="heading12"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse12
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-2.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Jacqueline Steve
                                             </h6>
-                                            <small class="text-muted">We has changed 2 attributes on 3
-                                              month Ago</small>
+                                            <small class="text-muted"
+                                              >We has changed 2 attributes on 3
+                                              month Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -901,36 +1234,57 @@ export default {
                                         enjoy with my whole heart.
                                       </div>
                                     </BCollapse>
-
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading13">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse14>
+                                    <div
+                                      class="accordion-header"
+                                      id="heading13"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse14
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-5.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               New ticket received
                                             </h6>
-                                            <small class="text-muted mb-2">User
-                                              <span class="text-secondary">Erica245</span>
+                                            <small class="text-muted mb-2"
+                                              >User
+                                              <span class="text-secondary"
+                                                >Erica245</span
+                                              >
                                               submitted a ticket - 5 month
-                                              Ago</small>
+                                              Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading14">
-                                      <BLink class="accordion-button p-2 shadow-none" data-bs-toggle="collapse"
-                                        href="#collapse14" aria-expanded="true">
+                                    <div
+                                      class="accordion-header"
+                                      id="heading14"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        data-bs-toggle="collapse"
+                                        href="#collapse14"
+                                        aria-expanded="true"
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0 avatar-xs">
-                                            <div class="avatar-title bg-light text-muted rounded-circle">
+                                            <div
+                                              class="avatar-title bg-light text-muted rounded-circle"
+                                            >
                                               <i class="ri-user-3-fill"></i>
                                             </div>
                                           </div>
@@ -938,14 +1292,18 @@ export default {
                                             <h6 class="fs-14 mb-1">
                                               Nancy Martino
                                             </h6>
-                                            <small class="text-muted">Commented on 24 Nov, 2021.</small>
+                                            <small class="text-muted"
+                                              >Commented on 24 Nov, 2021.</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
                                     </div>
 
                                     <BCollapse id="collapse14" visible>
-                                      <div class="accordion-body ms-2 ps-5 fst-italic">
+                                      <div
+                                        class="accordion-body ms-2 ps-5 fst-italic"
+                                      >
                                         " A wonderful serenity has taken
                                         possession of my entire soul, like these
                                         sweet mornings of spring which I enjoy
@@ -958,19 +1316,30 @@ export default {
                                     </BCollapse>
                                   </div>
                                   <div class="accordion-item border-0">
-                                    <div class="accordion-header" id="heading15">
-                                      <BLink class="accordion-button p-2 shadow-none" v-b-toggle.collapse15>
+                                    <div
+                                      class="accordion-header"
+                                      id="heading15"
+                                    >
+                                      <BLink
+                                        class="accordion-button p-2 shadow-none"
+                                        v-b-toggle.collapse15
+                                      >
                                         <div class="d-flex">
                                           <div class="flex-shrink-0">
-                                            <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                              class="avatar-xs rounded-circle" />
+                                            <img
+                                              src="@/assets/images/users/avatar-7.jpg"
+                                              alt=""
+                                              class="avatar-xs rounded-circle"
+                                            />
                                           </div>
                                           <div class="flex-grow-1 ms-3">
                                             <h6 class="fs-14 mb-1">
                                               Lewis Arnold
                                             </h6>
-                                            <small class="text-muted">Create new project Building
-                                              product - 8 month Ago</small>
+                                            <small class="text-muted"
+                                              >Create new project Building
+                                              product - 8 month Ago</small
+                                            >
                                           </div>
                                         </div>
                                       </BLink>
@@ -985,28 +1354,54 @@ export default {
                                           contribute to your project.
                                         </p>
                                         <div class="avatar-group">
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="Christi">
-                                            <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                              class="rounded-circle avatar-xs" />
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="Christi"
+                                          >
+                                            <img
+                                              src="@/assets/images/users/avatar-4.jpg"
+                                              alt=""
+                                              class="rounded-circle avatar-xs"
+                                            />
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="Frank Hook">
-                                            <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                              class="rounded-circle avatar-xs" />
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="Frank Hook"
+                                          >
+                                            <img
+                                              src="@/assets/images/users/avatar-3.jpg"
+                                              alt=""
+                                              class="rounded-circle avatar-xs"
+                                            />
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title=" Ruby">
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title=" Ruby"
+                                          >
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle bg-light text-primary">
+                                              <div
+                                                class="avatar-title rounded-circle bg-light text-primary"
+                                              >
                                                 R
                                               </div>
                                             </div>
                                           </BLink>
-                                          <BLink href="javascript: void(0);" class="avatar-group-item" v-b-tooltip.hover
-                                            title="more">
+                                          <BLink
+                                            href="javascript: void(0);"
+                                            class="avatar-group-item"
+                                            v-b-tooltip.hover
+                                            title="more"
+                                          >
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle">
+                                              <div
+                                                class="avatar-title rounded-circle"
+                                              >
                                                 2+
                                               </div>
                                             </div>
@@ -1031,27 +1426,41 @@ export default {
                         <swiper :slides-per-view="3" :space-between="50">
                           <swiper-slide>
                             <div class="swiper-slide">
-                              <BCard no-body class="profile-project-card shadow-none profile-project-success mb-0">
+                              <BCard
+                                no-body
+                                class="profile-project-card shadow-none profile-project-success mb-0"
+                              >
                                 <BCardBody class="p-4">
                                   <div class="d-flex">
-                                    <div class="flex-grow-1 text-muted overflow-hidden">
+                                    <div
+                                      class="flex-grow-1 text-muted overflow-hidden"
+                                    >
                                       <h5 class="fs-14 text-truncate mb-1">
-                                        <BLink href="#" class="text-body">ABC Project Customization</BLink>
+                                        <BLink href="#" class="text-body"
+                                          >ABC Project Customization</BLink
+                                        >
                                       </h5>
                                       <p class="text-muted text-truncate mb-0">
                                         Last Update :
-                                        <span class="fw-semibold text-body">4 hr Ago</span>
+                                        <span class="fw-semibold text-body"
+                                          >4 hr Ago</span
+                                        >
                                       </p>
                                     </div>
                                     <div class="flex-shrink-0 ms-2">
-                                      <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                                      <BBadge
+                                        variant="warning-subtle"
+                                        class="bg-warning-subtle text-warning fs-10"
+                                      >
                                         Inprogress
                                       </BBadge>
                                     </div>
                                   </div>
                                   <div class="d-flex mt-4">
                                     <div class="flex-grow-1">
-                                      <div class="d-flex align-items-center gap-2">
+                                      <div
+                                        class="d-flex align-items-center gap-2"
+                                      >
                                         <div>
                                           <h5 class="fs-12 text-muted mb-0">
                                             Members :
@@ -1060,27 +1469,38 @@ export default {
                                         <div class="avatar-group">
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-4.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-5.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle bg-light text-primary">
+                                              <div
+                                                class="avatar-title rounded-circle bg-light text-primary"
+                                              >
                                                 A
                                               </div>
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-2.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                         </div>
@@ -1093,27 +1513,41 @@ export default {
                           </swiper-slide>
                           <swiper-slide>
                             <div class="swiper-slide">
-                              <BCard no-body class="profile-project-card shadow-none profile-project-danger mb-0">
+                              <BCard
+                                no-body
+                                class="profile-project-card shadow-none profile-project-danger mb-0"
+                              >
                                 <BCardBody class="p-4">
                                   <div class="d-flex">
-                                    <div class="flex-grow-1 text-muted overflow-hidden">
+                                    <div
+                                      class="flex-grow-1 text-muted overflow-hidden"
+                                    >
                                       <h5 class="fs-14 text-truncate mb-1">
-                                        <BLink href="#" class="text-body">Client - John</BLink>
+                                        <BLink href="#" class="text-body"
+                                          >Client - John</BLink
+                                        >
                                       </h5>
                                       <p class="text-muted text-truncate mb-0">
                                         Last Update :
-                                        <span class="fw-semibold text-body">1 hr Ago</span>
+                                        <span class="fw-semibold text-body"
+                                          >1 hr Ago</span
+                                        >
                                       </p>
                                     </div>
                                     <div class="flex-shrink-0 ms-2">
-                                      <BBadge variant="success-subtle" class="bg-success-subtle text-success fs-10">
+                                      <BBadge
+                                        variant="success-subtle"
+                                        class="bg-success-subtle text-success fs-10"
+                                      >
                                         Completed
                                       </BBadge>
                                     </div>
                                   </div>
                                   <div class="d-flex mt-4">
                                     <div class="flex-grow-1">
-                                      <div class="d-flex align-items-center gap-2">
+                                      <div
+                                        class="d-flex align-items-center gap-2"
+                                      >
                                         <div>
                                           <h5 class="fs-12 text-muted mb-0">
                                             Members :
@@ -1122,13 +1556,18 @@ export default {
                                         <div class="avatar-group">
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-2.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle bg-light text-primary">
+                                              <div
+                                                class="avatar-title rounded-circle bg-light text-primary"
+                                              >
                                                 C
                                               </div>
                                             </div>
@@ -1143,27 +1582,41 @@ export default {
                           </swiper-slide>
                           <swiper-slide>
                             <div class="swiper-slide">
-                              <BCard no-body class="profile-project-card shadow-none profile-project-info mb-0">
+                              <BCard
+                                no-body
+                                class="profile-project-card shadow-none profile-project-info mb-0"
+                              >
                                 <BCardBody class="p-4">
                                   <div class="d-flex">
-                                    <div class="flex-grow-1 text-muted overflow-hidden">
+                                    <div
+                                      class="flex-grow-1 text-muted overflow-hidden"
+                                    >
                                       <h5 class="fs-14 text-truncate mb-1">
-                                        <BLink href="#" class="text-body">Brand logo Design</BLink>
+                                        <BLink href="#" class="text-body"
+                                          >Brand logo Design</BLink
+                                        >
                                       </h5>
                                       <p class="text-muted text-truncate mb-0">
                                         Last Update :
-                                        <span class="fw-semibold text-body">2 hr Ago</span>
+                                        <span class="fw-semibold text-body"
+                                          >2 hr Ago</span
+                                        >
                                       </p>
                                     </div>
                                     <div class="flex-shrink-0 ms-2">
-                                      <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                                      <BBadge
+                                        variant="warning-subtle"
+                                        class="bg-warning-subtle text-warning fs-10"
+                                      >
                                         Inprogress
                                       </BBadge>
                                     </div>
                                   </div>
                                   <div class="d-flex mt-4">
                                     <div class="flex-grow-1">
-                                      <div class="d-flex align-items-center gap-2">
+                                      <div
+                                        class="d-flex align-items-center gap-2"
+                                      >
                                         <div>
                                           <h5 class="fs-12 text-muted mb-0">
                                             Members :
@@ -1172,8 +1625,11 @@ export default {
                                         <div class="avatar-group">
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-5.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                         </div>
@@ -1187,20 +1643,32 @@ export default {
 
                           <swiper-slide>
                             <div class="swiper-slide">
-                              <BCard no-body class="profile-project-card shadow-none profile-project-danger mb-0">
+                              <BCard
+                                no-body
+                                class="profile-project-card shadow-none profile-project-danger mb-0"
+                              >
                                 <BCardBody class="p-4">
                                   <div class="d-flex">
-                                    <div class="flex-grow-1 text-muted overflow-hidden">
+                                    <div
+                                      class="flex-grow-1 text-muted overflow-hidden"
+                                    >
                                       <h5 class="fs-14 text-truncate mb-1">
-                                        <BLink href="#" class="text-body">Project update</BLink>
+                                        <BLink href="#" class="text-body"
+                                          >Project update</BLink
+                                        >
                                       </h5>
                                       <p class="text-muted text-truncate mb-0">
                                         Last Update :
-                                        <span class="fw-semibold text-body">4 hr Ago</span>
+                                        <span class="fw-semibold text-body"
+                                          >4 hr Ago</span
+                                        >
                                       </p>
                                     </div>
                                     <div class="flex-shrink-0 ms-2">
-                                      <BBadge variant="success-subtle" class="bg-success-subtle text-success fs-10">
+                                      <BBadge
+                                        variant="success-subtle"
+                                        class="bg-success-subtle text-success fs-10"
+                                      >
                                         Completed
                                       </BBadge>
                                     </div>
@@ -1208,7 +1676,9 @@ export default {
 
                                   <div class="d-flex mt-4">
                                     <div class="flex-grow-1">
-                                      <div class="d-flex align-items-center gap-2">
+                                      <div
+                                        class="d-flex align-items-center gap-2"
+                                      >
                                         <div>
                                           <h5 class="fs-12 text-muted mb-0">
                                             Members :
@@ -1217,14 +1687,20 @@ export default {
                                         <div class="avatar-group">
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-4.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-5.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                         </div>
@@ -1237,20 +1713,32 @@ export default {
                           </swiper-slide>
                           <swiper-slide>
                             <div class="swiper-slide">
-                              <BCard no-body class="profile-project-card shadow-none profile-project-warning mb-0">
+                              <BCard
+                                no-body
+                                class="profile-project-card shadow-none profile-project-warning mb-0"
+                              >
                                 <BCardBody class="p-4">
                                   <div class="d-flex">
-                                    <div class="flex-grow-1 text-muted overflow-hidden">
+                                    <div
+                                      class="flex-grow-1 text-muted overflow-hidden"
+                                    >
                                       <h5 class="fs-14 text-truncate mb-1">
-                                        <BLink href="#" class="text-body">Chat App</BLink>
+                                        <BLink href="#" class="text-body"
+                                          >Chat App</BLink
+                                        >
                                       </h5>
                                       <p class="text-muted text-truncate mb-0">
                                         Last Update :
-                                        <span class="fw-semibold text-body">1 hr Ago</span>
+                                        <span class="fw-semibold text-body"
+                                          >1 hr Ago</span
+                                        >
                                       </p>
                                     </div>
                                     <div class="flex-shrink-0 ms-2">
-                                      <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                                      <BBadge
+                                        variant="warning-subtle"
+                                        class="bg-warning-subtle text-warning fs-10"
+                                      >
                                         Inprogress
                                       </BBadge>
                                     </div>
@@ -1258,7 +1746,9 @@ export default {
 
                                   <div class="d-flex mt-4">
                                     <div class="flex-grow-1">
-                                      <div class="d-flex align-items-center gap-2">
+                                      <div
+                                        class="d-flex align-items-center gap-2"
+                                      >
                                         <div>
                                           <h5 class="fs-12 text-muted mb-0">
                                             Members :
@@ -1267,19 +1757,27 @@ export default {
                                         <div class="avatar-group">
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-4.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                                class="rounded-circle img-fluid" />
+                                              <img
+                                                src="@/assets/images/users/avatar-5.jpg"
+                                                alt=""
+                                                class="rounded-circle img-fluid"
+                                              />
                                             </div>
                                           </div>
                                           <div class="avatar-group-item">
                                             <div class="avatar-xs">
-                                              <div class="avatar-title rounded-circle bg-light text-primary">
+                                              <div
+                                                class="avatar-title rounded-circle bg-light text-primary"
+                                              >
                                                 A
                                               </div>
                                             </div>
@@ -1293,7 +1791,6 @@ export default {
                             </div>
                           </swiper-slide>
                         </swiper>
-
                       </div>
                     </BCardBody>
                   </BCard>
@@ -1311,13 +1808,20 @@ export default {
                   <div class="acitivity-timeline">
                     <div class="acitivity-item d-flex">
                       <div class="flex-shrink-0">
-                        <img src="@/assets/images/users/avatar-1.jpg" alt=""
-                          class="avatar-xs rounded-circle acitivity-avatar" />
+                        <img
+                          src="@/assets/images/users/avatar-1.jpg"
+                          alt=""
+                          class="avatar-xs rounded-circle acitivity-avatar"
+                        />
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">
                           Oliver Phillips
-                          <BBadge variant="primary-subtle" class="text-primary align-middle">New</BBadge>
+                          <BBadge
+                            variant="primary-subtle"
+                            class="text-primary align-middle"
+                            >New</BBadge
+                          >
                         </h6>
                         <p class="text-muted mb-2">
                           We talked about a project on linkedin.
@@ -1327,38 +1831,78 @@ export default {
                     </div>
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0 avatar-xs acitivity-avatar">
-                        <div class="avatar-title bg-success-subtle text-success rounded-circle">
+                        <div
+                          class="avatar-title bg-success-subtle text-success rounded-circle"
+                        >
                           N
                         </div>
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">
                           Nancy Martino
-                          <BBadge variant="secondary-subtle" class="text-secondary align-middle">In Progress</BBadge>
+                          <BBadge
+                            variant="secondary-subtle"
+                            class="text-secondary align-middle"
+                            >In Progress</BBadge
+                          >
                         </h6>
                         <p class="text-muted mb-2">
                           <i class="ri-file-text-line align-middle ms-2"></i>
                           Create new project Building product
                         </p>
                         <div class="avatar-group mb-2">
-                          <BLink href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="" data-bs-original-title="Christi">
-                            <img src="@/assets/images/users/avatar-4.jpg" alt="" class="rounded-circle avatar-xs" />
+                          <BLink
+                            href="javascript: void(0);"
+                            class="avatar-group-item"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title=""
+                            data-bs-original-title="Christi"
+                          >
+                            <img
+                              src="@/assets/images/users/avatar-4.jpg"
+                              alt=""
+                              class="rounded-circle avatar-xs"
+                            />
                           </BLink>
-                          <BLink href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="" data-bs-original-title="Frank Hook">
-                            <img src="@/assets/images/users/avatar-3.jpg" alt="" class="rounded-circle avatar-xs" />
+                          <BLink
+                            href="javascript: void(0);"
+                            class="avatar-group-item"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title=""
+                            data-bs-original-title="Frank Hook"
+                          >
+                            <img
+                              src="@/assets/images/users/avatar-3.jpg"
+                              alt=""
+                              class="rounded-circle avatar-xs"
+                            />
                           </BLink>
-                          <BLink href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="" data-bs-original-title=" Ruby">
+                          <BLink
+                            href="javascript: void(0);"
+                            class="avatar-group-item"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title=""
+                            data-bs-original-title=" Ruby"
+                          >
                             <div class="avatar-xs">
-                              <div class="avatar-title rounded-circle bg-light text-primary">
+                              <div
+                                class="avatar-title rounded-circle bg-light text-primary"
+                              >
                                 R
                               </div>
                             </div>
                           </BLink>
-                          <BLink href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-                            data-bs-placement="top" title="" data-bs-original-title="more">
+                          <BLink
+                            href="javascript: void(0);"
+                            class="avatar-group-item"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title=""
+                            data-bs-original-title="more"
+                          >
                             <div class="avatar-xs">
                               <div class="avatar-title rounded-circle">2+</div>
                             </div>
@@ -1369,13 +1913,20 @@ export default {
                     </div>
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0">
-                        <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                          class="avatar-xs rounded-circle acitivity-avatar" />
+                        <img
+                          src="@/assets/images/users/avatar-2.jpg"
+                          alt=""
+                          class="avatar-xs rounded-circle acitivity-avatar"
+                        />
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">
                           Natasha Carey
-                          <BBadge variant="success-subtle" class="text-success align-middle">Completed</BBadge>
+                          <BBadge
+                            variant="success-subtle"
+                            class="text-success align-middle"
+                            >Completed</BBadge
+                          >
                         </h6>
                         <p class="text-muted mb-2">
                           Adding a new event with attachments
@@ -1384,13 +1935,25 @@ export default {
                           <BCol xxl="4">
                             <BRow class="border border-dashed gx-2 p-2 mb-2">
                               <BCol cols="4">
-                                <img src="@/assets/images/small/img-2.jpg" alt="" class="img-fluid rounded" />
+                                <img
+                                  src="@/assets/images/small/img-2.jpg"
+                                  alt=""
+                                  class="img-fluid rounded"
+                                />
                               </BCol>
                               <BCol cols="4">
-                                <img src="@/assets/images/small/img-3.jpg" alt="" class="img-fluid rounded" />
+                                <img
+                                  src="@/assets/images/small/img-3.jpg"
+                                  alt=""
+                                  class="img-fluid rounded"
+                                />
                               </BCol>
                               <BCol cols="4">
-                                <img src="@/assets/images/small/img-4.jpg" alt="" class="img-fluid rounded" />
+                                <img
+                                  src="@/assets/images/small/img-4.jpg"
+                                  alt=""
+                                  class="img-fluid rounded"
+                                />
                               </BCol>
                             </BRow>
                           </BCol>
@@ -1400,8 +1963,11 @@ export default {
                     </div>
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0">
-                        <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                          class="avatar-xs rounded-circle acitivity-avatar" />
+                        <img
+                          src="@/assets/images/users/avatar-6.jpg"
+                          alt=""
+                          class="avatar-xs rounded-circle acitivity-avatar"
+                        />
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">Bethany Johnson</h6>
@@ -1414,7 +1980,9 @@ export default {
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0">
                         <div class="avatar-xs acitivity-avatar">
-                          <div class="avatar-title rounded-circle bg-danger-subtle text-danger">
+                          <div
+                            class="avatar-title rounded-circle bg-danger-subtle text-danger"
+                          >
                             <i class="ri-shopping-bag-line"></i>
                           </div>
                         </div>
@@ -1422,7 +1990,11 @@ export default {
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">
                           Your order is placed
-                          <BBadge variant="danger-subtle" class="text-danger align-middle ms-1">Out of Delivery</BBadge>
+                          <BBadge
+                            variant="danger-subtle"
+                            class="text-danger align-middle ms-1"
+                            >Out of Delivery</BBadge
+                          >
                         </h6>
                         <p class="text-muted mb-2">
                           These customers can rest assured their order has been
@@ -1433,8 +2005,11 @@ export default {
                     </div>
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0">
-                        <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                          class="avatar-xs rounded-circle acitivity-avatar" />
+                        <img
+                          src="@/assets/images/users/avatar-7.jpg"
+                          alt=""
+                          class="avatar-xs rounded-circle acitivity-avatar"
+                        />
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">Lewis Pratt</h6>
@@ -1449,7 +2024,9 @@ export default {
                     <div class="acitivity-item py-3 d-flex">
                       <div class="flex-shrink-0">
                         <div class="avatar-xs acitivity-avatar">
-                          <div class="avatar-title rounded-circle bg-info-subtle text-info">
+                          <div
+                            class="avatar-title rounded-circle bg-info-subtle text-info"
+                          >
                             <i class="ri-line-chart-line"></i>
                           </div>
                         </div>
@@ -1459,21 +2036,31 @@ export default {
                         <p class="text-muted mb-2">
                           <span class="text-danger">2 days left</span>
                           notification to submit the monthly sales report.
-                          <BLink href="javascript:void(0);" class="link-warning text-decoration-underline">Reports
-                            Builder</BLink>
+                          <BLink
+                            href="javascript:void(0);"
+                            class="link-warning text-decoration-underline"
+                            >Reports Builder</BLink
+                          >
                         </p>
                         <small class="mb-0 text-muted">15 Oct</small>
                       </div>
                     </div>
                     <div class="acitivity-item d-flex">
                       <div class="flex-shrink-0">
-                        <img src="@/assets/images/users/avatar-8.jpg" alt=""
-                          class="avatar-xs rounded-circle acitivity-avatar" />
+                        <img
+                          src="@/assets/images/users/avatar-8.jpg"
+                          alt=""
+                          class="avatar-xs rounded-circle acitivity-avatar"
+                        />
                       </div>
                       <div class="flex-grow-1 ms-3">
                         <h6 class="mb-1">
                           New ticket received
-                          <BBadge variant="success-subtle" class="text-success align-middle">Completed</BBadge>
+                          <BBadge
+                            variant="success-subtle"
+                            class="text-success align-middle"
+                            >Completed</BBadge
+                          >
                         </h6>
                         <p class="text-muted mb-2">
                           User
@@ -1496,20 +2083,30 @@ export default {
                 <BCardBody>
                   <BRow>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-warning">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-warning"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Chat App Update</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Chat App Update</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">2 year Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >2 year Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                              <BBadge
+                                variant="warning-subtle"
+                                class="bg-warning-subtle text-warning fs-10"
+                              >
                                 Inprogress
                               </BBadge>
                             </div>
@@ -1526,19 +2123,27 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-1.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-1.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-3.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-light text-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-light text-primary"
+                                      >
                                         J
                                       </div>
                                     </div>
@@ -1551,20 +2156,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-success">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-success"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">ABC Project Customization</BLink>
+                                <BLink href="#" class="text-body"
+                                  >ABC Project Customization</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">2 month Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >2 month Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="primary-subtle" class="bg-primary-subtle text-primary fs-10">
+                              <BBadge
+                                variant="primary-subtle"
+                                class="bg-primary-subtle text-primary fs-10"
+                              >
                                 Progress
                               </BBadge>
                             </div>
@@ -1581,25 +2196,36 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-8.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-8.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-6.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-primary"
+                                      >
                                         2+
                                       </div>
                                     </div>
@@ -1612,20 +2238,31 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-info">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-info"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Client - Frank Hook</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Client - Frank Hook</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">1 hr Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >1 hr Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="info-subtle" class="bg-info-subtle text-info fs-10">New</BBadge>
+                              <BBadge
+                                variant="info-subtle"
+                                class="bg-info-subtle text-info fs-10"
+                                >New</BBadge
+                              >
                             </div>
                           </div>
 
@@ -1640,21 +2277,29 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-4.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-light text-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-light text-primary"
+                                      >
                                         M
                                       </div>
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-3.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1665,20 +2310,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-primary">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-primary"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Velzon Project</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Velzon Project</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">11 hr Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >11 hr Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="success-subtle" class="bg-success-subtle text-success fs-10">
+                              <BBadge
+                                variant="success-subtle"
+                                class="bg-success-subtle text-success fs-10"
+                              >
                                 Completed
                               </BBadge>
                             </div>
@@ -1695,14 +2350,20 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-5.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1713,20 +2374,31 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-danger">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-danger"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Brand Logo Design</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Brand Logo Design</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">10 min Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >10 min Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="info-subtle" class="bg-info-subtle text-info fs-10">New</BBadge>
+                              <BBadge
+                                variant="info-subtle"
+                                class="bg-info-subtle text-info fs-10"
+                                >New</BBadge
+                              >
                             </div>
                           </div>
 
@@ -1741,19 +2413,27 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-6.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-light text-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-light text-primary"
+                                      >
                                         E
                                       </div>
                                     </div>
@@ -1766,20 +2446,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-primary">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-primary"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Chat App</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Chat App</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">8 hr Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >8 hr Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                              <BBadge
+                                variant="warning-subtle"
+                                class="bg-warning-subtle text-warning fs-10"
+                              >
                                 Inprogress
                               </BBadge>
                             </div>
@@ -1796,21 +2486,29 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-light text-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-light text-primary"
+                                      >
                                         R
                                       </div>
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-3.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-8.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-8.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1821,20 +2519,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-warning">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-warning"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Project Update</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Project Update</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">48 min Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >48 min Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="warning-subtle" class="bg-warning-subtle text-warning fs-10">
+                              <BBadge
+                                variant="warning-subtle"
+                                class="bg-warning-subtle text-warning fs-10"
+                              >
                                 Inprogress
                               </BBadge>
                             </div>
@@ -1851,20 +2559,29 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-6.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-5.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-4.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1875,20 +2592,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none profile-project-success">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none profile-project-success"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Client - Jennifer</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Client - Jennifer</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">30 min Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >30 min Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="primary-subtle" class="bg-primary-subtle text-primary fs-10">
+                              <BBadge
+                                variant="primary-subtle"
+                                class="bg-primary-subtle text-primary fs-10"
+                              >
                                 Process
                               </BBadge>
                             </div>
@@ -1905,8 +2632,11 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-1.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-1.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -1917,20 +2647,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none mb-xxl-0 profile-project-info">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none mb-xxl-0 profile-project-info"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Business Template - UI/UX design</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Business Template - UI/UX design</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">7 month Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >7 month Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="success-subtle" class="bg-success-subtle text-success fs-10">
+                              <BBadge
+                                variant="success-subtle"
+                                class="bg-success-subtle text-success fs-10"
+                              >
                                 Completed
                               </BBadge>
                             </div>
@@ -1946,25 +2686,36 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-2.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-2.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-3.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-3.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-4.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-4.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-primary"
+                                      >
                                         2+
                                       </div>
                                     </div>
@@ -1977,20 +2728,31 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none mb-xxl-0 profile-project-success">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none mb-xxl-0 profile-project-success"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Update Project</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Update Project</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">1 month Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >1 month Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="info-subtle" class="bg-info-subtle text-info fs-10">New</BBadge>
+                              <BBadge
+                                variant="info-subtle"
+                                class="bg-info-subtle text-info fs-10"
+                                >New</BBadge
+                              >
                             </div>
                           </div>
                           <div class="d-flex mt-4">
@@ -2004,13 +2766,18 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-light text-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-light text-primary"
+                                      >
                                         A
                                       </div>
                                     </div>
@@ -2023,20 +2790,30 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none mb-sm-0 profile-project-danger">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none mb-sm-0 profile-project-danger"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">Bank Management System</BLink>
+                                <BLink href="#" class="text-body"
+                                  >Bank Management System</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">10 month Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >10 month Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="success-subtle" class="bg-success-subtle text-success fs-10">
+                              <BBadge
+                                variant="success-subtle"
+                                class="bg-success-subtle text-success fs-10"
+                              >
                                 Completed
                               </BBadge>
                             </div>
@@ -2052,25 +2829,36 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-6.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-6.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-5.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-5.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <div class="avatar-title rounded-circle bg-primary">
+                                      <div
+                                        class="avatar-title rounded-circle bg-primary"
+                                      >
                                         2+
                                       </div>
                                     </div>
@@ -2083,20 +2871,31 @@ export default {
                       </BCard>
                     </BCol>
                     <BCol xxl="3" sm="6">
-                      <BCard no-body class="profile-project-card shadow-none mb-0 profile-project-primary">
+                      <BCard
+                        no-body
+                        class="profile-project-card shadow-none mb-0 profile-project-primary"
+                      >
                         <BCardBody class="p-4">
                           <div class="d-flex">
                             <div class="flex-grow-1 text-muted overflow-hidden">
                               <h5 class="fs-14 text-truncate">
-                                <BLink href="#" class="text-body">PSD to HTML Convert</BLink>
+                                <BLink href="#" class="text-body"
+                                  >PSD to HTML Convert</BLink
+                                >
                               </h5>
                               <p class="text-muted text-truncate mb-0">
                                 Last Update :
-                                <span class="fw-semibold text-body">29 min Ago</span>
+                                <span class="fw-semibold text-body"
+                                  >29 min Ago</span
+                                >
                               </p>
                             </div>
                             <div class="flex-shrink-0 ms-2">
-                              <BBadge variant="info-subtle" class="bg-info-subtle text-info fs-10">New</BBadge>
+                              <BBadge
+                                variant="info-subtle"
+                                class="bg-info-subtle text-info fs-10"
+                                >New</BBadge
+                              >
                             </div>
                           </div>
                           <div class="d-flex mt-4">
@@ -2110,8 +2909,11 @@ export default {
                                 <div class="avatar-group">
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
-                                      <img src="@/assets/images/users/avatar-7.jpg" alt=""
-                                        class="rounded-circle img-fluid" />
+                                      <img
+                                        src="@/assets/images/users/avatar-7.jpg"
+                                        alt=""
+                                        class="rounded-circle img-fluid"
+                                      />
                                     </div>
                                   </div>
                                 </div>
@@ -2123,28 +2925,42 @@ export default {
                     </BCol>
                     <BCol lg="12">
                       <div class="mt-4">
-                        <ul class="pagination pagination-separated justify-content-center mb-0">
+                        <ul
+                          class="pagination pagination-separated justify-content-center mb-0"
+                        >
                           <li class="page-item disabled">
-                            <BLink href="javascript:void(0);" class="page-link"><i class="mdi mdi-chevron-left"></i>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              ><i class="mdi mdi-chevron-left"></i>
                             </BLink>
                           </li>
                           <li class="page-item active">
-                            <BLink href="javascript:void(0);" class="page-link">1</BLink>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              >1</BLink
+                            >
                           </li>
                           <li class="page-item">
-                            <BLink href="javascript:void(0);" class="page-link">2</BLink>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              >2</BLink
+                            >
                           </li>
                           <li class="page-item">
-                            <BLink href="javascript:void(0);" class="page-link">3</BLink>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              >3</BLink
+                            >
                           </li>
                           <li class="page-item">
-                            <BLink href="javascript:void(0);" class="page-link">4</BLink>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              >4</BLink
+                            >
                           </li>
                           <li class="page-item">
-                            <BLink href="javascript:void(0);" class="page-link">5</BLink>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              >5</BLink
+                            >
                           </li>
                           <li class="page-item">
-                            <BLink href="javascript:void(0);" class="page-link"><i class="mdi mdi-chevron-right"></i>
+                            <BLink href="javascript:void(0);" class="page-link"
+                              ><i class="mdi mdi-chevron-right"></i>
                             </BLink>
                           </li>
                         </ul>
@@ -2164,9 +2980,15 @@ export default {
                   <div class="d-flex align-items-center mb-4">
                     <h5 class="card-title flex-grow-1 mb-0">Documents</h5>
                     <div class="flex-shrink-0">
-                      <input class="form-control d-none" type="file" id="formFile" />
-                      <label for="formFile" class="btn btn-danger"><i class="ri-upload-2-fill me-1 align-bottom"></i>
-                        Upload File</label>
+                      <input
+                        class="form-control d-none"
+                        type="file"
+                        id="formFile"
+                      />
+                      <label for="formFile" class="btn btn-danger"
+                        ><i class="ri-upload-2-fill me-1 align-bottom"></i>
+                        Upload File</label
+                      >
                     </div>
                   </div>
                   <BRow>
@@ -2187,13 +3009,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-primary-subtle text-primary rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-primary-subtle text-primary rounded fs-20"
+                                    >
                                       <i class="ri-file-zip-fill"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0)">Artboard-documents.zip</BLink>
+                                      <BLink href="javascript:void(0)"
+                                        >Artboard-documents.zip</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2202,17 +3028,32 @@ export default {
                               <td>4.57 MB</td>
                               <td>12 Dec 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2221,13 +3062,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-danger-subtle text-danger rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-danger-subtle text-danger rounded fs-20"
+                                    >
                                       <i class="ri-file-pdf-fill"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0);">Bank Management System</BLink>
+                                      <BLink href="javascript:void(0);"
+                                        >Bank Management System</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2236,17 +3081,32 @@ export default {
                               <td>8.89 MB</td>
                               <td>24 Nov 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2255,13 +3115,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-secondary-subtle text-secondary rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-secondary-subtle text-secondary rounded fs-20"
+                                    >
                                       <i class="ri-video-line"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0);">Tour-video.mp4</BLink>
+                                      <BLink href="javascript:void(0);"
+                                        >Tour-video.mp4</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2270,17 +3134,32 @@ export default {
                               <td>14.62 MB</td>
                               <td>19 Nov 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2289,13 +3168,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-success-subtle text-success rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-success-subtle text-success rounded fs-20"
+                                    >
                                       <i class="ri-file-excel-fill"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0);">Account-statement.xsl</BLink>
+                                      <BLink href="javascript:void(0);"
+                                        >Account-statement.xsl</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2304,17 +3187,32 @@ export default {
                               <td>2.38 KB</td>
                               <td>14 Nov 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2323,13 +3221,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-info-subtle text-info rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-info-subtle text-info rounded fs-20"
+                                    >
                                       <i class="ri-folder-line"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0);">Project Screenshots Collection</BLink>
+                                      <BLink href="javascript:void(0);"
+                                        >Project Screenshots Collection</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2338,17 +3240,32 @@ export default {
                               <td>87.24 MB</td>
                               <td>08 Nov 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2357,13 +3274,17 @@ export default {
                               <td>
                                 <div class="d-flex align-items-center">
                                   <div class="avatar-sm">
-                                    <div class="avatar-title bg-danger-subtle text-danger rounded fs-20">
+                                    <div
+                                      class="avatar-title bg-danger-subtle text-danger rounded fs-20"
+                                    >
                                       <i class="ri-image-2-fill"></i>
                                     </div>
                                   </div>
                                   <div class="ms-3 flex-grow-1">
                                     <h6 class="fs-15 mb-0">
-                                      <BLink href="javascript:void(0);">Velzon-logo.png</BLink>
+                                      <BLink href="javascript:void(0);"
+                                        >Velzon-logo.png</BLink
+                                      >
                                     </h6>
                                   </div>
                                 </div>
@@ -2372,17 +3293,32 @@ export default {
                               <td>879 KB</td>
                               <td>02 Nov 2021</td>
                               <td>
-                                <BDropdown variant="light" toggle-class="arrow-none px-1" class="btn-icon" no-caret>
-                                  <template #button-content><i class="ri-equalizer-fill"></i>
+                                <BDropdown
+                                  variant="light"
+                                  toggle-class="arrow-none px-1"
+                                  class="btn-icon"
+                                  no-caret
+                                >
+                                  <template #button-content
+                                    ><i class="ri-equalizer-fill"></i>
                                   </template>
                                   <BDropdownItem href="#">
-                                    <i class="ri-eye-fill me-2 align-middle text-muted"></i>View
+                                    <i
+                                      class="ri-eye-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >View
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-download-2-fill me-2 align-middle text-muted"></i>Download
+                                    <i
+                                      class="ri-download-2-fill me-2 align-middle text-muted"
+                                    ></i
+                                    >Download
                                   </BDropdownItem>
                                   <BDropdownItem href="#">
-                                    <i class="ri-delete-bin-5-line me-2 align-middle text-muted"></i>Delete
+                                    <i
+                                      class="ri-delete-bin-5-line me-2 align-middle text-muted"
+                                    ></i
+                                    >Delete
                                   </BDropdownItem>
                                 </BDropdown>
                               </td>
@@ -2391,8 +3327,10 @@ export default {
                         </table>
                       </div>
                       <div class="text-center mt-3">
-                        <BLink href="javascript:void(0);" class="text-success"><i
-                            class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"></i>
+                        <BLink href="javascript:void(0);" class="text-success"
+                          ><i
+                            class="mdi mdi-loading mdi-spin fs-20 align-middle me-2"
+                          ></i>
                           Load more
                         </BLink>
                       </div>
@@ -2409,7 +3347,7 @@ export default {
 </template>
 
 <style>
-.tamp{
+.tamp {
   position: absolute;
   top: 17px;
   right: 16px;
