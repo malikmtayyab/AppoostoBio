@@ -94,49 +94,49 @@ export default [
     component: () => import("../views/templates/index"),
   },
   {
-    path: "/file-links",
-    name: "file-links",
+    path: "/assistant",
+    name: "assistant",
     meta: {
       title: "File Links",
       authRequired: true,
     },
-    component: () => import("../views/file-links/index"),
+    component: () => import("../views/assistant/index"),
   },
   {
-    path: "/vcard-links",
-    name: "vcard-links",
+    path: "/speech-to-text",
+    name: "speech-to-text",
     meta: {
       title: "VCard Links",
       authRequired: true,
     },
-    component: () => import("../views/vcard-links/index"),
+    component: () => import("../views/speech-to-text/index"),
   },
   {
-    path: "/event-links",
-    name: "event-links",
+    path: "/landing-pages",
+    name: "landing-pages",
     meta: {
       title: "Event Links",
       authRequired: true,
     },
-    component: () => import("../views/event-links/index"),
+    component: () => import("../views/landing-pages/index"),
   },
   {
-    path: "/static-sites",
-    name: "static-sites",
+    path: "/action-pages",
+    name: "action-pages",
     meta: {
       title: "Static Sites",
       authRequired: true,
     },
-    component: () => import("../views/static-sites/index"),
+    component: () => import("../views/action-pages/index"),
   },
   {
-    path: "/qr-codes",
-    name: "qr-codes",
+    path: "/hosting",
+    name: "hosting",
     meta: {
       title: "Static Sites",
       authRequired: true,
     },
-    component: () => import("../views/qr-codes/index"),
+    component: () => import("../views/hosting/index"),
   },
   // New Pages Under the Dashboard End
   {
@@ -209,43 +209,41 @@ export default [
   },
   // AI Pages Start From Here
   {
-    path: "/ai-documents",
-    name: "ai-documents",
+    path: "/qr-code",
+    name: "qr-code",
     meta: {
-      title: "AI Documents",
+      title: "QR Code",
       authRequired: true,
     },
-    component: () => import("../views/ai-documents/index"),
+    component: () => import("../views/qr-code/index"),
   },
   {
-    path: "/ai-images",
-    name: "ai-images",
+    path: "/other-tools",
+    name: "other-tools",
     meta: {
-      title: "AI Images",
+      title: "Other tools",
       authRequired: true,
     },
-    component: () => import("../views/ai-images/index"),
+    component: () => import("../views/other-tools/index"),
+  },
+
+  {
+    path: "/file-manager",
+    name: "File Manager",
+    meta: { title: "File Manager", authRequired: true },
+    component: () => import("../views/file-manager/index"),
   },
   {
-    path: "/ai-speech-to-text",
-    name: "ai-speech-to-text",
-    meta: {
-      title: "AI Speech To Text",
-      authRequired: true,
-    },
-    component: () => import("../views/ai-speech-to-text/index"),
-  },
-  {
-    path: "/ai-chat",
-    name: "AI Chat",
-    meta: { title: "AI Chat", authRequired: true },
-    component: () => import("../views/ai-chat/index"),
-  },
-  {
-    path: "/tools",
+    path: "/event-link",
     name: "Tools",
     meta: { title: "Tools", authRequired: true },
-    component: () => import("../views/tools/index"),
+    component: () => import("../views/event-link/index"),
+  },
+  {
+    path: "/payments",
+    name: "Payments",
+    meta: { title: "Payments", authRequired: true },
+    component: () => import("../views/payments/index"),
   },
   // AI Pages Ends Here
   {
@@ -898,24 +896,7 @@ export default [
     component: () => import("../views/landing/job-landing"),
   },
   // Others Pages Start From Here
-  {
-    path: "/custom-domains",
-    name: "custom-domains",
-    meta: {
-      title: "Custom Domain",
-      authRequired: true,
-    },
-    component: () => import("../views/custom-domains/index"),
-  },
-  {
-    path: "/pixels",
-    name: "pixels",
-    meta: {
-      title: "Pixels",
-      authRequired: true,
-    },
-    component: () => import("../views/pixels/index"),
-  },
+
   {
     path: "/projects",
     name: "projects",

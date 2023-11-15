@@ -372,30 +372,30 @@ export default {
                 /></a>
                 <li>
                   <a
-                    href="#sidebarDashboards"
+                    href="#dashboard"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarDashboards', $event)"
+                    @click.prevent="updateMenu('dashboard', $event)"
                   >
                     <i class="ri-dashboard-2-line"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#sidebarApps"
+                    href="#ai"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarApps', $event)"
+                    @click.prevent="updateMenu('ai', $event)"
                   >
                     <i class="ri-apps-2-line"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#sidebarPages"
+                    href="#pages"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarPages', $event)"
+                    @click.prevent="updateMenu('pages', $event)"
                   >
                     <i class="ri-pages-line"></i>
                   </a>
@@ -403,40 +403,30 @@ export default {
 
                 <li>
                   <a
-                    href="#sidebarlanding"
+                    href="#links"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarlanding', $event)"
+                    @click.prevent="updateMenu('links', $event)"
                   >
                     <i class="ri-rocket-line"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#sidebarUI"
+                    href="#tools"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarUI', $event)"
+                    @click.prevent="updateMenu('tools', $event)"
                   >
                     <i class="ri-pencil-ruler-2-line"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#sidebarAdvanceUI"
+                    href="#data&payments"
                     class="nav-icon"
                     role="button"
-                    @click.prevent="updateMenu('sidebarAdvanceUI', $event)"
-                  >
-                    <i class="ri-stack-line"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#sidebarForms"
-                    class="nav-icon"
-                    role="button"
-                    @click.prevent="updateMenu('sidebarForms', $event)"
+                    @click.prevent="updateMenu('data&payments', $event)"
                   >
                     <i class="ri-file-list-3-line"></i>
                   </a>
@@ -449,7 +439,7 @@ export default {
                   <span data-key="t-menu"> {{ $t("t-menu") }}</span>
                 </li>
                 <li class="nav-item">
-                  <div class="collapse menu-dropdown" id="sidebarDashboards">
+                  <div class="collapse menu-dropdown" id="dashboard">
                     <ul class="nav nav-sm flex-column">
                       <!-- New Pages Start From Here -->
                       <li class="nav-item">
@@ -466,7 +456,7 @@ export default {
                 </li>
                 <!-- end Dashboard Menu -->
                 <li class="nav-item">
-                  <div class="collapse menu-dropdown" id="sidebarApps">
+                  <div class="collapse menu-dropdown" id="ai">
                     <ul class="nav nav-sm flex-column">
                       <!-- AI pages starts from here -->
 
@@ -490,122 +480,142 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/file-links"
+                          to="/assistant"
                           class="nav-link custom-abc"
-                          data-key="t-file-links"
+                          data-key="t-assistant"
                         >
-                          {{ $t("t-file-links") }}
+                          {{ $t("t-assistant") }}
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/vcard-links"
+                          to="/speech-to-text"
                           class="nav-link custom-abc"
-                          data-key="t-vcard-links"
+                          data-key="t-speech-to-text"
                         >
-                          {{ $t("t-vcard-links") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/event-links"
-                          class="nav-link custom-abc"
-                          data-key="t-event-links"
-                        >
-                          {{ $t("t-event-links") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/static-sites"
-                          class="nav-link custom-abc"
-                          data-key="t-static-sites"
-                        >
-                          {{ $t("t-static-sites") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/qr-codes"
-                          class="nav-link custom-abc"
-                          data-key="t-qr-codes"
-                        >
-                          {{ $t("t-qr-codes") }}
+                          {{ $t("t-speech-to-text") }}
                         </router-link>
                       </li>
 
-                      <li class="nav-item">
-                        <router-link
-                          to="/ai-chat"
-                          class="nav-link"
-                          data-key="t-ai-chat"
-                        >
-                          {{ $t("t-ai-chat") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/ai-documents"
-                          class="nav-link"
-                          data-key="t-ai-documents"
-                        >
-                          {{ $t("t-ai-documents") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/ai-images"
-                          class="nav-link"
-                          data-key="t-ai-images"
-                        >
-                          {{ $t("t-ai-images") }}
-                        </router-link>
-                      </li>
-
-                      <li class="nav-item">
-                        <router-link
-                          to="/tools"
-                          class="nav-link"
-                          data-key="t-tools"
-                        >
-                          {{ $t("t-tools") }}
-                        </router-link>
-                      </li>
                       <!-- AI pages End Here -->
                     </ul>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <div class="collapse menu-dropdown" id="sidebarPages">
+                  <div class="collapse menu-dropdown" id="pages">
                     <ul class="nav nav-sm flex-column">
-                      <!-- Other Pages Start From Here -->
                       <li class="nav-item">
                         <router-link
-                          to="/custom-domains"
-                          class="nav-link"
-                          data-key="t-custom-domains"
+                          to="/landing-pages"
+                          class="nav-link custom-abc"
+                          data-key="t-landing-pages"
                         >
-                          {{ $t("t-custom-domains") }}
+                          {{ $t("t-landing-pages") }}
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/pixels"
-                          class="nav-link"
-                          data-key="t-pixels"
+                          to="/action-pages"
+                          class="nav-link custom-abc"
+                          data-key="t-action-pages"
                         >
-                          {{ $t("t-pixels") }}
+                          {{ $t("t-action-pages") }}
                         </router-link>
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/projects"
-                          class="nav-link"
-                          data-key="t-projects"
+                          to="/hosting"
+                          class="nav-link custom-abc"
+                          data-key="t-hosting"
                         >
-                          {{ $t("t-projects") }}
+                          {{ $t("t-hosting") }}
                         </router-link>
                       </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="links">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/short-link"
+                          class="nav-link"
+                          data-key="t-short-link"
+                        >
+                          {{ $t("t-short-link") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/file-link"
+                          class="nav-link"
+                          data-key="t-file-link"
+                        >
+                          {{ $t("t-file-link") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/vcard-link"
+                          class="nav-link"
+                          data-key="t-vcard-link"
+                        >
+                          {{ $t("t-vcard-link") }}
+                        </router-link>
+                      </li>
+
+                      <li class="nav-item">
+                        <router-link
+                          to="/event-link"
+                          class="nav-link"
+                          data-key="t-event-link"
+                        >
+                          {{ $t("t-event-link") }}
+                        </router-link>
+                      </li>
+
+                      <!-- Other Pages Start Ends Here -->
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="tools">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/file-manager"
+                          class="nav-link"
+                          data-key="t-file-manager"
+                        >
+                          {{ $t("t-file-manager") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/qr-code"
+                          class="nav-link"
+                          data-key="t-qr-code"
+                        >
+                          {{ $t("t-qr-code") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/other-tools"
+                          class="nav-link"
+                          data-key="t-other-tools"
+                        >
+                          {{ $t("t-other-tools") }}
+                        </router-link>
+                      </li>
+                      <!-- Other Pages Start Ends Here -->
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="data&payments">
+                    <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                         <router-link
                           to="/data"
@@ -617,20 +627,11 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/payment-processors"
+                          to="/payments"
                           class="nav-link"
-                          data-key="t-payment-processors"
+                          data-key="t-payments"
                         >
-                          {{ $t("t-payment-processors") }}
-                        </router-link>
-                      </li>
-                      <li class="nav-item">
-                        <router-link
-                          to="/guests-payments"
-                          class="nav-link"
-                          data-key="t-guests-payments"
-                        >
-                          {{ $t("t-guests-payments") }}
+                          {{ $t("t-payments") }}
                         </router-link>
                       </li>
                       <!-- Other Pages Start Ends Here -->
