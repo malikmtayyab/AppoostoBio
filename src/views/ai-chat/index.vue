@@ -1,7 +1,6 @@
 <script>
 import simplebar from 'simplebar-vue';
 import {
-  SearchIcon,
   InfoIcon,
   MoreVerticalIcon
 } from '@zhuowenli/vue-feather-icons';
@@ -30,22 +29,22 @@ export default {
   data() {
     return {
       showOffcanvas: false,
+      showMessageOffCanvas: false,
       chatData: chatData,
       chatMessagesData: chatMessagesData,
       botData: botData,
-      botName: "",
+      botName: "Appooso Assistant",
       submitted: false,
       chattab: true,
       form: {
         message: "",
       },
-      username: "Steven Franklin",
-      profile: require("@/assets/images/users/avatar-2.jpg")
+      username: "General Queries",
+      profile: require("@/assets/images/users/appoostoo_assitant.png")
     };
   },
   components: {
     Layout,
-    SearchIcon,
     InfoIcon,
     MoreVerticalIcon,
     simplebar
@@ -129,7 +128,6 @@ export default {
     },
     setSuggestion(message) {
       this.form.message = message;
-      this.formSubmit();
     }
   },
   mounted() {
@@ -181,17 +179,6 @@ export default {
 
     <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
       <div class="chat-leftsidebar">
-        <div class="px-4 pt-4 mb-4">
-          <div class="d-flex align-items-start">
-            <div class="flex-grow-1">
-              <h5 class="mb-4">Chats</h5>
-            </div>
-          </div>
-          <div class="search-box">
-            <input type="text" class="form-control bg-light border-light" placeholder="Search here..." />
-            <i class="ri-search-2-line search-icon"></i>
-          </div>
-        </div>
 
         <BCard no-body>
           <BCardBody>
@@ -213,7 +200,8 @@ export default {
             </div>
             <div class="flex-shrink-0">
               <div v-b-tooltip.hover title="New Message">
-                <BButton type="button" variant="soft-success" size="sm">
+                <BButton @click="showMessageOffCanvas = !showMessageOffCanvas" type="button" variant="soft-success"
+                  size="sm">
                   <i class="ri-add-line align-bottom"></i>
                 </BButton>
               </div>
@@ -240,11 +228,11 @@ export default {
                       <p class="text-truncate mb-1">
                         {{ data.name }}
                       </p>
-                    </div>
-
-                    <div class="flex-shrink-0">
-                      <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">{{ data.time
-                      }}</BBadge>
+                      <p class="text-truncate mb-1">
+                        <small>
+                          {{ data.name }}
+                        </small>
+                      </p>
                     </div>
                   </div>
                 </BLink>
@@ -255,7 +243,7 @@ export default {
         <div v-else class="chat-message-list">
           <SimpleBar class="list-unstyled chat-list chat-user-list">
             <li class v-for="data of botData" :key="data.id" @click="chatBot(data.name)"
-              :class="{ active: username == data.name }">
+              :class="{ active: botName == data.name }">
               <BLink href="javascript: void(0);">
                 <div class="d-flex align-items-center">
                   <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
@@ -314,23 +302,6 @@ export default {
                   </BCol>
                   <BCol sm="8" cols="4">
                     <ul class="list-inline user-chat-nav text-end mb-0">
-                      <li class="list-inline-item m-0">
-                        <BDropdown variant="link" class="btn btn-ghost-secondary btn-icon" toggle-class="arrow-none"
-                          menu-class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg" auto-close="outside">
-                          <template #button-content> <search-icon class="icon-sm"></search-icon>
-                          </template>
-                          <BDropdownItemButton>
-                            <div class="p-2 dropdown-menu-lg px-0 py-0">
-                              <div class="search-box">
-                                <input type="text" class="form-control bg-light border-light" placeholder="Search here..."
-                                  id="searchMessage" @click.prevent />
-                                <i class="ri-search-2-line search-icon"></i>
-                              </div>
-                            </div>
-                          </BDropdownItemButton>
-                        </BDropdown>
-                      </li>
-
                       <li class="list-inline-item d-none d-lg-inline-block m-0">
                         <BButton type="button" variant="ghost-secondary" class="btn-icon"
                           @click="showOffcanvas = !showOffcanvas">
@@ -343,11 +314,15 @@ export default {
                           menu-class="dropdown-menu" aria-haspopup="true">
                           <template #button-content> <more-vertical-icon class="icon-sm"></more-vertical-icon>
                           </template>
-                          <BDropdownItem><i class="ri-inbox-archive-line align-bottom text-muted me-2"></i>
-                            Archive
+                          <BDropdownItem><i class="ri-save-line align-bottom text-muted me-2"></i>
+                            Save
                           </BDropdownItem>
-                          <BDropdownItem><i class="ri-mic-off-line align-bottom text-muted me-2"></i>
-                            Muted</BDropdownItem>
+                          <BDropdownItem><i class="ri-download-line align-bottom text-muted me-2"></i>
+                            Download (.txt)</BDropdownItem>
+                          <BDropdownItem><i class="ri-download-line align-bottom text-muted me-2"></i>
+                            Download (.pdf)</BDropdownItem>
+                          <BDropdownItem><i class="ri-download-line align-bottom text-muted me-2"></i>
+                            Download (.docx)</BDropdownItem>
                           <BDropdownItem><i class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>
                             Delete</BDropdownItem>
                         </BDropdown>
@@ -379,15 +354,8 @@ export default {
                               toggle-class=" arrow-none" menu-class="dropdown-menu" aria-haspopup="true">
                               <template #button-content> <i class="ri-more-2-fill"></i>
                               </template>
-                              <BDropdownItem> <i class="ri-reply-line me-2 text-muted align-bottom"></i> Reply
+                              <BDropdownItem> <i class="ri-edit-line me-2 text-muted align-bottom"></i> Edit
                               </BDropdownItem>
-                              <BDropdownItem><i class="ri-share-line me-2 text-muted align-bottom"></i>
-                                Forward
-                              </BDropdownItem>
-                              <BDropdownItem><i class="ri-file-copy-line me-2 text-muted align-bottom"></i>
-                                Copy</BDropdownItem>
-                              <BDropdownItem><i class="ri-bookmark-line me-2 text-muted align-bottom"></i>
-                                Bookmark</BDropdownItem>
                               <BDropdownItem><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>
                                 Delete</BDropdownItem>
                             </BDropdown>
@@ -414,16 +382,38 @@ export default {
 
               <div class="chat-input-section p-3 p-lg-4">
                 <form @submit.prevent="formSubmit">
-                  <BRow class="g-0 align-items-center">
-                    <BCol cols="auto">
-                      <div class="chat-input-links me-2">
-                        <div class="links-list-item">
-                          <BButton type="button" variant="link" class="text-decoration-none emoji-btn" id="emoji-btn">
-                            <i class="bx bx-smile align-middle"></i>
-                          </BButton>
-                        </div>
+                  <div class="container mb-3">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <label for="select1" class="form-label">Output Language</label>
+                        <select class="form-select" id="select1">
+                          <option selected>English (US)</option>
+                          <option value="1">English (UK)</option>
+                          <option value="2">Italiano</option>
+                          <option value="3">Turkce</option>
+                        </select>
                       </div>
-                    </BCol>
+                      <div class="col-md-4">
+                        <label for="select2" class="form-label">Tone</label>
+                        <select class="form-select" id="select2">
+                          <option selected>Emotional</option>
+                          <option value="1">Professional</option>
+                          <option value="2">Humorous</option>
+                          <option value="3">Educational</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="select3" class="form-label">Writing Style</label>
+                        <select class="form-select" id="select3">
+                          <option selected>Narratvive</option>
+                          <option value="1">Poetic</option>
+                          <option value="2">Argumentative</option>
+                          <option value="3">Descriptive</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <BRow class="g-0 align-items-center">
                     <BCol>
                       <div class="chat-input-feedback">
                         Please Enter a Message
@@ -526,24 +516,85 @@ export default {
       <div v-if="botName" class="border-top border-top-dashed p-3">
         <h5 class="fs-15 mb-3">Suggestions</h5>
 
-        <div class="vstack gap-2">
+        <BAccordion>
+          <BAccordionItem title="Content">
+            <div class="vstack gap-2">
 
-          <div class="border rounded border-dashed p-2">
-            <div class="d-flex align-items-center">
-              <div class="suggestion flex-shrink-0 me-3">
-                <p @click="setSuggestion('Ask me anything about Appoosto')">Ask me anything about Appoosto</p>
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="suggestion flex-shrink-0 me-3">
+                    <p @click="setSuggestion('Write a blog post about AI')">Write a blog post about AI</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="suggestion flex-shrink-0 me-3">
+                    <p @click="setSuggestion('What are the different types of content writing?')">What are the different
+                      types of content
+                      writing?</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </BAccordionItem>
+          <BAccordionItem title="SEO">
+            <div class="vstack gap-2">
 
-          <div class="border rounded border-dashed p-2">
-            <div class="d-flex align-items-center">
-              <div class="suggestion flex-shrink-0 me-3">
-                <p @click="setSuggestion('Ask me anything about SEO')">Ask me anything about SEO</p>
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="suggestion flex-shrink-0 me-3">
+                    <p @click="setSuggestion('How can I implement SEO on my site?')">How can I implement SEO on my site?
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex align-items-center">
+                  <div class="suggestion flex-shrink-0 me-3">
+                    <p @click="setSuggestion('What are the benefits of SSR in terms of SEO?')">What are the benefits of
+                      SSR in terms of SEO?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+        </BAccordion>
+
+
+      </div>
+
+    </BOffcanvas>
+    <BOffcanvas v-model="showMessageOffCanvas" placement="end" body-class="border-0 p-0 overflow-hidden"
+      header-class="border-bottom">
+      <div class="offcanvas-body profile-offcanvas p-0">
+        <div v-for="data of botData" :key="data.id" class="p-3 text-center">
+          <div v-if="data.name === botName">
+            <div>
+              <img :src="data.image" alt="" class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img">
+              <div class="mt-3">
+                <h5 class="fs-16 mb-1"><a href="javascript:void(0);" class="link-primary username"> {{ data.name }}</a>
+                </h5>
+              </div>
+            </div>
+            <div class="border-top border-top-dashed p-3">
+              <h5 class="fs-15 mb-3">Description</h5>
+              <div class="mb-3">
+                <p class="text-muted text-uppercase fw-medium fs-12 mb-1">{{ data.description }}</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="m-3">
+        <label for="basiInput" class="form-label">Chat Title</label>
+        <input type="text" class="form-control" id="basiInput">
+      </div>
+      <div class="text-center mt-5 m-3 ">
+        <BButton class="w-100" variant="primary" type="button" id="button-addon1">Create</BButton>
       </div>
 
     </BOffcanvas>

@@ -129,7 +129,6 @@ export default {
     },
     setSuggestion(message) {
       this.form.message = message;
-      this.formSubmit();
     }
   },
   mounted() {

@@ -7,7 +7,6 @@ import Schedules from "./schedule.vue";
 import Project from "./projects.vue";
 import Task from "./tasks.vue";
 import Member from "./members.vue";
-import Chat from "./chat.vue";
 import Status from "./status.vue";
 import ActiveProjects from "./active-projects.vue";
 
@@ -20,7 +19,6 @@ export default {
     Project,
     Task,
     Member,
-    Chat,
     ActiveProjects,
     Status
   },
@@ -64,9 +62,6 @@ export default {
     <BRow>
       <BCol xxl="4">
         <Member />
-      </BCol>
-      <BCol xxl="4" lg="6">
-        <Chat />
       </BCol>
       <BCol xxl="4" lg="6">
         <Status />
