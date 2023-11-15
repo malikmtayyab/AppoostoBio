@@ -46,7 +46,7 @@ props:{
 </script>
 
 <template>
-         <BForm action="javascript:void(0);" class="mt-3 pb-2 col-5"  >
+         <BForm action="javascript:void(0);" class="mt-3 pb-2 col-12 col-md-5"  >
                 <BRow>
                   <BCol md="12">
                     <div class="mb-3">

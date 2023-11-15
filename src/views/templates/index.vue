@@ -19,7 +19,7 @@ export default {
 <template>
   <Layout>
     <BRow>
-      <BCol xxl="12" class="h-100">
+      <BCol xxl="12" class="h-100" style="height: 100vh;">
         <BCard no-body>
           <BCardBody>
             <BTabs
@@ -27,7 +27,7 @@ export default {
               content-class="text-muted"
             >
               <BTab title="Command Prompts" active>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column flex-md-row justify-content-between">
                   <Form :index="0"></Form>
 
                   <Response></Response>
