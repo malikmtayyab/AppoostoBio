@@ -67,14 +67,53 @@ export default [
     component: () => import("../views/dashboard/index"),
   },
   {
+    path: "/images",
+    name: "images",
+    meta: {
+      title: "images",
+      authRequired: true,
+    },
+    component: () => import("../views/images/index"),
+  },
+  {
     path: "/templates",
     name: "templates",
     meta: {
-      title: "Shortened Links",
+      title: "templates",
       authRequired: true,
     },
     component: () => import("../views/templates/index"),
   },
+  {
+    path: "/short-link",
+    name: "short-link",
+    meta: {
+      title: "short-link",
+      authRequired: true,
+    },
+    component: () => import("../views/shortLinks/index"),
+  },
+  {
+    path: "/file-link",
+    name: "file-link",
+    meta: {
+      title: "file-link",
+      authRequired: true,
+    },
+    component: () => import("../views/fileLink/index"),
+  },
+
+  {
+    path: "/vcard-link",
+    name: "vcard-link",
+    meta: {
+      title: "vcard-link",
+      authRequired: true,
+    },
+    component: () => import("../views/vcard-link/index"),
+  },
+
+
   {
     path: "/assistant",
     name: "assistant",
