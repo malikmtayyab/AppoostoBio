@@ -39,7 +39,7 @@ export default {
         <BCol cols="auto">
           <div class="avatar-lg">
             <img
-              src="@/assets/images/users/avatar-1.jpg"
+              src="@/assets/images/users/avatar-1.png"
               alt="user-img"
               class="img-thumbnail rounded-circle"
             />
@@ -1809,7 +1809,7 @@ export default {
                     <div class="acitivity-item d-flex">
                       <div class="flex-shrink-0">
                         <img
-                          src="@/assets/images/users/avatar-1.jpg"
+                          src="@/assets/images/users/avatar-1.png"
                           alt=""
                           class="avatar-xs rounded-circle acitivity-avatar"
                         />
@@ -2124,7 +2124,7 @@ export default {
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
                                       <img
-                                        src="@/assets/images/users/avatar-1.jpg"
+                                        src="@/assets/images/users/avatar-1.png"
                                         alt=""
                                         class="rounded-circle img-fluid"
                                       />
@@ -2633,7 +2633,7 @@ export default {
                                   <div class="avatar-group-item">
                                     <div class="avatar-xs">
                                       <img
-                                        src="@/assets/images/users/avatar-1.jpg"
+                                        src="@/assets/images/users/avatar-1.png"
                                         alt=""
                                         class="rounded-circle img-fluid"
                                       />
