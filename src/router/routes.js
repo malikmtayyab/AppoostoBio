@@ -236,7 +236,12 @@ export default [
     component: () => import("../views/data-and-payments/payments/index"),
   },
   // Data&Payments Ended
-
+  {
+    path: "/faqs",
+    name: "Faqs",
+    meta: { title: "Setting", authRequired: true },
+    component: () => import("../views/faqs"),
+  },
   {
     path: "/dashboard/profile-setting",
     name: "profile-setting",
