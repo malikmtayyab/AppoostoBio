@@ -789,7 +789,7 @@ export default {
               <span class="d-flex align-items-center">
                 <img
                   class="rounded-circle header-profile-user"
-                  src="@/assets/images/users/avatar-1.jpg"
+                  src="@/assets/images/users/avatar-1.png"
                   alt="Header Avatar"
                 />
                 <span class="text-start ms-xl-2">
@@ -805,7 +805,7 @@ export default {
             </template>
             <h6 class="dropdown-header">Welcome Ezio!</h6>
             <!-- <div class="dropdown-divider"></div> -->
-            <router-link class="dropdown-item" to="/pages/profile-setting">
+            <router-link class="dropdown-item" to="/dashboard/profile-setting">
               <i
                 class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"
               ></i>

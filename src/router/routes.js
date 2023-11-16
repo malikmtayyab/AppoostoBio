@@ -66,99 +66,6 @@ export default [
     },
     component: () => import("../views/dashboard/index"),
   },
-  {
-    path: "/images",
-    name: "images",
-    meta: {
-      title: "images",
-      authRequired: true,
-    },
-    component: () => import("../views/images/index"),
-  },
-  {
-    path: "/templates",
-    name: "templates",
-    meta: {
-      title: "templates",
-      authRequired: true,
-    },
-    component: () => import("../views/templates/index"),
-  },
-  {
-    path: "/short-link",
-    name: "short-link",
-    meta: {
-      title: "short-link",
-      authRequired: true,
-    },
-    component: () => import("../views/shortLinks/index"),
-  },
-  {
-    path: "/file-link",
-    name: "file-link",
-    meta: {
-      title: "file-link",
-      authRequired: true,
-    },
-    component: () => import("../views/fileLink/index"),
-  },
-
-  {
-    path: "/vcard-link",
-    name: "vcard-link",
-    meta: {
-      title: "vcard-link",
-      authRequired: true,
-    },
-    component: () => import("../views/vcard-link/index"),
-  },
-
-
-  {
-    path: "/assistant",
-    name: "assistant",
-    meta: {
-      title: "File Links",
-      authRequired: true,
-    },
-    component: () => import("../views/assistant/index"),
-  },
-  {
-    path: "/speech-to-text",
-    name: "speech-to-text",
-    meta: {
-      title: "VCard Links",
-      authRequired: true,
-    },
-    component: () => import("../views/speech-to-text/index"),
-  },
-  {
-    path: "/landing-pages",
-    name: "landing-pages",
-    meta: {
-      title: "Event Links",
-      authRequired: true,
-    },
-    component: () => import("../views/landing-pages/index"),
-  },
-  {
-    path: "/action-pages",
-    name: "action-pages",
-    meta: {
-      title: "Static Sites",
-      authRequired: true,
-    },
-    component: () => import("../views/action-pages/index"),
-  },
-  {
-    path: "/hosting",
-    name: "hosting",
-    meta: {
-      title: "Static Sites",
-      authRequired: true,
-    },
-    component: () => import("../views/hosting/index"),
-  },
 
   {
     path: "/logout",
@@ -174,68 +81,167 @@ export default [
     },
     component: () => import("../views/auth/logout/basic"),
   },
-  // AI Pages Start From Here
+  // ai
+
   {
-    path: "/qr-code",
+    path: "/ai/images",
+    name: "images",
+    meta: {
+      title: "images",
+      authRequired: true,
+    },
+    component: () => import("../views/ai/images/index"),
+  },
+  {
+    path: "/ai/templates",
+    name: "templates",
+    meta: {
+      title: "templates",
+      authRequired: true,
+    },
+    component: () => import("../views/ai/templates/index"),
+  },
+  {
+    path: "/ai/assistant",
+    name: "assistant",
+    meta: {
+      title: "Assistant",
+      authRequired: true,
+    },
+    component: () => import("../views/ai/assistant/index"),
+  },
+  {
+    path: "/ai/speech-to-text",
+    name: "speech-to-text",
+    meta: {
+      title: "VCard Links",
+      authRequired: true,
+    },
+    component: () => import("../views/ai/speech-to-text/index"),
+  },
+
+  // ai ended
+  // Pages
+  {
+    path: "/pages/landing-pages",
+    name: "landing-pages",
+    meta: {
+      title: "Event Links",
+      authRequired: true,
+    },
+    component: () => import("../views/pages/landing-pages/index"),
+  },
+  {
+    path: "/pages/action-pages",
+    name: "action-pages",
+    meta: {
+      title: "Static Sites",
+      authRequired: true,
+    },
+    component: () => import("../views/pages/action-pages/index"),
+  },
+  {
+    path: "/pages/hosting",
+    name: "hosting",
+    meta: {
+      title: "Static Sites",
+      authRequired: true,
+    },
+    component: () => import("../views/pages/hosting/index"),
+  },
+  // Pages Ended
+  // Links
+  {
+    path: "/links/short-link",
+    name: "short-link",
+    meta: {
+      title: "short-link",
+      authRequired: true,
+    },
+    component: () => import("../views/links/short-link/index"),
+  },
+  {
+    path: "/links/file-link",
+    name: "file-link",
+    meta: {
+      title: "file-link",
+      authRequired: true,
+    },
+    component: () => import("../views/links/file-link/index"),
+  },
+  {
+    path: "/links/vcard-link",
+    name: "vcard-link",
+    meta: {
+      title: "vcard-link",
+      authRequired: true,
+    },
+    component: () => import("../views/links/vcard-link/index"),
+  },
+  {
+    path: "/links/event-link",
+    name: "Tools",
+    meta: { title: "Tools", authRequired: true },
+    component: () => import("../views/links/event-link/index"),
+  },
+  // Links End
+
+  // Tools
+  {
+    path: "/tools/calendar",
+    name: "Calendar",
+    meta: { title: "Calendar", authRequired: true },
+    component: () => import("../views/tools/calendar/index"),
+  },
+  {
+    path: "/tools/file-manager",
+    name: "File Manager",
+    meta: { title: "File Manager", authRequired: true },
+    component: () => import("../views/tools/file-manager/index"),
+  },
+  {
+    path: "/tools/qr-code",
     name: "qr-code",
     meta: {
       title: "QR Code",
       authRequired: true,
     },
-    component: () => import("../views/qr-code/index"),
+    component: () => import("../views/tools/qr-code/index"),
   },
   {
-    path: "/other-tools",
+    path: "/tools/other-tools",
     name: "other-tools",
     meta: {
       title: "Other tools",
       authRequired: true,
     },
-    component: () => import("../views/other-tools/index"),
+    component: () => import("../views/tools/other-tools/index"),
   },
 
+  // Tools Ended
+  // Data&Payments
   {
-    path: "/file-manager",
-    name: "File Manager",
-    meta: { title: "File Manager", authRequired: true },
-    component: () => import("../views/file-manager/index"),
-  },
-  {
-    path: "/event-link",
-    name: "Tools",
-    meta: { title: "Tools", authRequired: true },
-    component: () => import("../views/event-link/index"),
-  },
-  {
-    path: "/payments",
-    name: "Payments",
-    meta: { title: "Payments", authRequired: true },
-    component: () => import("../views/payments/index"),
-  },
-  {
-    path: "/projects",
-    name: "projects",
-    meta: {
-      title: "Projects",
-      authRequired: true,
-    },
-    component: () => import("../views/projects/index"),
-  },
-  {
-    path: "/data",
+    path: "/data-and-payments/data",
     name: "data",
     meta: {
       title: "Data",
       authRequired: true,
     },
-    component: () => import("../views/data/index"),
+    component: () => import("../views/data-and-payments/data/index"),
   },
+  {
+    path: "/data-and-payments/payments",
+    name: "Payments",
+    meta: { title: "Payments", authRequired: true },
+    component: () => import("../views/data-and-payments/payments/index"),
+  },
+  // Data&Payments Ended
 
   {
-    path: "/pages/profile-setting",
+    path: "/dashboard/profile-setting",
     name: "profile-setting",
     meta: { title: "Setting", authRequired: true },
-    component: () => import("../views/pages/profile/setting"),
+    component: () => import("../views/dashboard/profile/setting"),
   },
   {
     path: "/auth/signin-basic",

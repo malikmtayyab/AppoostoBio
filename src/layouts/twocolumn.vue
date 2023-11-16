@@ -462,7 +462,7 @@ export default {
 
                       <li class="nav-item">
                         <router-link
-                          to="/images"
+                          to="/ai/images"
                           class="nav-link custom-abc"
                           data-key="t-images"
                         >
@@ -471,7 +471,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/templates"
+                          to="/ai/templates"
                           class="nav-link custom-abc"
                           data-key="t-templates"
                         >
@@ -480,7 +480,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/assistant"
+                          to="/ai/assistant"
                           class="nav-link custom-abc"
                           data-key="t-assistant"
                         >
@@ -489,7 +489,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/speech-to-text"
+                          to="/ai/speech-to-text"
                           class="nav-link custom-abc"
                           data-key="t-speech-to-text"
                         >
@@ -506,7 +506,7 @@ export default {
                     <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                         <router-link
-                          to="/landing-pages"
+                          to="/pages/landing-pages"
                           class="nav-link custom-abc"
                           data-key="t-landing-pages"
                         >
@@ -515,7 +515,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/action-pages"
+                          to="/pages/action-pages"
                           class="nav-link custom-abc"
                           data-key="t-action-pages"
                         >
@@ -524,7 +524,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/hosting"
+                          to="/pages/hosting"
                           class="nav-link custom-abc"
                           data-key="t-hosting"
                         >
@@ -539,7 +539,7 @@ export default {
                     <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                         <router-link
-                          to="/short-link"
+                          to="/links/short-link"
                           class="nav-link"
                           data-key="t-short-link"
                         >
@@ -548,7 +548,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/file-link"
+                          to="/links/file-link"
                           class="nav-link"
                           data-key="t-file-link"
                         >
@@ -557,7 +557,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/vcard-link"
+                          to="/links/vcard-link"
                           class="nav-link"
                           data-key="t-vcard-link"
                         >
@@ -567,7 +567,7 @@ export default {
 
                       <li class="nav-item">
                         <router-link
-                          to="/event-link"
+                          to="/links/event-link"
                           class="nav-link"
                           data-key="t-event-link"
                         >
@@ -584,7 +584,16 @@ export default {
                     <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                         <router-link
-                          to="/file-manager"
+                          to="/tools/calendar"
+                          class="nav-link"
+                          data-key="t-calendar"
+                        >
+                          {{ $t("t-calendar") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/tools/file-manager"
                           class="nav-link"
                           data-key="t-file-manager"
                         >
@@ -593,7 +602,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/qr-code"
+                          to="/tools/qr-code"
                           class="nav-link"
                           data-key="t-qr-code"
                         >
@@ -602,7 +611,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/other-tools"
+                          to="/tools/other-tools"
                           class="nav-link"
                           data-key="t-other-tools"
                         >
@@ -618,7 +627,7 @@ export default {
                     <ul class="nav nav-sm flex-column">
                       <li class="nav-item">
                         <router-link
-                          to="/data"
+                          to="/data-and-payments/data"
                           class="nav-link"
                           data-key="t-data"
                         >
@@ -627,7 +636,7 @@ export default {
                       </li>
                       <li class="nav-item">
                         <router-link
-                          to="/payments"
+                          to="/data-and-payments/payments"
                           class="nav-link"
                           data-key="t-payments"
                         >
