@@ -65,41 +65,41 @@ export default {
           language: "en",
           title: "English",
         },
-        {
-          flag: require("@/assets/images/flags/spain.svg"),
-          language: "sp",
-          title: "Española",
-        },
-        {
-          flag: require("@/assets/images/flags/germany.svg"),
-          language: "gr",
-          title: "Deutsche",
-        },
+        // {
+        //   flag: require("@/assets/images/flags/spain.svg"),
+        //   language: "sp",
+        //   title: "Española",
+        // },
+        // {
+        //   flag: require("@/assets/images/flags/germany.svg"),
+        //   language: "gr",
+        //   title: "Deutsche",
+        // },
         {
           flag: require("@/assets/images/flags/italy.svg"),
           language: "it",
           title: "italiana",
         },
-        {
-          flag: require("@/assets/images/flags/russia.svg"),
-          language: "ru",
-          title: "русский",
-        },
-        {
-          flag: require("@/assets/images/flags/china.svg"),
-          language: "ch",
-          title: "中國人",
-        },
-        {
-          flag: require("@/assets/images/flags/french.svg"),
-          language: "fr",
-          title: "Français",
-        },
-        {
-          flag: require("@/assets/images/flags/ae.svg"),
-          language: "ar",
-          title: "Arabic",
-        },
+        // {
+        //   flag: require("@/assets/images/flags/russia.svg"),
+        //   language: "ru",
+        //   title: "русский",
+        // },
+        // {
+        //   flag: require("@/assets/images/flags/china.svg"),
+        //   language: "ch",
+        //   title: "中國人",
+        // },
+        // {
+        //   flag: require("@/assets/images/flags/french.svg"),
+        //   language: "fr",
+        //   title: "Français",
+        // },
+        // {
+        //   flag: require("@/assets/images/flags/ae.svg"),
+        //   language: "ar",
+        //   title: "Arabic",
+        // },
       ],
       lan: i18n.locale,
       text: null,
