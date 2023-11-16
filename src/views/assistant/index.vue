@@ -32,10 +32,14 @@ export default {
       showMessageOffCanvas: false,
       chatData: chatData,
       chatMessagesData: chatMessagesData,
+      index: -1,
+      copy: false,
       botData: botData,
       botName: "Appooso Assistant",
       submitted: false,
       chattab: true,
+      editingMessageId: null,
+      editedMessages: {},
       form: {
         message: "",
       },
@@ -128,7 +132,37 @@ export default {
     },
     setSuggestion(message) {
       this.form.message = message;
-    }
+    },
+    editMessage(data) {
+      this.editingMessageId = data.id;
+      this.editedMessages[data.id] = data.message;
+    },
+    cancelEdit() {
+      this.editingMessageId = null;
+      this.editedMessages = {};
+    },
+    saveEditedMessage(data) {
+      const messageIndex = this.chatMessagesData.findIndex((msg) => msg.id === data.id);
+      if (messageIndex !== -1) {
+        this.chatMessagesData[messageIndex].message = this.editedMessages[data.id];
+      }
+      this.editingMessageId = null;
+      this.editedMessages = {};
+    },
+    copyToClipboard(align, id, message) {
+      this.index = id;
+      this.copy = true;
+      const textarea = document.createElement('textarea');
+      textarea.value = message;
+      textarea.style.textAlign = align;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setTimeout(() => {
+        this.copy = false;
+      }, 1000)
+    },
   },
   mounted() {
     var currentChatId = "users-chat";
@@ -228,11 +262,6 @@ export default {
                       <p class="text-truncate mb-1">
                         {{ data.name }}
                       </p>
-                      <p class="text-truncate mb-1">
-                        <small>
-                          {{ data.name }}
-                        </small>
-                      </p>
                     </div>
                   </div>
                 </BLink>
@@ -259,6 +288,11 @@ export default {
                   <div class="flex-grow-1 overflow-hidden">
                     <p class="text-truncate mb-1">
                       {{ data.name }}
+                    </p>
+                    <p class="text-truncate mb-1">
+                      <small>
+                        {{ data.name }}
+                      </small>
                     </p>
                   </div>
                 </div>
@@ -345,27 +379,38 @@ export default {
                         </div>
                         <div class="user-chat-content">
                           <div class="ctext-wrap">
-                            <div class="ctext-wrap-content">
-                              <p class="mb-0 ctext-content">
-                                {{ data.message }}
-                              </p>
-                            </div>
-                            <BDropdown variant="link" class="dropdown align-self-start message-box-drop"
-                              toggle-class=" arrow-none" menu-class="dropdown-menu" aria-haspopup="true">
-                              <template #button-content> <i class="ri-more-2-fill"></i>
-                              </template>
-                              <BDropdownItem> <i class="ri-edit-line me-2 text-muted align-bottom"></i> Edit
+                            <div class="d-flex justify-content-center align-items-center gap-2">
+                              <div class="ctext-wrap-content">
+                                <p class="mb-0 ctext-content" v-if="editingMessageId !== data.id">
+                                  {{ data.message }}
+                                </p>
+                                <input class="messageinput" v-else-if="editingMessageId === data.id" type="text"
+                                  v-model="editedMessages[data.id]" />
+
+                              </div>
+                              <BDropdownItem @click="editMessage(data)"
+                                v-if="!editingMessageId && data.align === 'right'"> <i
+                                  class="ri-edit-line me-2 text-muted align-bottom"></i>
                               </BDropdownItem>
-                              <BDropdownItem><i class="ri-delete-bin-5-line me-2 text-muted align-bottom"></i>
-                                Delete</BDropdownItem>
-                            </BDropdown>
-                            <div class="conversation-name">
-                              <small class="text-muted time">{{
-                                data.time
-                              }}</small>
-                              <span class="text-success check-message-icon"><i
-                                  class="ri-check-double-line align-bottom"></i></span>
+                              <BDropdownItem @click="copyToClipboard(data.align, data.id, data.message)"
+                                v-if="!editingMessageId && !copy && data.align !== 'right'">
+                                <i class="ri-file-copy-line me-2 text-muted align-bottom"></i>
+                              </BDropdownItem>
+                              <BDropdownItem v-if="copy && index === data.id">
+                                <i class="ri-check-line me-2 text-muted align-bottom"></i>
+                              </BDropdownItem>
+                              <BDropdownItem v-if="data.align !== 'right'">
+                                <i class="ri-restart-line me-2 text-muted align-bottom"></i>
+                              </BDropdownItem>
                             </div>
+                            <BDropdown variant="link" v-if="editingMessageId === data.id"
+                              class="dropdown align-self-start message-box-drop" toggle-class=" arrow-none"
+                              menu-class="dropdown-menu" aria-haspopup="true">
+                              <template #button-content>
+                                <i class="ri-save-line align-bottom" @click="saveEditedMessage(data)"></i>
+                                <i class="ri-close-line align-bottom ms-2" @click="cancelEdit"></i>
+                              </template>
+                            </BDropdown>
                           </div>
                         </div>
                       </div>
@@ -418,11 +463,20 @@ export default {
                       <div class="chat-input-feedback">
                         Please Enter a Message
                       </div>
-
-                      <input type="text" v-model="form.message" class="form-control chat-input bg-light border-light"
-                        placeholder="Enter Message..." :class="{
-                          'is-invalid': submitted && v$.form.message.$error,
-                        }" />
+                      <div>
+                        <div class="d-flex justify-content-center align-items-center cursor-pointer">
+                          <div class="border rounded p-1 me-1">
+                            <label class="form-label text-white m-1" for="customFile1"><i
+                                class="ri-upload-line text-muted align-bottom"></i></label>
+                            <input type="file" class="form-control d-none" id="customFile1"
+                              onchange="displaySelectedImage(event, 'selectedImage')" accept="image/*" />
+                          </div>
+                          <input type="text" v-model="form.message" class="form-control chat-input bg-light border-light"
+                            placeholder="Enter Message..." :class="{
+                              'is-invalid': submitted && v$.form.message.$error,
+                            }" />
+                        </div>
+                      </div>
                       <div v-if="submitted && v$.form.message.$error" class="invalid-feedback">
                         <span v-if="v$.form.message.required.$message">{{
                           v$.form.message.required.$message
@@ -602,11 +656,20 @@ export default {
 </template>
 
 <style scoped>
+*:focus {
+  outline: none;
+}
+
 .suggestion {
   cursor: pointer;
 }
 
 .custom {
   height: calc(100vh - 50px - 8px);
+}
+
+.messageinput {
+  border: 1px solid #d0eaeb;
+  background-color: #d0eaeb;
 }
 </style>
