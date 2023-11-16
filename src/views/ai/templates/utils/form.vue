@@ -1,9 +1,10 @@
 <script>
-import typeSelect from './typeSelector'
+import typeSelect from "./typeSelector";
 
 export default {
   data() {
     return {
+      showTooltip: false,
       options: [
         [{ name: "Custom Prompt", value: "custom" }],
         [
@@ -34,63 +35,88 @@ export default {
     };
     
   },
-props:{
-  index:{
-    type:Number
-  }
-},
-  components: {
-    typeSelect
+  props: {
+    index: {
+      type: Number,
+    },
   },
+  components: {
+    typeSelect,
+  },
+  methods: {
+    handleAdvancedClick() {
+      // Emitting an event named 'advanced-click' to the parent component
+      this.$emit('advanced-click');
+    }
+  }
 };
 </script>
 
 <template>
-         <BForm action="javascript:void(0);" class="mt-3 pb-2 col-12 col-md-5"  >
-                <BRow>
-                  <BCol md="12">
-                    <div class="mb-3">
-                      <label for="firstNameinput" class="form-label">Name</label>
-                      <BFormInput type="text" class="form-control" placeholder="Enter your firstname" id="firstNameinput" />
-                    </div>
-                  </BCol>
-                
-               
-                  <BCol md="12">
-                   <typeSelect :options=options[index]></typeSelect>
-                  </BCol>
-                  <BCol md="12">
-                    <div class="mb-3">
-                      <label for="emailidInput" class="form-label">Prompt</label>
-                      <textarea class="form-control" rows="4" id="validationTextarea" placeholder="What are the top 5 most tourist friendly countries?" ></textarea>
-                    </div>
-                  </BCol>
-                  <BCol md="12">
-                    <div class="mb-3">
-                      <label for="address1ControlTextarea" class="form-label">Language</label>
-                      <BFormSelect class="form-select" id="validationDefault04" required >
-                        <option selected disabled value="">Choose...</option>
-                        <option>English</option>
-                        <option>Italian</option>
-                      </BFormSelect>
-                    </div>
-                  </BCol>
-                  <BCol lg="12">
-                    <div class=" text-end mt-2 mb-2">
-                      <BButton class="w-100" type="submit" variant="outline-primary">
-                        Advanced
-                      </BButton>
-                    </div>
-                  </BCol>
-                  
-                  <BCol lg="12">
-                    <div class=" text-end mt-2">
-                      <BButton class="w-100" type="submit" variant="primary">
-                        Generate
-                      </BButton>
-                    </div>
-                  </BCol>
-                </BRow>
-              </BForm>
+  <BForm action="javascript:void(0);" class="mt-3 pb-2 col-12 col-md-5">
+    <BRow>
+      <BCol md="12">
+        <typeSelect :options="options[index]"></typeSelect>
+      </BCol>
+
+      <BCol md="12">
+        <div class="mb-3">
+          <label for="firstNameinput" class="form-label">Name</label>
+          <BFormInput
+            type="text"
+            class="form-control"
+            placeholder="Enter your firstname"
+            id="firstNameinput"
+          />
+        </div>
+      </BCol>
+
+      <BCol md="12">
+        <div class="mb-3">
+        
+  
+          <label for="emailidInput" class="form-label">Prompt</label>
+          
+          <i class="ms-2 mdi mdi-information-outline"  data-toggle="tooltip" data-placement="right" title="Tooltip about prompt "></i>
+          <textarea
+            class="form-control"
+            rows="4"
+            id="validationTextarea"
+            placeholder="What are the top 5 most tourist friendly countries?"
+          ></textarea>
+        </div>
+      </BCol>
+      <BCol md="12">
+        <div class="mb-3">
+          <label for="address1ControlTextarea" class="form-label"
+            >Language</label
+          >
+          <BFormSelect class="form-select" id="validationDefault04" >
+            <option selected disabled value="">Choose...</option>
+            <option>English</option>
+            <option>Italian</option>
+          </BFormSelect>
+        </div>
+      </BCol>
+      <BCol lg="12">
+        <div class="text-end mt-2 mb-2">
+          <BButton  @click="handleAdvancedClick" class="w-100" type="submit" variant="outline-primary">
+            Advanced
+          </BButton>
+
+      
+        </div>
+      </BCol>
+
+      <BCol lg="12">
+        <div class="text-end mt-2">
+          <BButton class="w-100" type="submit" variant="primary">
+            Generate
+          </BButton>
+        </div>
+      </BCol>
+    </BRow>
+  </BForm>
 </template>
+
 
