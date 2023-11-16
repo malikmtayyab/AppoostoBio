@@ -75,7 +75,13 @@ props:{
                       </BFormSelect>
                     </div>
                   </BCol>
-               
+                  <BCol lg="12">
+                    <div class=" text-end mt-2 mb-2">
+                      <BButton class="w-100" type="submit" variant="outline-primary">
+                        Advanced
+                      </BButton>
+                    </div>
+                  </BCol>
                   
                   <BCol lg="12">
                     <div class=" text-end mt-2">
