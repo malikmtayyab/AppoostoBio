@@ -564,7 +564,6 @@ export default {
                           {{ $t("t-vcard-link") }}
                         </router-link>
                       </li>
-
                       <li class="nav-item">
                         <router-link
                           to="/links/event-link"

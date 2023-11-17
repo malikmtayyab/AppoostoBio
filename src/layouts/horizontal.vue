@@ -1073,9 +1073,7 @@ export default {
                   aria-controls="sidebarAuth"
                 >
                   <i class="ri-account-circle-line"></i>
-                  <span data-key="t-authentication">{{
-                    $t("t-authentication")
-                  }}</span>
+                  <span data-key="t-pages">{{ $t("t-pages") }}</span>
                 </a>
                 <div class="collapse menu-dropdown" id="sidebarAuth">
                   <ul class="nav nav-sm flex-column">
@@ -1592,7 +1590,7 @@ export default {
                   data-key="t-projects"
                 >
                   <i class="ri-rocket-line"></i>
-                  {{ $t("t-landing") }}
+                  {{ $t("t-links") }}
                 </a>
                 <div class="collapse menu-dropdown" id="sidebarlanding">
                   <ul class="nav nav-sm flex-column">
@@ -1602,7 +1600,7 @@ export default {
                         target="_blank"
                         href="/landing"
                       >
-                        <span data-key="t-landing">{{ $t("t-one-page") }}</span>
+                        <span data-key="t-links">{{ $t("t-one-page") }}</span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -1611,7 +1609,7 @@ export default {
                         target="_blank"
                         href="/nft-landing"
                       >
-                        <span data-key="t-landing">{{
+                        <span data-key="t-links">{{
                           $t("t-nft-landing")
                         }}</span>
                       </a>
@@ -1622,7 +1620,7 @@ export default {
                         target="_blank"
                         href="/job-landing"
                       >
-                        <span data-key="t-landing">{{ $t("t-job") }}</span>
+                        <span data-key="t-links">{{ $t("t-job") }}</span>
                       </a>
                     </li>
                   </ul>
