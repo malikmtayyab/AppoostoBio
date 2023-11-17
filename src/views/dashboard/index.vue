@@ -27,12 +27,12 @@ export default {
                   <h5 class="text-muted text-uppercase fs-13">
                     Campaign Sent
                     <i class="
-                                    ri-arrow-up-circle-line
-                                    text-success
-                                    fs-18
-                                    float-end
-                                    align-middle
-                                  "></i>
+                                      ri-arrow-up-circle-line
+                                      text-success
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -52,12 +52,12 @@ export default {
                   <h5 class="text-muted text-uppercase fs-13">
                     Annual Profit
                     <i class="
-                                    ri-arrow-up-circle-line
-                                    text-success
-                                    fs-18
-                                    float-end
-                                    align-middle
-                                  "></i>
+                                      ri-arrow-up-circle-line
+                                      text-success
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -77,12 +77,12 @@ export default {
                   <h5 class="text-muted text-uppercase fs-13">
                     Lead Conversation
                     <i class="
-                                    ri-arrow-down-circle-line
-                                    text-danger
-                                    fs-18
-                                    float-end
-                                    align-middle
-                                  "></i>
+                                      ri-arrow-down-circle-line
+                                      text-danger
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -102,12 +102,12 @@ export default {
                   <h5 class="text-muted text-uppercase fs-13">
                     Daily Average Income
                     <i class="
-                                    ri-arrow-up-circle-line
-                                    text-success
-                                    fs-18
-                                    float-end
-                                    align-middle
-                                  "></i>
+                                      ri-arrow-up-circle-line
+                                      text-success
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -123,16 +123,41 @@ export default {
               </BCol>
 
               <BCol lg>
-                <div class="mt-3 mt-lg-0 py-4 px-3">
+                <div class="mt-3 mt-lg-0 py-4 px-3 border-end">
                   <h5 class="text-muted text-uppercase fs-13">
                     Annual Deals
                     <i class="
-                                    ri-arrow-down-circle-line
-                                    text-danger
-                                    fs-18
-                                    float-end
-                                    align-middle
-                                  "></i>
+                                      ri-arrow-down-circle-line
+                                      text-danger
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
+                  </h5>
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <i class="ri-service-line display-6 text-muted"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h2 class="mb-0">
+                        <count-to :startVal="0" :endVal="2659" :duration="5000"></count-to>
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </BCol>
+
+              <BCol lg>
+                <div class="mt-3 mt-lg-0 py-4 px-3">
+                  <h5 class="text-muted text-uppercase fs-13">
+                    MOnthly Deals
+                    <i class="
+                                      ri-arrow-down-circle-line
+                                      text-danger
+                                      fs-18
+                                      float-end
+                                      align-middle
+                                    "></i>
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
