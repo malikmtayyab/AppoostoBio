@@ -25,14 +25,8 @@ export default {
               <BCol lg class="border-end">
                 <div class="py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Campaign Sent
-                    <i class="
-                                      ri-arrow-up-circle-line
-                                      text-success
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                     Total Biolinks
+                 
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -40,7 +34,8 @@ export default {
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        <count-to :startVal="0" :endVal="197" :duration="5000"></count-to>
+                        <!-- <count-to :startVal="0" :endVal="197" :duration="5000"></count-to> -->
+                        10
                       </h2>
                     </div>
                   </div>
@@ -50,14 +45,8 @@ export default {
               <BCol lg class="border-end">
                 <div class="mt-3 mt-md-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Annual Profit
-                    <i class="
-                                      ri-arrow-up-circle-line
-                                      text-success
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                    Total Short Links
+                  
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -65,7 +54,8 @@ export default {
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        $<count-to :startVal="0" :endVal="489" :duration="5000"></count-to>k
+                        <!-- $<count-to :startVal="0" :endVal="489" :duration="5000"></count-to>k -->
+                        0
                       </h2>
                     </div>
                   </div>
@@ -75,14 +65,8 @@ export default {
               <BCol lg class="border-end">
                 <div class="mt-3 mt-md-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Lead Conversation
-                    <i class="
-                                      ri-arrow-down-circle-line
-                                      text-danger
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                    Total File Links
+                   
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -90,7 +74,8 @@ export default {
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        <count-to :startVal="0" :endVal="32" :duration="5000"></count-to>%
+                        <!-- <count-to :startVal="0" :endVal="32" :duration="5000"></count-to>% -->
+                        5
                       </h2>
                     </div>
                   </div>
@@ -100,14 +85,8 @@ export default {
               <BCol lg class="border-end">
                 <div class="mt-3 mt-lg-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Daily Average Income
-                    <i class="
-                                      ri-arrow-up-circle-line
-                                      text-success
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                    Total vcard links
+                    
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -115,7 +94,8 @@ export default {
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        $<count-to :startVal="0" :endVal="1596" :duration="5000"></count-to>0
+                        <!-- $<count-to :startVal="0" :endVal="1596" :duration="5000"></count-to>0 -->
+                        4
                       </h2>
                     </div>
                   </div>
@@ -125,14 +105,8 @@ export default {
               <BCol lg>
                 <div class="mt-3 mt-lg-0 py-4 px-3 border-end">
                   <h5 class="text-muted text-uppercase fs-13">
-                    Annual Deals
-                    <i class="
-                                      ri-arrow-down-circle-line
-                                      text-danger
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                   Total Event Links
+                  
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -140,7 +114,8 @@ export default {
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        <count-to :startVal="0" :endVal="2659" :duration="5000"></count-to>
+                        <!-- <count-to :startVal="0" :endVal="2659" :duration="5000"></count-to> -->
+                        15
                       </h2>
                     </div>
                   </div>
@@ -150,22 +125,17 @@ export default {
               <BCol lg>
                 <div class="mt-3 mt-lg-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
-                    MOnthly Deals
-                    <i class="
-                                      ri-arrow-down-circle-line
-                                      text-danger
-                                      fs-18
-                                      float-end
-                                      align-middle
-                                    "></i>
+                    Total QR Codes
+                  
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <i class="ri-service-line display-6 text-muted"></i>
+                      <i class="ri-qr-code-line display-6 text-muted"></i>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
-                        <count-to :startVal="0" :endVal="2659" :duration="5000"></count-to>
+                        <!-- <count-to :startVal="0" :endVal="2659" :duration="5000"></count-to> -->
+                        78
                       </h2>
                     </div>
                   </div>
