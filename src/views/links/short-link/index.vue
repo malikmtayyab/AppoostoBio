@@ -99,7 +99,12 @@ export default {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Annette Black</td>
+                    <td>
+                      <div>
+                        <p>Annette Black</p>
+                        <p class="opacity-50">example.com</p>
+                      </div>
+                    </td>
                     <td>
                       <div class="d-flex justify-content-center">
                         <i class="ri-line-chart-line"></i>
@@ -182,7 +187,12 @@ export default {
                     </td>
                   </tr>
                   <tr>
-                    <td>Bessie Cooper</td>
+                    <td>
+                      <div>
+                        <p>Bessie Cooper</p>
+                        <p class="opacity-50">example.com</p>
+                      </div>
+                    </td>
                     <td>
                       <div class="d-flex justify-content-center">
                         <i class="ri-line-chart-line"></i>
@@ -265,7 +275,12 @@ export default {
                     </td>
                   </tr>
                   <tr>
-                    <td>Leslie Alexander</td>
+                    <td>
+                      <div>
+                        <p>Leslie Alexander</p>
+                        <p class="opacity-50">example.com</p>
+                      </div>
+                    </td>
                     <td>
                       <div class="d-flex justify-content-center">
                         <i class="ri-line-chart-line"></i>
@@ -348,7 +363,12 @@ export default {
                     </td>
                   </tr>
                   <tr>
-                    <td>Lenora Sandoval</td>
+                    <td>
+                      <div>
+                        <p>Lenora Sandoval</p>
+                        <p class="opacity-50">example.com</p>
+                      </div>
+                    </td>
                     <td>
                       <div class="d-flex justify-content-center">
                         <i class="ri-line-chart-line"></i>
@@ -571,28 +591,67 @@ export default {
       body-class="border-0 p-0 overflow-hidden"
       header-class="border-bottom"
     >
-      <div class="m-3">
-        <i class="ri-links-line m-1"></i>
-        <label for="basiInput" class="form-label h5">URL</label>
-        <input
-          type="text"
-          placeholder="https://example.com"
-          class="form-control"
-          id="basiInput"
-        />
-      </div>
-
-      <div class="m-3">
-        <i class="ri-link m-1"></i>
-        <label for="basiInput" class="form-label h5">URL</label>
-        <div class="d-flex justify-content-center">
-          <input
-            type="text"
-            placeholder="appoostobio.com/"
-            class="form-control w-50"
-            id="basiInput"
-            readonly
-          />
+      <div class="mx-3">
+        <div class="mt-4 d-flex justify-content-between">
+          <div>
+            <h5>Lenora Sandoval</h5>
+            <p><span class="opacity-50">Your link</span> is example.com</p>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check form-switch d-flex justify-content-center">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="SwitchCheck2"
+              />
+            </div>
+            <i
+              class="ri-file-copy-line align-bottom text-muted me-2"
+              style="font-size: 20px"
+            ></i>
+            <i
+              class="ri-line-chart-line align-bottom text-muted me-2"
+              style="font-size: 20px"
+            ></i>
+            <BDropdown
+              variant="link"
+              class="btn btn-ghost-secondary btn-icon"
+              toggle-class=" arrow-none"
+              menu-class="dropdown-menu"
+              aria-haspopup="true"
+            >
+              <template #button-content>
+                <more-vertical-icon class="icon-sm"></more-vertical-icon>
+              </template>
+              <BDropdownItem
+                ><i class="ri-edit-line align-bottom text-muted me-2"></i>
+                Edit
+              </BDropdownItem>
+              <BDropdownItem
+                ><i class="ri-line-chart-line align-bottom text-muted me-2"></i>
+                Statistics</BDropdownItem
+              >
+              <BDropdownItem
+                ><i class="ri-qr-code-line align-bottom text-muted me-2"></i> QR
+                Code</BDropdownItem
+              >
+              <BDropdownItem
+                ><i class="ri-file-copy-line align-bottom text-muted me-2"></i>
+                Duplicate</BDropdownItem
+              >
+              <BDropdownItem
+                ><i
+                  class="ri-delete-bin-5-line align-bottom text-muted me-2"
+                ></i>
+                Delete</BDropdownItem
+              >
+            </BDropdown>
+          </div>
+        </div>
+        <div class="mb-3 mt-5">
+          <i class="ri-links-line m-1"></i>
+          <label for="basiInput" class="form-label h5">Destination URL</label>
           <input
             type="text"
             placeholder="https://example.com"
@@ -600,17 +659,286 @@ export default {
             id="basiInput"
           />
         </div>
-        <p>Leave empty for a random generated one.</p>
-      </div>
-
-      <div class="text-center mt-5 m-3">
-        <BButton
-          class="w-100"
-          variant="primary"
-          type="button"
-          id="button-addon1"
-          >Shorten URL</BButton
-        >
+        <div class="mb-3">
+          <i class="ri-link m-1"></i>
+          <label for="basiInput" class="form-label h5">Short URL</label>
+          <div class="d-flex justify-content-center">
+            <input
+              type="text"
+              placeholder="appoostobio.com/"
+              class="form-control rounded-0 rounded-start border-end-0"
+              style="width: 152px"
+              id="basiInput"
+              readonly
+              disabled
+            />
+            <input
+              type="text"
+              placeholder="https://example.com"
+              class="form-control flex-1 rounded-0 rounded-end"
+              id="basiInput"
+            />
+          </div>
+          <p class="opacity-50 m-1 fs-6 fst-italic">
+            Leave empty for a random generated one.
+          </p>
+        </div>
+        <BAccordion>
+          <BAccordionItem title="Pixels">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex justify-content-between">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Pixel one
+                    </label>
+                  </div>
+                  <div class="d-flex">
+                    <i class="ri-add-line"></i>
+                    <p class="cursor-pointer">Create Pixel</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="Temporary URL">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div class="">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="SwitchCheck2"
+                    />
+                  </div>
+                  <p class="opacity-75">
+                    Configure the dates on which it will work
+                  </p>
+                </div>
+                <div class="mb-3">
+                  <i class="ri-mouse-line"></i>
+                  <label for="basiInput" class="form-label h5"
+                    >Clicks Limit</label
+                  >
+                  <input
+                    type="number"
+                    placeholder="0"
+                    class="form-control"
+                    id="basiInput"
+                  />
+                  <p class="opacity-50 m-1 fs-6 fst-italic">
+                    Only allow the link to work for a certain amount of clicks.
+                  </p>
+                  <i class="ri-timer-fill"></i>
+                  <label for="basiInput" class="form-label h5"
+                    >Expiration URL</label
+                  >
+                  <input type="text" class="form-control" id="basiInput" />
+                  <p class="opacity-50 m-1 fs-6 fst-italic">
+                    Visitors will be redirected to this URL after the main link
+                    expires.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="Protection">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div>
+                  <i class="ri-key-fill"></i>
+                  <label for="basiInput" class="form-label h5">Password</label>
+                  <input type="text" class="form-control" id="basiInput" />
+                  <p class="opacity-50 m-1 fs-6 fst-italic">
+                    Require users to enter a password before accessing the link.
+                  </p>
+                </div>
+                <div class="">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="SwitchCheck2"
+                    />
+                  </div>
+                  <p class="opacity-75">Sensitive content warning</p>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="Targeting">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div>
+                  <i class="ri-focus-2-line"></i>
+                  <label for="basiInput" class="form-label h5">Targeting Type</label>
+                  <br />
+                  <BInputGroup>
+                    <BFormSelect
+                      id="inputGroupSelect01"
+                      v-model="selectedOption"
+                    >
+                      <option value="">None</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </BFormSelect>
+                  </BInputGroup>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="Cloaking">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div class="">
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="SwitchCheck2"
+                    />
+                    <p>URL Cloaking</p>
+                  </div>
+                  <p class="opacity-75">
+                    Hide the original destination URL and display the current
+                    Short URL in the browser. This feature only works for
+                    websites that allow iframe embedding.
+                  </p>
+                </div>
+                <div class="mb-3">
+                  <i class="ri-pencil-line"></i>
+                  <label for="basiInput" class="form-label h5"
+                    >Title of the cloaked page</label
+                  >
+                  <input
+                    type="number"
+                    placeholder="0"
+                    class="form-control"
+                    id="basiInput"
+                  />
+                  <div class="mt-3">
+                    <i class="ri-image-line me-1"></i>
+                    <label for="basiInput" class="form-label h5"
+                      >Favicon of the cloaked page</label
+                    >
+                    <div class="input-group">
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="inputGroupFile04"
+                        aria-describedby="inputGroupFileAddon04"
+                        aria-label="Upload"
+                      />
+                      >
+                    </div>
+                    <p class="opacity-50 m-1 fs-6 fst-italic">
+                      .jpg, .jpeg, .png, .ico, .svg, .gif, .webp allowed. 2 MB
+                      maximum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="HTTP Status">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div>
+                  <BAlert :model-value="true" variant="success">
+                    <p>
+                      The HTTP status code is only sent when the pixels and
+                      cloaking features are not used.
+                    </p>
+                  </BAlert>
+                  <BFormGroup class="mb-2">
+                    <BFormRadio
+                      v-model="radio1"
+                      value="default"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      >301 Permanent redirect</BFormRadio
+                    >
+                  </BFormGroup>
+                  <BFormGroup class="mb-2">
+                    <BFormRadio
+                      v-model="radio1"
+                      value="default"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      >302 Temporary redirect
+                    </BFormRadio>
+                  </BFormGroup>
+                  <BFormGroup class="mb-2">
+                    <BFormRadio
+                      v-model="radio1"
+                      value="default"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      >307 Form submissions with temporary redirect</BFormRadio
+                    >
+                  </BFormGroup>
+                  <BFormGroup class="mb-2">
+                    <BFormRadio
+                      v-model="radio1"
+                      value="default"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      >308 Form submissions with permanent redirect</BFormRadio
+                    >
+                  </BFormGroup>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+          <BAccordionItem title="Advanced">
+            <div class="vstack gap-2">
+              <div class="border rounded border-dashed p-2">
+                <div class="d-flex justify-content-between">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Project
+                  </label>
+                  <div class="d-flex">
+                    <i class="ri-add-line"></i>
+                    <p class="cursor-pointer">Create Project</p>
+                  </div>
+                </div>
+                <div>
+                  <BInputGroup>
+                    <BFormSelect
+                      id="inputGroupSelect01"
+                      v-model="selectedOption"
+                    >
+                      <option value="">None</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </BFormSelect>
+                  </BInputGroup>
+                </div>
+              </div>
+            </div>
+          </BAccordionItem>
+        </BAccordion>
+        <div class="text-center mt-5 m-3">
+          <BButton
+            class="w-100"
+            variant="primary"
+            type="button"
+            id="button-addon1"
+            >Update</BButton
+          >
+        </div>
       </div>
     </BOffcanvas>
   </Layout>
