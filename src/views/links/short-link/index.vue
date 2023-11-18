@@ -90,11 +90,11 @@ export default {
               >
                 <thead>
                   <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Stats</th>
-                    <th scope="col">Dates</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Options</th>
+                    <th class="text-start" scope="col">Title</th>
+                    <th class="text-center" scope="col">Stats</th>
+                    <th class="text-center" scope="col">Dates</th>
+                    <th class="text-center" scope="col">Status</th>
+                    <th class="text-end" scope="col">Options</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -107,13 +107,17 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
                         <i class="ri-calendar-fill p-2"></i>
                         <i class="ri-history-line"></i>
                       </div>
                     </td>
                     <td>
-                      <div class="form-check form-switch">
+                      <div
+                        class="form-check form-switch d-flex justify-content-center"
+                      >
                         <input
                           class="form-check-input"
                           type="checkbox"
@@ -123,7 +127,9 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="hstack gap-3 fs-15">
+                      <div
+                        class="hstack gap-3 fs-15 d-flex justify-content-end"
+                      >
                         <BLink href="javascript:void(0);" class="link-primary"
                           ><i class="ri-file-copy-line"></i
                         ></BLink>
@@ -184,13 +190,17 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
                         <i class="ri-calendar-fill p-2"></i>
                         <i class="ri-history-line"></i>
                       </div>
                     </td>
                     <td>
-                      <div class="form-check form-switch">
+                      <div
+                        class="form-check form-switch d-flex justify-content-center"
+                      >
                         <input
                           class="form-check-input"
                           type="checkbox"
@@ -200,7 +210,9 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="hstack gap-3 fs-15">
+                      <div
+                        class="hstack gap-3 fs-15 d-flex justify-content-end"
+                      >
                         <BLink href="javascript:void(0);" class="link-primary"
                           ><i class="ri-file-copy-line"></i
                         ></BLink>
@@ -261,13 +273,17 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
                         <i class="ri-calendar-fill p-2"></i>
                         <i class="ri-history-line"></i>
                       </div>
                     </td>
                     <td>
-                      <div class="form-check form-switch">
+                      <div
+                        class="form-check form-switch d-flex justify-content-center"
+                      >
                         <input
                           class="form-check-input"
                           type="checkbox"
@@ -277,7 +293,9 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="hstack gap-3 fs-15">
+                      <div
+                        class="hstack gap-3 fs-15 d-flex justify-content-end"
+                      >
                         <BLink href="javascript:void(0);" class="link-primary"
                           ><i class="ri-file-copy-line"></i
                         ></BLink>
@@ -338,13 +356,17 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div>
+                      <div
+                        class="d-flex align-items-center justify-content-center"
+                      >
                         <i class="ri-calendar-fill p-2"></i>
                         <i class="ri-history-line"></i>
                       </div>
                     </td>
                     <td>
-                      <div class="form-check form-switch">
+                      <div
+                        class="form-check form-switch d-flex justify-content-center"
+                      >
                         <input
                           class="form-check-input"
                           type="checkbox"
@@ -354,7 +376,9 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="hstack gap-3 fs-15">
+                      <div
+                        class="hstack gap-3 fs-15 d-flex justify-content-end"
+                      >
                         <BLink href="javascript:void(0);" class="link-primary"
                           ><i class="ri-file-copy-line"></i
                         ></BLink>
@@ -434,7 +458,7 @@ export default {
                                                             &lt;td&gt;10, Nov 2021&lt;/td&gt;
                                                             &lt;td&gt;&lt;span class=&quot;badge bg-success-subtle text-success&quot;&gt;Active&lt;/span&gt;&lt;/td&gt;
                                                             &lt;td&gt;
-                                                                &lt;div class=&quot;hstack gap-3 fs-15&quot;&gt;
+                                                                &lt;div class=&quot; d-flex justify-content-end&quot;&gt;
                                                                     &lt;a href=&quot;javascript:void(0);&quot; class=&quot;link-primary&quot;&gt;&lt;i class=&quot;ri-settings-4-line&quot;&gt;&lt;/i&gt;&lt;/a&gt;
                                                                     &lt;a href=&quot;javascript:void(0);&quot; class=&quot;link-danger&quot;&gt;&lt;i class=&quot;ri-delete-bin-5-line&quot;&gt;&lt;/i&gt;&lt;/a&gt;
                                                                 &lt;/div&gt;
@@ -489,31 +513,15 @@ export default {
       v-if="urlCreate === false"
       v-model="shortendCanvas"
       placement="end"
-      body-class="border-0 p-0 overflow-hidden"
+      body-class="border-0 p-0 overflow-hidden p-3"
       header-class="border-bottom"
+      title="Shortened URL"
+      footer-class="border-top p-3 text-center text-primary "
     >
-      <div class="m-3">
-        <i class="ri-links-line m-1"></i>
-        <label for="basiInput" class="form-label h5">Long URL</label>
-        <input
-          type="text"
-          placeholder="https://example.com"
-          class="form-control"
-          id="basiInput"
-        />
-      </div>
-
-      <div class="m-3">
-        <i class="ri-link m-1"></i>
-        <label for="basiInput" class="form-label h5">Short URL</label>
-        <div class="d-flex justify-content-center">
-          <input
-            type="text"
-            placeholder="appoostobio.com/"
-            class="form-control w-50"
-            id="basiInput"
-            readonly
-          />
+      <simplebar data-simplebar style="height: calc(100vh - 112px)">
+        <div class="mb-3">
+          <i class="ri-links-line m-1"></i>
+          <label for="basiInput" class="form-label h5">Long URL</label>
           <input
             type="text"
             placeholder="https://example.com"
@@ -521,19 +529,40 @@ export default {
             id="basiInput"
           />
         </div>
-        <p>Leave empty for a random generated one.</p>
-      </div>
-
-      <div class="text-center mt-5 m-3">
+        <div class="mb-3">
+          <i class="ri-link m-1"></i>
+          <label for="basiInput" class="form-label h5">Short URL</label>
+          <div class="d-flex justify-content-center">
+            <input
+              type="text"
+              placeholder="appoostobio.com/"
+              class="form-control rounded-0 rounded-start border-end-0"
+              style="width: 152px"
+              id="basiInput"
+              readonly
+              disabled
+            />
+            <input
+              type="text"
+              placeholder="https://example.com"
+              class="form-control flex-1 rounded-0 rounded-end"
+              id="basiInput"
+            />
+          </div>
+          <p class="opacity-50 m-1 fs-6 fst-italic">
+            Leave empty for a random generated one.
+          </p>
+        </div>
         <BButton
-          class="w-100"
+          class="w-100 text-center mb-3"
           variant="primary"
           type="button"
           id="button-addon1"
           @click="shortendURLCLick"
           >Create</BButton
         >
-      </div>
+      </simplebar>
+      <template #footer> Design & Develop Cocoon Web Tech srl </template>
     </BOffcanvas>
     <BOffcanvas
       v-if="urlCreate"
@@ -580,7 +609,7 @@ export default {
           variant="primary"
           type="button"
           id="button-addon1"
-          >Create</BButton
+          >Shorten URL</BButton
         >
       </div>
     </BOffcanvas>
