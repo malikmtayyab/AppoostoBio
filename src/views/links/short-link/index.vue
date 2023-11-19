@@ -8,6 +8,7 @@ export default {
     return {
       shortendCanvas: false,
       urlCreate: false,
+      filterCanvas:false
     };
   },
   components: {
@@ -22,7 +23,19 @@ export default {
     },
     shortendURLCLick() {
       this.urlCreate = !this.urlCreate;
+      
     },
+    hadleEditClick(index)
+    {
+     console.log(index)
+       this.urlCreate=true
+      this.shortendCanvas = !this.shortendCanvas;
+
+    },
+    handleFilterClick()
+    {
+      this.filterCanvas=true
+    }
   },
 };
 </script>
@@ -40,43 +53,17 @@ export default {
         <button class="btn btn-primary p-2" @click="handleShortendClick">
           Shortend URL
         </button>
-        <BDropdown
-          variant="link"
-          class="btn btn-icon"
-          toggle-class=" arrow-none"
-          menu-class="dropdown-menu"
-          aria-haspopup="true"
-        >
-          <template #button-content>
+     
             <i
-              class="ri-download-2-fill"
+              class="ri-download-2-fill ms-3 cursor-pointer "
               style="font-size: 24px; margin-left: 10px; margin-top: 10px"
             ></i>
-          </template>
-          <BDropdownItem
-            ><i class="ri-edit-line align-bottom text-muted me-2"></i>
-            Edit
-          </BDropdownItem>
-          <BDropdownItem
-            ><i class="ri-line-chart-line align-bottom text-muted me-2"></i>
-            Statistics</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-qr-code-line align-bottom text-muted me-2"></i> QR
-            Code</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-file-copy-line align-bottom text-muted me-2"></i>
-            Duplicate</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>
-            Delete</BDropdownItem
-          >
-        </BDropdown>
+    
+    
         <i
-          class="ri-filter-fill align-bottom ms-3 me-3"
+          class="ri-filter-fill align-bottom ms-3 me-3 cursor-pointer"
           style="font-size: 24px"
+          v-on:click.prevent="handleFilterClick"
         ></i>
       </div>
     </div>
@@ -152,6 +139,7 @@ export default {
                               ></more-vertical-icon>
                             </template>
                             <BDropdownItem
+                          v-on:click.prevent="hadleEditClick(1)"
                               ><i
                                 class="ri-edit-line align-bottom text-muted me-2"
                               ></i>
@@ -588,7 +576,7 @@ export default {
       v-if="urlCreate"
       v-model="shortendCanvas"
       placement="end"
-      body-class="border-0 p-0 overflow-hidden"
+      body-class="border-0 p-0 "
       header-class="border-bottom"
     >
       <div class="mx-3">
@@ -685,7 +673,7 @@ export default {
         </div>
         <BAccordion>
           <BAccordionItem title="Pixels">
-            <div class="vstack gap-2">
+            <div class="vstack gap-2" >
               <div class="border rounded border-dashed p-2">
                 <div class="d-flex justify-content-between">
                   <div class="form-check">
@@ -940,6 +928,41 @@ export default {
           >
         </div>
       </div>
+    </BOffcanvas>
+
+
+    <BOffcanvas v-model="filterCanvas" placement="end" body-class="border-0 p-0 overflow-hidden"
+      header-class="border-bottom">
+      <div class="offcanvas-body profile-offcanvas px-4">
+        <div class="mt-3 mb-3">
+          <h2 class="text-center">
+            Filter
+          </h2>
+        </div>
+        <simplebar data-simplebar style="height: calc(100vh - 112px)">
+        <div class="mb-3">
+       
+          <label for="basiInput" class="form-label h5">Search</label>
+          <input
+            type="text"
+            class="form-control"
+            id="basiInput"
+          />
+        </div>
+      
+        <BButton
+          class="w-100 text-center mb-3"
+          variant="primary"
+          type="button"
+          id="button-addon1"
+          @click="shortendURLCLick"
+          >Create</BButton
+        >
+      </simplebar>
+     
+      </div>
+
+
     </BOffcanvas>
   </Layout>
 </template>
