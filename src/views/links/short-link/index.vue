@@ -2,6 +2,7 @@
 import Layout from "@/layouts/main.vue";
 import PageHeader from "@/components/page-header";
 import { MoreVerticalIcon } from "@zhuowenli/vue-feather-icons";
+import getChartColorsArray from "@/common/getChartColorsArray";
 
 export default {
   data() {
@@ -9,6 +10,64 @@ export default {
       shortendCanvas: false,
       urlCreate: false,
       filterCanvas: false,
+      topCanvasFlag: false,
+      infoCanvasFlag: false,
+      series: [
+        {
+          name: "Revenue",
+          data: [20, 25, 30, 35, 40, 55, 70, 110, 150, 180, 210, 250],
+        },
+        {
+          name: "Expenses",
+          data: [12, 17, 45, 42, 24, 35, 42, 75, 102, 108, 156, 199],
+        },
+      ],
+      chartOptions: {
+        chart: {
+          height: 290,
+          type: "area",
+          toolbar: "false",
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        stroke: {
+          curve: "smooth",
+          width: 2,
+        },
+        xaxis: {
+          categories: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+        },
+        yaxis: {
+          labels: {
+            formatter: function (value) {
+              return "$" + value + "k";
+            },
+          },
+          tickAmount: 5,
+          min: 0,
+          max: 260,
+        },
+        colors: getChartColorsArray('["--vz-success", "--vz-danger"]'),
+        fill: {
+          opacity: 0.06,
+          colors: ["#0AB39C", "#F06548"],
+          type: "solid",
+        },
+      },
     };
   },
   components: {
@@ -31,6 +90,12 @@ export default {
     },
     handleFilterClick() {
       this.filterCanvas = true;
+    },
+    handleTopCanvas() {
+      this.topCanvasFlag = !this.topCanvasFlag;
+    },
+    handleInfoClick() {
+      this.infoCanvasFlag = !this.infoCanvasFlag;
     },
   },
 };
@@ -87,7 +152,10 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="d-flex justify-content-center">
+                      <div
+                        class="d-flex justify-content-center cursor-pointer"
+                        @click="handleTopCanvas"
+                      >
                         <i class="ri-line-chart-line"></i>
                         <td>0</td>
                       </div>
@@ -176,7 +244,7 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center cursor-pointer">
                         <i class="ri-line-chart-line"></i>
                         <td>0</td>
                       </div>
@@ -264,7 +332,7 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center cursor-pointer">
                         <i class="ri-line-chart-line"></i>
                         <td>0</td>
                       </div>
@@ -352,7 +420,7 @@ export default {
                       </div>
                     </td>
                     <td>
-                      <div class="d-flex justify-content-center">
+                      <div class="d-flex justify-content-center cursor-pointer">
                         <i class="ri-line-chart-line"></i>
                         <td>0</td>
                       </div>
@@ -1008,6 +1076,85 @@ export default {
         >
       </simplebar>
       <template #footer> Design & Develop Cocoon Web Tech srl </template>
+    </BOffcanvas>
+    <BOffcanvas
+      v-if="topCanvasFlag"
+      v-model="topCanvasFlag"
+      placement="top"
+      title="Gallery"
+      style="height: 50vh"
+    >
+      <div class="d-flex justify-space-center g-2">
+        <div class="d-flex flex-column align-items-center w-25">
+          <BCardBody class="px-0 w-100">
+            <apexchart
+              class="apex-charts"
+              height="290"
+              dir="ltr"
+              :series="series"
+              :options="chartOptions"
+            ></apexchart>
+          </BCardBody>
+          <i
+            class="ri-information-fill fs-4 cursor-pointer mt-1"
+            @click="handleInfoClick"
+          ></i>
+        </div>
+        <div class="d-flex flex-column align-items-center w-25">
+          <BCardBody class="px-0 w-100">
+            <apexchart
+              class="apex-charts"
+              height="290"
+              dir="ltr"
+              :series="series"
+              :options="chartOptions"
+            ></apexchart>
+          </BCardBody>
+          <i
+            class="ri-information-fill fs-4 cursor-pointer mt-1"
+            @click="handleInfoClick"
+          ></i>
+        </div>
+        <div class="d-flex flex-column align-items-center w-25">
+          <BCardBody class="px-0 w-100">
+            <apexchart
+              class="apex-charts"
+              height="290"
+              dir="ltr"
+              :series="series"
+              :options="chartOptions"
+            ></apexchart>
+          </BCardBody>
+          <i
+            class="ri-information-fill fs-4 cursor-pointer mt-1"
+            @click="handleInfoClick"
+          ></i>
+        </div>
+        <div class="d-flex flex-column align-items-center w-25">
+          <BCardBody class="px-0 w-100">
+            <apexchart
+              class="apex-charts"
+              height="290"
+              dir="ltr"
+              :series="series"
+              :options="chartOptions"
+            ></apexchart>
+          </BCardBody>
+          <i
+            class="ri-information-fill fs-4 cursor-pointer mt-1"
+            @click="handleInfoClick"
+          ></i>
+        </div>
+      </div>
+    </BOffcanvas>
+
+    <BOffcanvas
+      v-if="infoCanvasFlag"
+      v-model="infoCanvasFlag"
+      placement="bottom"
+      title="Info"
+      style="height: 40vh"
+    >
     </BOffcanvas>
   </Layout>
 </template>
