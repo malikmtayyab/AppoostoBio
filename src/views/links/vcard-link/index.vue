@@ -8,6 +8,7 @@ export default {
     return {
       shortendCanvas: false,
       urlCreate: false,
+      filterCanvas: false,
     };
   },
   components: {
@@ -23,6 +24,9 @@ export default {
     vcardUrlClick() {
       this.urlCreate = !this.urlCreate;
     },
+    handleFilterClick() {
+      this.filterCanvas = true;
+    },
   },
 };
 </script>
@@ -36,48 +40,27 @@ export default {
           <BCardTitle class="my-3 flex-grow-1"></BCardTitle>
         </BCardHeader>
       </div>
-      <div>
-        <button class="btn btn-primary p-2" @click="handleVCardClick">
-          VCard Link
-        </button>
-        <BDropdown
-          variant="link"
-          class="btn btn-icon"
-          toggle-class=" arrow-none"
-          menu-class="dropdown-menu"
-          aria-haspopup="true"
-        >
-          <template #button-content>
-            <i
-              class="ri-download-2-fill"
-              style="font-size: 24px; margin-left: 10px; margin-top: 10px"
-            ></i>
-          </template>
-          <BDropdownItem
-            ><i class="ri-edit-line align-bottom text-muted me-2"></i>
-            Edit
-          </BDropdownItem>
-          <BDropdownItem
-            ><i class="ri-line-chart-line align-bottom text-muted me-2"></i>
-            Statistics</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-qr-code-line align-bottom text-muted me-2"></i> QR
-            Code</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-file-copy-line align-bottom text-muted me-2"></i>
-            Duplicate</BDropdownItem
-          >
-          <BDropdownItem
-            ><i class="ri-delete-bin-5-line align-bottom text-muted me-2"></i>
-            Delete</BDropdownItem
-          >
-        </BDropdown>
-        <i
-          class="ri-filter-fill align-bottom ms-3 me-3"
-          style="font-size: 24px"
-        ></i>
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <BCardHeader class="align-items-center d-flex py-0">
+            <BCardTitle class="my-3 flex-grow-1"></BCardTitle>
+          </BCardHeader>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <button class="btn btn-primary p-2" @click="handleVCardClick">
+            VCard Link
+          </button>
+          <i
+            class="ri-download-2-fill cursor-pointer"
+            style="font-size: 24px; margin-left: 10px; margin-right: 10px"
+          ></i>
+
+          <i
+            class="ri-filter-fill align-bottom cursor-pointer"
+            style="font-size: 24px"
+            v-on:click.prevent="handleFilterClick"
+          ></i>
+        </div>
       </div>
     </div>
     <BCol xl="12">
@@ -602,6 +585,91 @@ export default {
           >Create</BButton
         >
       </div>
+    </BOffcanvas>
+
+    <BOffcanvas
+      v-model="filterCanvas"
+      placement="end"
+      body-class="border-0 p-0 overflow-auto p-3"
+      header-class="border-bottom"
+      title="Filters"
+      footer-class="border-top p-3 text-center text-primary "
+    >
+      <simplebar data-simplebar style="height: calc(100vh - 112px)">
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Search</label>
+          <input type="text" class="form-control" id="basiInput" />
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Search By</label>
+          <select class="form-select mb-3" aria-label="Search By">
+            <option selected>Short URL</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Status</label>
+          <select class="form-select mb-3" aria-label="Status">
+            <option selected>All</option>
+            <option>Active</option>
+            <option selected>Disabled</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Project</label>
+          <select class="form-select mb-3" aria-label="Project">
+            <option selected>All</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Type</label>
+          <select class="form-select mb-3" aria-label="Type">
+            <option>All</option>
+            <option>Builink Pages</option>
+            <option selected>Shortend URLs</option>
+            <option>File links</option>
+            <option>VCard links</option>
+            <option>Event links</option>
+            <option>Static sites</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Order by</label>
+          <select class="form-select mb-3" aria-label="Order by">
+            <option selected>Created datetime</option>
+            <option>Updated datetime</option>
+            <option>Pageviews</option>
+            <option>Short URL</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Order Type</label>
+          <select class="form-select mb-3" aria-label="Order Type">
+            <option>Ascending</option>
+            <option selected>Descending</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="basiInput" class="form-label h5">Results per page</label>
+          <select class="form-select mb-3" aria-label="Results per page">
+            <option>10</option>
+            <option>25</option>
+            <option selected>50</option>
+            <option>100</option>
+            <option>250</option>
+            <option>500</option>
+            <option>1000</option>
+          </select>
+        </div>
+        <BButton
+          class="w-100 text-center mb-3"
+          variant="primary"
+          type="button"
+          id="button-addon1"
+          @click="shortendURLCLick"
+          >Apply</BButton
+        >
+      </simplebar>
+      <template #footer> Design & Develop Cocoon Web Tech srl </template>
     </BOffcanvas>
   </Layout>
 </template>
