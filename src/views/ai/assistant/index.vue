@@ -30,6 +30,10 @@ export default {
       submitted: false,
       chattab: false,
       editingMessageId: null,
+      isHovered: false,
+      isEditing: false,
+      editedUsername: "", // New data property to store the edited username
+
       editedMessages: {},
       form: {
         message: "",
@@ -171,6 +175,15 @@ export default {
         this.copy = false;
       }, 1000);
     },
+    startEditing() {
+      this.isEditing = true;
+      this.editedUsername = this.username; // Store the current username for editing
+    },
+    updateUsername() {
+      this.isEditing = false;
+      // Update the username with the edited content
+      this.username = this.editedUsername.trim();
+    },
   },
   mounted() {
     var currentChatId = "users-chat";
@@ -238,23 +251,14 @@ export default {
         </BCard>
 
         <simplebar v-if="chattab" class="chat-room-list" data-simplebar>
-          <div class="d-flex align-items-center px-4 mb-2">
-            <div class="flex-grow-1">
-              <h4 class="mb-0 fs-11 text-muted text-uppercase">
-                Direct Messages
-              </h4>
-            </div>
-            <div class="flex-shrink-0">
-              <div v-b-tooltip.hover title="New Message">
-                <BButton
-                  @click="showMessageOffCanvas = !showMessageOffCanvas"
-                  type="button"
-                  variant="soft-success"
-                  size="sm"
-                >
-                  <i class="ri-add-line align-bottom"></i>
-                </BButton>
-              </div>
+          <div class="px-4 mb-4">
+            <div class="search-box">
+              <input
+                type="text"
+                class="form-control bg-light border-light"
+                placeholder="Search here..."
+              />
+              <i class="ri-search-2-line search-icon"></i>
             </div>
           </div>
 
@@ -300,6 +304,16 @@ export default {
         </simplebar>
         <div v-else class="chat-message-list">
           <SimpleBar class="list-unstyled chat-list chat-user-list">
+            <div class="px-4 mb-4">
+              <div class="search-box">
+                <input
+                  type="text"
+                  class="form-control bg-light border-light"
+                  placeholder="Search here..."
+                />
+                <i class="ri-search-2-line search-icon"></i>
+              </div>
+            </div>
             <li
               class
               v-for="data of botData"
@@ -308,7 +322,10 @@ export default {
               :class="{ active: botName == data.name }"
             >
               <BLink href="javascript: void(0);">
-                <div class="d-flex align-items-center">
+                <div
+                  class="d-flex align-items-center"
+                  @click="showMessageOffCanvas = !showMessageOffCanvas"
+                >
                   <div
                     class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0"
                   >
@@ -375,18 +392,37 @@ export default {
                             <span class="user-status"></span>
                           </div>
                           <div class="flex-grow-1 overflow-hidden">
-                            <h5 class="text-truncate mb-0 fs-16">
-                              <BLink
-                                class="text-reset username"
-                                @click="showOffcanvas = !showOffcanvas"
-                                >{{ username }}
-                              </BLink>
-                            </h5>
-                            <p
-                              class="text-truncate text-muted fs-14 mb-0 userStatus"
+                            <h5
+                              class="text-truncate mb-0 fs-16"
+                              @mouseover="isHovered = true"
                             >
-                              <small>Online</small>
-                            </p>
+                              <BLink
+                                class="chattitle text-reset username"
+                                v-if="!isEditing"
+                              >
+                                <span v-if="!isEditing">{{ username }}</span>
+                                <span
+                                  v-else
+                                  @click="showOffcanvas = !showOffcanvas"
+                                >
+                                  {{ editedUsername }}
+                                </span>
+                                <i
+                                  v-if="isHovered && !isEditing"
+                                  class="ri-edit-line align-bottom ms-2"
+                                  @click="startEditing"
+                                  @mouseout="isHovered = false"
+                                ></i>
+                              </BLink>
+                              <span v-else>
+                                <input
+                                  v-model="editedUsername"
+                                  @blur="updateUsername"
+                                  @keyup.enter="updateUsername"
+                                  class="edit-input"
+                                />
+                              </span>
+                            </h5>
                           </div>
                         </div>
                       </div>
@@ -713,156 +749,194 @@ export default {
       header-class=""
       class="offcanvas-bg"
     >
-      <div class="offcanvas-body profile-offcanvas p-0">
-        <div class="p-1 pb-2 pt-0">
-          <div class="team-settings">
-            <div class="row g-0">
-              <div class="col"></div>
-              <div class="col-auto">
-                <div class="user-chat-nav d-flex">
-                  <div class="dropdown">
-                    <a
-                      class="btn nav-btn"
-                      href="javascript:void(0);"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <i class="ri-more-2-fill"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);"
-                          ><i
-                            class="ri-inbox-archive-line align-bottom text-muted me-2"
-                          ></i
-                          >Archive</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);"
-                          ><i
-                            class="ri-mic-off-line align-bottom text-muted me-2"
-                          ></i
-                          >Muted</a
-                        >
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);"
-                          ><i
-                            class="ri-delete-bin-5-line align-bottom text-muted me-2"
-                          ></i
-                          >Delete</a
-                        >
-                      </li>
-                    </ul>
+      <div class="scrollbar" style="max-height: 90vh; overflow-y: auto">
+        <div class="offcanvas-body profile-offcanvas p-0">
+          <div class="p-1 pb-2 pt-0">
+            <div class="team-settings">
+              <div class="row g-0">
+                <div class="col"></div>
+                <div class="col-auto">
+                  <div class="user-chat-nav d-flex">
+                    <div class="dropdown">
+                      <a
+                        class="btn nav-btn"
+                        href="javascript:void(0);"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="ri-more-2-fill"></i>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i
+                              class="ri-inbox-archive-line align-bottom text-muted me-2"
+                            ></i
+                            >Archive</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i
+                              class="ri-mic-off-line align-bottom text-muted me-2"
+                            ></i
+                            >Muted</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="javascript:void(0);"
+                            ><i
+                              class="ri-delete-bin-5-line align-bottom text-muted me-2"
+                            ></i
+                            >Delete</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div v-for="data of botData" :key="data.id" class="p-3 text-center">
-          <div v-if="data.name === botName">
-            <div style="color: white">
-              <img
-                :src="data.image"
-                alt=""
-                class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
-              />
-              <div class="mt-3">
-                <h5 class="fs-16 mb-1">
-                  <a
-                    href="javascript:void(0);"
-                    class="link-primary username"
+          <div v-for="data of botData" :key="data.id" class="p-3 text-center">
+            <div v-if="data.name === botName">
+              <div style="color: white">
+                <img
+                  :src="data.image"
+                  alt=""
+                  class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
+                />
+                <div class="mt-3">
+                  <h5 class="fs-16 mb-1">
+                    <a
+                      href="javascript:void(0);"
+                      class="link-primary username"
+                      style="color: white"
+                    >
+                      {{ data.name }}</a
+                    >
+                  </h5>
+                </div>
+              </div>
+              <div class="p-3">
+                <h5 class="fs-15 mb-3" style="color: white">Description</h5>
+                <div class="mb-3">
+                  <p
+                    class="text-uppercase fw-medium fs-12 mb-1"
                     style="color: white"
                   >
-                    {{ data.name }}</a
-                  >
-                </h5>
-              </div>
-            </div>
-            <div class="p-3">
-              <h5 class="fs-15 mb-3" style="color: white">Description</h5>
-              <div class="mb-3">
-                <p
-                  class="text-uppercase fw-medium fs-12 mb-1"
-                  style="color: white"
-                >
-                  {{ data.description }}
-                </p>
+                    {{ data.description }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div v-if="botName" class="border-top p-3">
-        <h5 class="fs-15 mb-3" style="color: white">Suggestions</h5>
-
-        <BAccordion>
-          <BAccordionItem title="Content">
-            <div class="vstack gap-2">
-              <div class="border rounded border-dashed p-2">
-                <div class="d-flex align-items-center">
-                  <div class="suggestion flex-shrink-0 me-3">
-                    <p @click="setSuggestion('Write a blog post about AI')">
-                      Write a blog post about AI
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="border rounded border-dashed p-2">
-                <div class="d-flex align-items-center">
-                  <div class="suggestion flex-shrink-0 me-3">
-                    <p
-                      @click="
-                        setSuggestion(
-                          'What are the different types of content writing?'
-                        )
-                      "
-                    >
-                      What are the different types of content writing?
-                    </p>
-                  </div>
-                </div>
-              </div>
+        <div class="container mb-3">
+          <div class="flex-container">
+            <div class="flex-item">
+              <label for="select1" class="form-label fs-15"
+                >Output Language</label
+              >
+              <select class="form-select" id="select1">
+                <option selected>English (US)</option>
+                <option value="1">English (UK)</option>
+                <option value="2">Italiano</option>
+                <option value="3">Turkce</option>
+              </select>
             </div>
-          </BAccordionItem>
-          <BAccordionItem title="SEO">
-            <div class="vstack gap-2">
-              <div class="border rounded border-dashed p-2">
-                <div class="d-flex align-items-center">
-                  <div class="suggestion flex-shrink-0 me-3">
-                    <p
-                      @click="
-                        setSuggestion('How can I implement SEO on my site?')
-                      "
-                    >
-                      How can I implement SEO on my site?
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="border rounded border-dashed p-2">
-                <div class="d-flex align-items-center">
-                  <div class="suggestion flex-shrink-0 me-3">
-                    <p
-                      @click="
-                        setSuggestion(
-                          'What are the benefits of SSR in terms of SEO?'
-                        )
-                      "
-                    >
-                      What are the benefits of SSR in terms of SEO?
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div class="flex-item">
+              <label for="select2" class="form-label fs-15">Tone</label>
+              <select class="form-select" id="select2">
+                <option selected>Emotional</option>
+                <option value="1">Professional</option>
+                <option value="2">Humorous</option>
+                <option value="3">Educational</option>
+              </select>
             </div>
-          </BAccordionItem>
-        </BAccordion>
+            <div class="flex-item">
+              <label for="select3" class="form-label fs-15"
+                >Writing Style</label
+              >
+              <select class="form-select" id="select3">
+                <option selected>Narrative</option>
+                <option value="1">Poetic</option>
+                <option value="2">Argumentative</option>
+                <option value="3">Descriptive</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="botName" class="border-top p-3">
+          <h5 class="fs-15 mb-3" style="color: white">Suggestions</h5>
+
+          <BAccordion>
+            <BAccordionItem title="Content">
+              <div class="vstack gap-2">
+                <div class="border rounded border-dashed p-2">
+                  <div class="d-flex align-items-center">
+                    <div class="suggestion flex-shrink-0 me-3">
+                      <p @click="setSuggestion('Write a blog post about AI')">
+                        Write a blog post about AI
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border rounded border-dashed p-2">
+                  <div class="d-flex align-items-center">
+                    <div class="suggestion flex-shrink-0 me-3">
+                      <p
+                        @click="
+                          setSuggestion(
+                            'What are the different types of content writing?'
+                          )
+                        "
+                      >
+                        What are the different types of content writing?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </BAccordionItem>
+            <BAccordionItem title="SEO">
+              <div class="vstack gap-2">
+                <div class="border rounded border-dashed p-2">
+                  <div class="d-flex align-items-center">
+                    <div class="suggestion flex-shrink-0 me-3">
+                      <p
+                        @click="
+                          setSuggestion('How can I implement SEO on my site?')
+                        "
+                      >
+                        How can I implement SEO on my site?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border rounded border-dashed p-2">
+                  <div class="d-flex align-items-center">
+                    <div class="suggestion flex-shrink-0 me-3">
+                      <p
+                        @click="
+                          setSuggestion(
+                            'What are the benefits of SSR in terms of SEO?'
+                          )
+                        "
+                      >
+                        What are the benefits of SSR in terms of SEO?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </BAccordionItem>
+          </BAccordion>
+        </div>
       </div>
     </BOffcanvas>
     <BOffcanvas
@@ -872,7 +946,7 @@ export default {
       header-class="border-bottom"
     >
       <div class="offcanvas-body profile-offcanvas p-0">
-        <div v-for="data of botData" :key="data.id" class="p-3 text-center">
+        <div v-for="data of botData" :key="data.id" class="text-center">
           <div v-if="data.name === botName">
             <div>
               <img
@@ -933,7 +1007,42 @@ export default {
   border: 1px solid #d0eaeb;
   background-color: #d0eaeb;
 }
+.chattitle i {
+  display: none;
+}
 
+.chattitle:hover i {
+  display: inline;
+}
+
+.edit-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-item {
+  margin-bottom: 15px; /* Adjust as needed */
+  text-align: center;
+  min-width: 100%;
+}
+.canvaslabel {
+  font-size: 20px;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 0;
+}
 #myOffcanvas .offcanvas-bg {
   background: #405189 !important;
 }
