@@ -536,12 +536,12 @@ export default {
                                 class="ctext-wrap-content"
                                 :style="
                                   data.align === 'right'
-                                    ? 'background-color:#405189 '
-                                    : ''
+                                    ? 'background-color:#405189; color:#FFFFFF '
+                                    : 'color:#878a99'
                                 "
                               >
                                 <p
-                                  class="mb-0 ctext-content text-muted"
+                                  class="mb-0 ctext-content"
                                   v-if="editingMessageId !== data.id"
                                 >
                                   {{ data.message }}
@@ -1043,9 +1043,6 @@ export default {
 }
 .scrollbar::-webkit-scrollbar {
   width: 0;
-}
-.chat-list .active {
-  background-color: #405189;
 }
 #myOffcanvas .offcanvas-bg {
   background: #405189 !important;
