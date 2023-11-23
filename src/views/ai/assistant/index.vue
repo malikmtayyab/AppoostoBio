@@ -59,6 +59,11 @@ export default {
     /**
      * Get the name of user
      */
+    resizeTextarea(event) {
+      console.log("RUNNING ===>", event);
+      event.target.style.height = "auto";
+      event.target.style.height = event.target.scrollHeight + "px";
+    },
     scrollToBottom(id) {
       setTimeout(function () {
         var simpleBar = document
@@ -375,7 +380,7 @@ export default {
                           ><i class="ri-arrow-left-s-line align-bottom"></i
                         ></BLink>
                       </div>
-                      <div class="flex-grow-1 overflow-hidden">
+                      <div class="flex-grow-1 overflow-hiddena">
                         <div class="d-flex align-items-center">
                           <div
                             class="flex-shrink-0 chat-user-img online user-own-img align-self-center me-3 ms-0"
@@ -416,6 +421,9 @@ export default {
                               </BLink>
                               <span v-else>
                                 <input
+                                  :style="{
+                                    width: editedUsername * 7 + 'px',
+                                  }"
                                   v-model="editedUsername"
                                   @blur="updateUsername"
                                   @keyup.enter="updateUsername"
@@ -532,11 +540,14 @@ export default {
                                   {{ data.message }}
                                 </p>
 
-                                <input
-                                  :style="{
-                                    width:
-                                      editedMessages[data.id].length * 7 + 'px',
-                                  }"
+                                <textarea
+                                  rows="1"
+                                  style="
+                                    resize: none;
+                                    max-width: 400px;
+                                    width: 400px;
+                                  "
+                                  @input="this.resizeTextarea"
                                   class="messageinput"
                                   v-else-if="editingMessageId === data.id"
                                   type="text"
