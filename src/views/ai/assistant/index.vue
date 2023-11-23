@@ -535,7 +535,7 @@ export default {
                                 <input
                                   :style="{
                                     width:
-                                      editedMessages[data.id].length * 8 + 'px',
+                                      editedMessages[data.id].length * 7 + 'px',
                                   }"
                                   class="messageinput"
                                   v-else-if="editingMessageId === data.id"
