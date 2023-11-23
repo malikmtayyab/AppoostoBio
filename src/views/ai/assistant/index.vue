@@ -349,7 +349,7 @@ export default {
                       </div>
                     </div>
                   </div>
-                  <div class="flex-grow-1 overflow-hidden" style="color: black">
+                  <div class="flex-grow-1 overflow-hidden">
                     <p class="text-truncate mb-1">
                       {{ data.name }}
                     </p>

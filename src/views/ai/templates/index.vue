@@ -145,7 +145,7 @@ export default {
                 </div>
               </BTab>
             </BTabs> -->
-<div class="d-flex">
+<div class="d-flex pb-5 pt-5">
   <div>
     
               <div>
