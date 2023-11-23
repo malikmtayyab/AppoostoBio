@@ -531,7 +531,12 @@ export default {
                                 >
                                   {{ data.message }}
                                 </p>
+
                                 <input
+                                  :style="{
+                                    width:
+                                      editedMessages[data.id].length * 8 + 'px',
+                                  }"
                                   class="messageinput"
                                   v-else-if="editingMessageId === data.id"
                                   type="text"
@@ -1006,6 +1011,8 @@ export default {
 .messageinput {
   border: 1px solid #d0eaeb;
   background-color: #d0eaeb;
+  width: 100%;
+  overflow: hidden;
 }
 .chattitle i {
   display: none;
