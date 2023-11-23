@@ -349,7 +349,7 @@ export default {
                       </div>
                     </div>
                   </div>
-                  <div class="flex-grow-1 overflow-hidden">
+                  <div class="flex-grow-1 overflow-hidden" style="color: black">
                     <p class="text-truncate mb-1">
                       {{ data.name }}
                     </p>
@@ -532,9 +532,16 @@ export default {
                             <div
                               class="d-flex justify-content-center align-items-center gap-2"
                             >
-                              <div class="ctext-wrap-content">
+                              <div
+                                class="ctext-wrap-content"
+                                :style="
+                                  data.align === 'right'
+                                    ? 'background-color:#405189 '
+                                    : ''
+                                "
+                              >
                                 <p
-                                  class="mb-0 ctext-content"
+                                  class="mb-0 ctext-content text-muted"
                                   v-if="editingMessageId !== data.id"
                                 >
                                   {{ data.message }}
@@ -546,6 +553,9 @@ export default {
                                     resize: none;
                                     max-width: 400px;
                                     width: 400px;
+                                    background-color: #405189;
+                                    border: none;
+                                    color: white;
                                   "
                                   @input="this.resizeTextarea"
                                   class="messageinput"
@@ -713,7 +723,7 @@ export default {
                       <div class="chat-input-links ms-2">
                         <div class="links-list-item">
                           <BButton
-                            variant="success"
+                            variant="primary"
                             type="submit"
                             class="chat-send"
                           >
@@ -1060,6 +1070,9 @@ export default {
 }
 .scrollbar::-webkit-scrollbar {
   width: 0;
+}
+.chat-list .active {
+  background-color: #405189;
 }
 #myOffcanvas .offcanvas-bg {
   background: #405189 !important;
