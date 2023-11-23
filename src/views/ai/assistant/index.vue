@@ -519,7 +519,7 @@ export default {
                             alt=""
                           />
                         </div>
-                        <div class="user-chat-content">
+                        <div class="user-chat-content overflow-hidden">
                           <div class="ctext-wrap">
                             <div
                               class="d-flex justify-content-center align-items-center gap-2"
@@ -621,7 +621,7 @@ export default {
                   <div class="container mb-3">
                     <div class="row">
                       <div class="col-md-4">
-                        <label for="select1" class="form-label "
+                        <label for="select1" class="form-label"
                           >Output Language</label
                         >
                         <select class="form-select" id="select1">
@@ -803,7 +803,7 @@ export default {
               </div>
             </div>
           </div>
-          <div v-for="data of botData" :key="data.id" class=" text-center">
+          <div v-for="data of botData" :key="data.id" class="text-center">
             <div v-if="data.name === botName">
               <div style="color: white">
                 <img
@@ -811,7 +811,7 @@ export default {
                   alt=""
                   class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
                 />
-                <div >
+                <div>
                   <h5 class="fs-16 mb-1">
                     <a
                       href="javascript:void(0);"
@@ -838,7 +838,7 @@ export default {
           </div>
         </div>
 
-        <div class="container mb-3  ">
+        <div class="container mb-3">
           <div class="">
             <div class="">
               <label for="select1" class="form-label fs-15 pt-1"
