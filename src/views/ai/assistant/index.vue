@@ -637,43 +637,11 @@ export default {
                 </div>
               </div>
 
-              <div class="chat-input-section p-3 p-lg-4">
+              <div
+                class="chat-input-section p-3 p-lg-4"
+                style="margin-top: 84px"
+              >
                 <form @submit.prevent="formSubmit">
-                  <div class="container mb-3">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <label for="select1" class="form-label"
-                          >Output Language</label
-                        >
-                        <select class="form-select" id="select1">
-                          <option selected>English (US)</option>
-                          <option value="1">English (UK)</option>
-                          <option value="2">Italiano</option>
-                          <option value="3">Turkce</option>
-                        </select>
-                      </div>
-                      <div class="col-md-4">
-                        <label for="select2" class="form-label">Tone</label>
-                        <select class="form-select" id="select2">
-                          <option selected>Emotional</option>
-                          <option value="1">Professional</option>
-                          <option value="2">Humorous</option>
-                          <option value="3">Educational</option>
-                        </select>
-                      </div>
-                      <div class="col-md-4">
-                        <label for="select3" class="form-label"
-                          >Writing Style</label
-                        >
-                        <select class="form-select" id="select3">
-                          <option selected>Narratvive</option>
-                          <option value="1">Poetic</option>
-                          <option value="2">Argumentative</option>
-                          <option value="3">Descriptive</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
                   <BRow class="g-0 align-items-center">
                     <BCol>
                       <div class="chat-input-feedback">
@@ -845,7 +813,7 @@ export default {
                 </div>
               </div>
               <div class="p-3">
-                <h5 class="fs-15 mb-2" style="color: white">Description</h5>
+                <h5 class="fs-15 mb-2" style="color: white">{{ data.name }}</h5>
                 <div class="mb-3">
                   <p
                     class="text-uppercase fw-medium fs-12 mb-1"
@@ -873,7 +841,9 @@ export default {
               </select>
             </div>
             <div class="">
-              <label for="select2" class="form-label fs-15 pb-1">Tone</label>
+              <label for="select2" class="form-label fs-15 pb-1"
+                >Tone</label
+              >
               <select class="form-select" id="select2">
                 <option selected>Emotional</option>
                 <option value="1">Professional</option>
@@ -896,7 +866,7 @@ export default {
         </div>
 
         <div v-if="botName" class="border-top p-3">
-          <h5 class="fs-15 mb-3" style="color: white">Suggestions</h5>
+          <h5 class="fs-15 mb-3 text-muted">Suggestions</h5>
 
           <BAccordion>
             <BAccordionItem title="Content">
@@ -969,12 +939,12 @@ export default {
       v-model="showMessageOffCanvas"
       placement="end"
       body-class="border-0 p-0 overflow-hidden"
-      header-class="border-bottom"
+      style="background: #405189 !important"
     >
       <div class="offcanvas-body profile-offcanvas p-0">
         <div v-for="data of botData" :key="data.id" class="text-center">
           <div v-if="data.name === botName">
-            <div>
+            <div class="m-5">
               <img
                 :src="data.image"
                 alt=""
@@ -982,16 +952,18 @@ export default {
               />
               <div class="mt-3">
                 <h5 class="fs-16 mb-1">
-                  <a href="javascript:void(0);" class="link-primary username">
+                  <a
+                    href="javascript:void(0);"
+                    class="link-primary username text-white"
+                  >
                     {{ data.name }}</a
                   >
                 </h5>
               </div>
             </div>
-            <div class="border-top border-top-dashed p-3">
-              <h5 class="fs-15 mb-3">Description</h5>
+            <div class="p-3 text-white">
               <div class="mb-3">
-                <p class="text-muted text-uppercase fw-medium fs-12 mb-1">
+                <p class="text-uppercase fw-medium fs-12 mb-1 text-white">
                   {{ data.description }}
                 </p>
               </div>
@@ -1000,7 +972,7 @@ export default {
         </div>
       </div>
       <div class="m-3">
-        <label for="basiInput" class="form-label">Chat Title</label>
+        <label for="basiInput" class="form-label text-white">Chat Title</label>
         <input type="text" class="form-control" id="basiInput" />
       </div>
       <div class="text-center mt-5 m-3">
@@ -1009,6 +981,7 @@ export default {
           variant="primary"
           type="button"
           id="button-addon1"
+          style="background-color: white; color: black"
           >Create</BButton
         >
       </div>
