@@ -34,10 +34,10 @@ export default {
 <template>
   <Layout>
     <BRow class="div-height">
-      <BCol xxl="12" >
+      <BCol xxl="12">
         <BCard no-body>
           <BCardBody>
-            <BTabs
+            <!-- <BTabs
               nav-class="nav-border-top nav-border-top-primary mb-3"
               content-class="text-muted"
             >
@@ -144,88 +144,120 @@ export default {
                   <Response></Response>
                 </div>
               </BTab>
-            </BTabs>
+            </BTabs> -->
+<div class="d-flex">
+  <div>
+    
+              <div>
+              <div class="mb-4">
+                <h4 class="color">Custom Propmts</h4>
+              </div>
+
+              <BCol xl="12" md="6">
+                <BCard no-body class="card-animate" v-on:click.prevent="showOffcanvas=true">
+                  <BCardBody>
+                    <div class="">
+                      <div class="mb-2">
+                        <i class="mdi mdi-code-tags mdi-24px me-1"></i>
+                      </div>
+
+                      <div>
+                        <h5 class="fw-medium">Custom Prompts</h5>
+                        <p class="mt-2 ff-secondary fw-semibold">
+                          Ask our AI for anything & he will do it is best to
+                          give you quality content
+                        </p>
+                      </div>
+                      <div></div>
+                    </div>
+                  </BCardBody>
+                </BCard>
+              </BCol>
+            </div>
+
+            <div>
+              <div class="mb-4">
+                <h4 class="color">Website</h4>
+              </div>
+
+              <BCol xl="12" md="6">
+                <BCard no-body class="card-animate" v-on:click.prevent="showOffcanvas=true">
+                  <BCardBody>
+                    <div class="">
+                      <div class="mb-2">
+                        <i class="mdi mdi-earth mdi-24px me-1"></i>
+                      </div>
+
+                      <div>
+                        <h5 class="fw-medium">Website Headline</h5>
+                        <p class="mt-2 ff-secondary fw-semibold">
+                          Generate creative, catchy and unique headlines for
+                          your website.
+                        </p>
+                      </div>
+                      <div></div>
+                    </div>
+                  </BCardBody>
+                </BCard>
+              </BCol>
+            </div>
+
+            <div>
+              <div class="mb-4">
+                <h4 class="color">Developers</h4>
+              </div>
+
+              <BCol xl="12" md="6">
+                <BCard no-body class="card-animate" v-on:click.prevent="showOffcanvas=true">
+                  <BCardBody>
+                    <div class="">
+                      <div class="mb-2">
+                        <i class="mdi mdi-code-braces mdi-24px me-1"></i>
+                      </div>
+
+                      <div>
+                        <h5 class="fw-medium">PHP Snippet</h5>
+                        <p class="mt-2 ff-secondary fw-semibold">
+                          Generate creative, catchy and unique headlines for
+                          your website.
+                        </p>
+                      </div>
+                      <div></div>
+                    </div>
+                  </BCardBody>
+                </BCard>
+              </BCol>
+            </div>
+            </div>
+            <div >
+
+<Response/>
+</div>
+            </div>
           </BCardBody>
         </BCard>
       </BCol>
     </BRow>
+
     <BOffcanvas
       v-model="showOffcanvas"
       placement="end"
-      body-class="border-0 p-0 overflow-hidden"
+      body-class="border-0 p-0 "
       header-class="border-bottom"
     >
       <div class="offcanvas-body profile-offcanvas p-0">
+        <h2 class="text-center mt-3 color">Create Template</h2>
         <div class="p-3">
-          <div>
-            <div>
-          
-              <div class="mt-3 text-center">
-                <h5 class="fs-16 mb-1">
-                  <h3 class="link-primary username">Advanced Settings</h3>
-                </h5>
-              </div>
-            </div>
-            <div class="border-top border-top-dashed p-3">
-              <div class="mb-3 mt-3">
-                <label for="compnayNameinput" class="form-label"
-                  >Creativity Level</label
-                >
-                <BFormSelect
-                  class="form-select"
-                  id="validationDefault04"
-                  required
-                >
-                  <option selected disabled value="">Choose Level</option>
-
-                  <option v-for="option in creativity_levels" :key="option">
-                    {{ option }}
-                  </option>
-                </BFormSelect>
-              </div>
-
-              <div class="mb-3 mt-3">
-                <label for="compnayNameinput" class="form-label"
-                  >Variants</label
-                >
-                <BFormSelect
-                  class="form-select"
-                  id="validationDefault04"
-                  required
-                >
-                  <option selected disabled value="">Choose Variant</option>
-
-                  <option v-for="option in variants" :key="option">
-                    {{ option }}
-                  </option>
-                </BFormSelect>
-              </div>
-
-              <div class="mb-3 mt-3">
-                <label for="firstNameinput" class="form-label"
-                  >Maximum words per variant</label
-                >
-                <BFormInput
-                  type="text"
-                  class="form-control"
-                  placeholder="1000"
-                  id="firstNameinput"
-                />
-              </div>
-              <div class="mb-3 mt-4">
-                <BButton
-                  v-on:click.prevent="showOffcanvas=!showOffcanvas"
-                  class="w-100"
-                  type="submit"
-                  variant="primary"
-                >
-                  Apply
-                </BButton>
-              </div>
-            </div>
-          </div>
+          <Form index="1" />
+         
         </div>
       </div>
     </BOffcanvas>
   </Layout>
 </template>
+
+<style>
+.color {
+  color: #405189 !important;
+}
+</style>
