@@ -621,7 +621,7 @@ export default {
                   <div class="container mb-3">
                     <div class="row">
                       <div class="col-md-4">
-                        <label for="select1" class="form-label"
+                        <label for="select1" class="form-label "
                           >Output Language</label
                         >
                         <select class="form-select" id="select1">
@@ -803,7 +803,7 @@ export default {
               </div>
             </div>
           </div>
-          <div v-for="data of botData" :key="data.id" class="p-3 text-center">
+          <div v-for="data of botData" :key="data.id" class=" text-center">
             <div v-if="data.name === botName">
               <div style="color: white">
                 <img
@@ -811,7 +811,7 @@ export default {
                   alt=""
                   class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
                 />
-                <div class="mt-3">
+                <div >
                   <h5 class="fs-16 mb-1">
                     <a
                       href="javascript:void(0);"
@@ -824,7 +824,7 @@ export default {
                 </div>
               </div>
               <div class="p-3">
-                <h5 class="fs-15 mb-3" style="color: white">Description</h5>
+                <h5 class="fs-15 mb-2" style="color: white">Description</h5>
                 <div class="mb-3">
                   <p
                     class="text-uppercase fw-medium fs-12 mb-1"
@@ -838,10 +838,10 @@ export default {
           </div>
         </div>
 
-        <div class="container mb-3">
-          <div class="flex-container">
-            <div class="flex-item">
-              <label for="select1" class="form-label fs-15"
+        <div class="container mb-3  ">
+          <div class="">
+            <div class="">
+              <label for="select1" class="form-label fs-15 pt-1"
                 >Output Language</label
               >
               <select class="form-select" id="select1">
@@ -851,8 +851,8 @@ export default {
                 <option value="3">Turkce</option>
               </select>
             </div>
-            <div class="flex-item">
-              <label for="select2" class="form-label fs-15">Tone</label>
+            <div class="">
+              <label for="select2" class="form-label fs-15 pb-1">Tone</label>
               <select class="form-select" id="select2">
                 <option selected>Emotional</option>
                 <option value="1">Professional</option>
@@ -860,8 +860,8 @@ export default {
                 <option value="3">Educational</option>
               </select>
             </div>
-            <div class="flex-item">
-              <label for="select3" class="form-label fs-15"
+            <div class="">
+              <label for="select3" class="form-label mt-1 fs-15"
                 >Writing Style</label
               >
               <select class="form-select" id="select3">
