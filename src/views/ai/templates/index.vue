@@ -50,7 +50,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                   <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -85,7 +85,7 @@ export default {
                 </template>
                 <div class="d-flex justify-content-between">
                   <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -122,7 +122,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                   <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -159,7 +159,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                   <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -196,7 +196,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                 <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -233,7 +233,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                 <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
@@ -271,7 +271,7 @@ export default {
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
                 <div>
-                    <BCol xl="12" md="6" class="mt-3">
+                    <BCol xl="12" md="12" class="mt-3">
                       <BCard
                         no-body
                         class="card-animate"
