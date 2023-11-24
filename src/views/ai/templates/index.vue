@@ -35,7 +35,7 @@ export default {
   <Layout>
     <BRow class="div-height">
       <BCol xxl="12">
-        <BCard no-body>
+        <BCard style="min-height: calc(100vh - 178px)" no-body>
           <BCardBody>
             <BTabs
               nav-class="nav-border-top nav-border-top-primary mb-3"
