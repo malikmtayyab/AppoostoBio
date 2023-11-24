@@ -195,7 +195,7 @@ export default {
                 <div
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
-                <div>
+                  <div>
                     <BCol xl="12" md="6" class="mt-3">
                       <BCard
                         no-body
@@ -232,7 +232,7 @@ export default {
                 <div
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
-                <div>
+                  <div>
                     <BCol xl="12" md="6" class="mt-3">
                       <BCard
                         no-body
@@ -258,7 +258,6 @@ export default {
                     </BCol>
                   </div>
 
-
                   <Response></Response>
                 </div>
               </BTab>
@@ -270,7 +269,7 @@ export default {
                 <div
                   class="d-flex flex-column flex-md-row justify-content-between"
                 >
-                <div>
+                  <div>
                     <BCol xl="12" md="6" class="mt-3">
                       <BCard
                         no-body
@@ -373,9 +372,10 @@ export default {
       placement="end"
       body-class="border-0 p-0 "
       header-class="border-bottom"
+      :style="{ background: '#405189', color: 'white' }"
     >
       <div class="offcanvas-body profile-offcanvas p-0">
-        <h2 class="text-center mt-3 color">Create Template</h2>
+        <h2 class="text-center text-white mt-3 color">Create Template</h2>
         <div class="p-3">
           <Form index="1" />
         </div>
@@ -384,8 +384,4 @@ export default {
   </Layout>
 </template>
 
-<style>
-.color {
-  color: #405189 !important;
-}
-</style>
+<style></style>
