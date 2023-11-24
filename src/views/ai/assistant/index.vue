@@ -841,9 +841,7 @@ export default {
               </select>
             </div>
             <div class="">
-              <label for="select2" class="form-label fs-15 pb-1"
-                >Tone</label
-              >
+              <label for="select2" class="form-label fs-15 pb-1">Tone</label>
               <select class="form-select" id="select2">
                 <option selected>Emotional</option>
                 <option value="1">Professional</option>
@@ -866,7 +864,7 @@ export default {
         </div>
 
         <div v-if="botName" class="border-top p-3">
-          <h5 class="fs-15 mb-3 text-muted">Suggestions</h5>
+          <h5 class="fs-15 mb-3 text-white">Suggestions</h5>
 
           <BAccordion>
             <BAccordionItem title="Content">
