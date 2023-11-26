@@ -384,4 +384,22 @@ export default {
   </Layout>
 </template>
 
-<style></style>
+<style>
+@media (max-width: 1180px) {
+  .nav-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .nav-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .nav-tabs .nav-item {
+    flex-grow: 1;
+  }
+}
+</style>
