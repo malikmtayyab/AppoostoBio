@@ -7,6 +7,7 @@ export default {
       settings: {
         minScrollbarLength: 60,
       },
+      rmenu: localStorage.getItem("rmenu"),
     };
   },
   computed: {
@@ -27,6 +28,7 @@ export default {
   },
 
   mounted() {
+    console.log("in menu", this.layoutType);
     if (document.querySelectorAll(".navbar-nav .collapse")) {
       let collapses = document.querySelectorAll(".navbar-nav .collapse");
 
@@ -176,7 +178,7 @@ export default {
   <BContainer fluid>
     <div id="two-column-menu"></div>
 
-    <template v-if="layoutType === 'vertical' || layoutType === 'semibox'">
+    <template v-if="layoutType === 'vertical' || layoutType === 'semibox' || rmenu==='vertical'">
       <ul class="navbar-nav h-100" id="navbar-nav">
         <!-- <li class="menu-title">
           <span data-key="t-menu"> {{ $t("t-menu") }}</span>
