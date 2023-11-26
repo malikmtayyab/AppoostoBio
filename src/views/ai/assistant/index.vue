@@ -637,10 +637,8 @@ export default {
                 </div>
               </div>
 
-              <div
-                class="chat-input-section p-3 p-lg-4"
-                style="margin-top: 84px"
-              >
+              <!-- style="margin-top: 84px" -->
+              <div class="chat-input-section p-3 p-lg-4">
                 <form @submit.prevent="formSubmit">
                   <BRow class="g-0 align-items-center">
                     <BCol>
