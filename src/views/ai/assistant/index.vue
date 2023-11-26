@@ -911,7 +911,6 @@ export default {
                     </div>
                   </div>
                 </div>
-
                 <div class="border rounded border-dashed p-2">
                   <div class="d-flex align-items-center">
                     <div class="suggestion flex-shrink-0 me-3">
