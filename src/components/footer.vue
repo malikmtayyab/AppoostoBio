@@ -14,8 +14,8 @@
             <BCol> {{ new Date().getFullYear() }} @ Cocoon Web Tech srl. </BCol>
           </BRow>
         </BCol>
-        <BCol col sm="6">
-          <div class="text-sm-end d-none d-sm-block">
+        <BCol col sm="6" class="d-none d-sm-block">
+          <div class="text-sm-end d-sm-block">
             Design & Develop Cocoon Web Tech srl
           </div>
         </BCol>

@@ -6,14 +6,15 @@ import getChartColorsArray from "@/common/getChartColorsArray";
 export default {
   data() {
     return {
-      series: [{
-        name: "Revenue",
-        data: [20, 25, 30, 35, 40, 55, 70, 110, 150, 180, 210, 250],
-      },
-      {
-        name: "Expenses",
-        data: [12, 17, 45, 42, 24, 35, 42, 75, 102, 108, 156, 199],
-      },
+      series: [
+        {
+          name: "Revenue",
+          data: [20, 25, 30, 35, 40, 55, 70, 110, 150, 180, 210, 250],
+        },
+        {
+          name: "Expenses",
+          data: [12, 17, 45, 42, 24, 35, 42, 75, 102, 108, 156, 199],
+        },
       ],
       chartOptions: {
         chart: {
@@ -153,11 +154,12 @@ export default {
                 <div class="mt-3 mt-md-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
                     Total Short Links
-
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
-                      <i class="ri-exchange-dollar-line display-6 text-muted"></i>
+                      <i
+                        class="ri-exchange-dollar-line display-6 text-muted"
+                      ></i>
                     </div>
                     <div class="flex-grow-1 ms-3">
                       <h2 class="mb-0">
@@ -173,7 +175,6 @@ export default {
                 <div class="mt-3 mt-md-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
                     Total File Links
-
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -193,7 +194,6 @@ export default {
                 <div class="mt-3 mt-lg-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
                     Total vcard links
-
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -213,7 +213,6 @@ export default {
                 <div class="mt-3 mt-lg-0 py-4 px-3 border-end">
                   <h5 class="text-muted text-uppercase fs-13">
                     Total Event Links
-
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -233,7 +232,6 @@ export default {
                 <div class="mt-3 mt-lg-0 py-4 px-3">
                   <h5 class="text-muted text-uppercase fs-13">
                     Total QR Codes
-
                   </h5>
                   <div class="d-flex align-items-center">
                     <div class="flex-shrink-0">
@@ -248,25 +246,28 @@ export default {
                   </div>
                 </div>
               </BCol>
-
             </BRow>
-
           </BCardBody>
-
         </BCard>
-
       </BCol>
-
     </BRow>
     <BCard no-body class="card-height-100">
       <BCardHeader class="align-items-center d-flex py-0">
         <BCardTitle class="mb-0 flex-grow-1">Balance Overview</BCardTitle>
         <div class="flex-shrink-0">
-          <BDropdown variant="link" class="card-header-dropdown" toggle-class="text-reset dropdown-btn arrow-none"
-            menu-class="dropdown-menu-end" aria-haspopup="true"
-            :offset="{ alignmentAxis: -3, crossAxis: 0, mainAxis: 0 }">
-            <template #button-content> <span class="fw-semibold text-uppercase fs-12">Sort by: </span><span
-                class="text-muted">Current Year<i class="mdi mdi-chevron-down ms-1"></i></span>
+          <BDropdown
+            variant="link"
+            class="card-header-dropdown"
+            toggle-class="text-reset dropdown-btn arrow-none"
+            menu-class="dropdown-menu-end"
+            aria-haspopup="true"
+            :offset="{ alignmentAxis: -3, crossAxis: 0, mainAxis: 0 }"
+          >
+            <template #button-content>
+              <span class="fw-semibold text-uppercase fs-12">Sort by: </span
+              ><span class="text-muted"
+                >Current Year<i class="mdi mdi-chevron-down ms-1"></i
+              ></span>
             </template>
             <BDropdownItem>Today</BDropdownItem>
             <BDropdownItem>Last Week</BDropdownItem>
@@ -280,23 +281,36 @@ export default {
           <li class="list-inline-item chart-border-left me-0 border-0">
             <h4 class="text-primary">
               $584k
-              <span class="text-muted d-inline-block fs-13 align-middle ms-2">Revenue</span>
+              <span class="text-muted d-inline-block fs-13 align-middle ms-2"
+                >Revenue</span
+              >
             </h4>
           </li>
           <li class="list-inline-item chart-border-left me-0">
             <h4>
-              $497k<span class="text-muted d-inline-block fs-13 align-middle ms-2">Expenses</span>
+              $497k<span
+                class="text-muted d-inline-block fs-13 align-middle ms-2"
+                >Expenses</span
+              >
             </h4>
           </li>
           <li class="list-inline-item chart-border-left me-0">
             <h4>
               <span data-plugin="counterup">3.6</span>%<span
-                class="text-muted d-inline-block fs-13 align-middle ms-2">Profit Ratio</span>
+                class="text-muted d-inline-block fs-13 align-middle ms-2"
+                >Profit Ratio</span
+              >
             </h4>
           </li>
         </ul>
 
-        <apexchart class="apex-charts" height="290" dir="ltr" :series="series" :options="chartOptions"></apexchart>
+        <apexchart
+          class="apex-charts"
+          height="290"
+          dir="ltr"
+          :series="series"
+          :options="chartOptions"
+        ></apexchart>
       </BCardBody>
     </BCard>
     <BCard no-body>
@@ -308,25 +322,48 @@ export default {
         </div>
         <div>
           <button class="btn btn-primary p-2">Create Link</button>
-          <i class="ri-filter-fill align-bottom ms-3 me-3" style="font-size: 24px;"></i>
+          <i
+            class="ri-filter-fill align-bottom ms-3 me-3"
+            style="font-size: 24px"
+          ></i>
         </div>
       </div>
 
       <BCardBody>
-        <div class=" table-responsive table-card">
-          <table class="table table-borderless table-hover table-nowrap align-middle mb-0">
+        <div class="table-responsive table-card">
+          <table
+            class="table table-borderless table-hover table-nowrap align-middle mb-0"
+          >
             <tbody>
               <tr v-for="(item, index) of dealsStatus" :key="index">
                 <td>{{ item.name }}</td>
                 <td>{{ item.date }}</td>
                 <td>
-                  <img :src="`${item.img}`" alt="" class="avatar-xs rounded-circle me-2" />
-                  <BLink href="#javascript: void(0);" class="text-body fw-medium">{{ item.representativeName }}</BLink>
+                  <img
+                    :src="`${item.img}`"
+                    alt=""
+                    class="avatar-xs rounded-circle me-2"
+                  />
+                  <BLink
+                    href="#javascript: void(0);"
+                    class="text-body fw-medium"
+                    >{{ item.representativeName }}</BLink
+                  >
                 </td>
                 <td>
                   <span
-                    :class="{ 'badge bg-success-subtle text-success p-2': item.status == 'Deal Won', 'badge bg-warning-subtle text-warning p-2': item.status == 'Intro Call', 'badge bg-danger-subtle text-danger p-2': item.status == 'Stuck', 'badge bg-info-subtle text-info p-2': item.status == 'New Lead' }">{{
-                      item.status }}</span>
+                    :class="{
+                      'badge bg-success-subtle text-success p-2':
+                        item.status == 'Deal Won',
+                      'badge bg-warning-subtle text-warning p-2':
+                        item.status == 'Intro Call',
+                      'badge bg-danger-subtle text-danger p-2':
+                        item.status == 'Stuck',
+                      'badge bg-info-subtle text-info p-2':
+                        item.status == 'New Lead',
+                    }"
+                    >{{ item.status }}</span
+                  >
                 </td>
                 <td>
                   <div class="text-nowrap">{{ item.statusValue }}</div>
