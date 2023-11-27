@@ -549,14 +549,6 @@ export default {
 
                                 <textarea
                                   rows="1"
-                                  style="
-                                    resize: none;
-                                    max-width: 400px;
-                                    width: 400px;
-                                    background-color: #405189;
-                                    border: none;
-                                    color: white;
-                                  "
                                   @input="this.resizeTextarea"
                                   class="messageinput"
                                   v-else-if="editingMessageId === data.id"
@@ -1002,7 +994,38 @@ export default {
   background-color: #d0eaeb;
   width: 100%;
   overflow: hidden;
+
+  resize: none;
+  /* max-width: 400px; */
+  width: 400px;
+  background-color: #405189;
+  border: none;
+  color: white;
+  max-width: calc(100vw - 98px);
 }
+
+@media (min-width: 320px) {
+  .messageinput {
+    max-width: calc(100vw - 244px);
+  }
+}
+
+@media (min-width: 768px) {
+  .messageinput {
+    max-width: 270px;
+  }
+}
+@media (min-width: 1140px) {
+  .messageinput {
+    max-width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .messageinput {
+    max-width: 400px;
+  }
+}
+
 .chattitle i {
   display: none;
 }
