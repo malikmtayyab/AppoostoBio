@@ -236,6 +236,18 @@ export default [
     component: () => import("../views/data-and-payments/payments/index"),
   },
   // Data&Payments Ended
+
+  // New Pages
+  {
+    path: "/data-and-payments/data",
+    name: "data",
+    meta: {
+      title: "Data",
+      authRequired: true,
+    },
+    component: () => import("../views/data-and-payments/data/index"),
+  },
+  // New Pages Ended
   {
     path: "/faqs",
     name: "Faqs",
