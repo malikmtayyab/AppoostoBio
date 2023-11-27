@@ -993,9 +993,9 @@ export default {
   cursor: pointer;
 }
 
-.custom {
+/* .custom {
   height: calc(100vh - 50px - 8px);
-}
+} */
 
 .messageinput {
   border: 1px solid #d0eaeb;
