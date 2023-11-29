@@ -299,69 +299,6 @@ export default {
                 </div>
               </BTab>
             </BTabs>
-            <!-- <div class="d-flex pb-5 pt-5">
-  <div>
-    
-       
-            <div>
-              <div class="mb-4">
-                <h4 class="color">Website</h4>
-              </div>
-
-              <BCol xl="12" md="6">
-                <BCard no-body class="card-animate" v-on:click.prevent="showOffcanvas=true">
-                  <BCardBody>
-                    <div class="">
-                      <div class="mb-2">
-                        <i class="mdi mdi-earth mdi-24px me-1"></i>
-                      </div>
-
-                      <div>
-                        <h5 class="fw-medium">Website Headline</h5>
-                        <p class="mt-2 ff-secondary fw-semibold">
-                          Generate creative, catchy and unique headlines for
-                          your website.
-                        </p>
-                      </div>
-                      <div></div>
-                    </div>
-                  </BCardBody>
-                </BCard>
-              </BCol>
-            </div>
-
-            <div>
-              <div class="mb-4">
-                <h4 class="color">Developers</h4>
-              </div>
-
-              <BCol xl="12" md="6">
-                <BCard no-body class="card-animate" v-on:click.prevent="showOffcanvas=true">
-                  <BCardBody>
-                    <div class="">
-                      <div class="mb-2">
-                        <i class="mdi mdi-code-braces mdi-24px me-1"></i>
-                      </div>
-
-                      <div>
-                        <h5 class="fw-medium">PHP Snippet</h5>
-                        <p class="mt-2 ff-secondary fw-semibold">
-                          Generate creative, catchy and unique headlines for
-                          your website.
-                        </p>
-                      </div>
-                      <div></div>
-                    </div>
-                  </BCardBody>
-                </BCard>
-              </BCol>
-            </div>
-            </div>
-            <div >
-
-<Response/>
-</div>
-            </div> -->
           </BCardBody>
         </BCard>
       </BCol>
