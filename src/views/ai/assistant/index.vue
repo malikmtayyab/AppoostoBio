@@ -90,6 +90,37 @@ export default {
           });
       }, 300);
     },
+    openChatMessages() {
+      var currentChatId = "users-chat";
+      this.scrollToBottom(currentChatId);
+      document.getElementById("copyClipBoard").style.display = "none";
+      var userChatElement = document.querySelectorAll(".user-chat");
+      document
+        .querySelectorAll(".chat-user-list li a")
+        .forEach(function (item) {
+          item.addEventListener("click", function () {
+            userChatElement.forEach(function (elm) {
+              elm.classList.add("user-chat-show");
+            });
+
+            // chat user list link active
+            var chatUserList = document.querySelector(
+              ".chat-user-list li.active"
+            );
+            if (chatUserList) chatUserList.classList.remove("active");
+            this.parentNode.classList.add("active");
+          });
+        });
+
+      // user-chat-remove
+      document.querySelectorAll(".user-chat-remove").forEach(function (item) {
+        item.addEventListener("click", function () {
+          userChatElement.forEach(function (elm) {
+            elm.classList.remove("user-chat-show");
+          });
+        });
+      });
+    },
     chatUsername(name, image) {
       this.username = name;
       this.profile = image;
@@ -106,6 +137,8 @@ export default {
         message: this.usermessage,
         time: hours + ":" + minutes,
       });
+      console.log("in chatUsername");
+      this.openChatMessages();
     },
 
     /**
@@ -139,7 +172,7 @@ export default {
       this.form = {};
     },
     handleActiveTab(tab) {
-      this.chattab = tab === "chat" ? true : false;
+      this.chattab = tab === "bot" ? false : true;
     },
     chatBot(name) {
       this.botName = name;
@@ -190,33 +223,6 @@ export default {
       this.username = this.editedUsername.trim();
     },
   },
-  mounted() {
-    var currentChatId = "users-chat";
-    this.scrollToBottom(currentChatId);
-    document.getElementById("copyClipBoard").style.display = "none";
-    var userChatElement = document.querySelectorAll(".user-chat");
-    document.querySelectorAll(".chat-user-list li a").forEach(function (item) {
-      item.addEventListener("click", function () {
-        userChatElement.forEach(function (elm) {
-          elm.classList.add("user-chat-show");
-        });
-
-        // chat user list link active
-        var chatUserList = document.querySelector(".chat-user-list li.active");
-        if (chatUserList) chatUserList.classList.remove("active");
-        this.parentNode.classList.add("active");
-      });
-    });
-
-    // user-chat-remove
-    document.querySelectorAll(".user-chat-remove").forEach(function (item) {
-      item.addEventListener("click", function () {
-        userChatElement.forEach(function (elm) {
-          elm.classList.remove("user-chat-show");
-        });
-      });
-    });
-  },
   computed: {
     resultQuery() {
       if (this.searchQuery) {
@@ -235,7 +241,7 @@ export default {
 <template>
   <Layout>
     <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
-      <div class="custom chat-leftsidebar">
+      <div class="chat-leftsidebar">
         <BCard no-body>
           <BCardBody>
             <BTabs nav-class="nav-tabs-custom nav-success mb-3" justified>
@@ -255,60 +261,8 @@ export default {
           </BCardBody>
         </BCard>
 
-        <simplebar v-if="chattab" class="chat-room-list" data-simplebar>
-          <div class="px-4 mb-4">
-            <div class="search-box">
-              <input
-                type="text"
-                class="form-control bg-light border-light"
-                placeholder="Search here..."
-              />
-              <i class="ri-search-2-line search-icon"></i>
-            </div>
-          </div>
-
-          <div class="chat-message-list">
-            <SimpleBar class="list-unstyled chat-list chat-user-list">
-              <li
-                class
-                v-for="data of chatData"
-                :key="data.id"
-                @click="chatUsername(data.name, data.image)"
-                :class="{ active: username == data.name }"
-              >
-                <BLink href="javascript: void(0);">
-                  <div class="d-flex align-items-center">
-                    <div
-                      class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0"
-                    >
-                      <div class="avatar-xxs" v-if="data.image">
-                        <img
-                          :src="`${data.image}`"
-                          class="rounded-circle img-fluid userprofile"
-                          alt
-                        />
-                      </div>
-                      <div class="avatar-xxs" v-if="!data.image">
-                        <div
-                          class="avatar-title rounded-circle bg-danger userprofile"
-                        >
-                          {{ data.name.charAt(0) }}
-                        </div>
-                      </div>
-                    </div>
-                    <div class="flex-grow-1 overflow-hidden">
-                      <p class="text-truncate mb-1">
-                        {{ data.name }}
-                      </p>
-                    </div>
-                  </div>
-                </BLink>
-              </li>
-            </SimpleBar>
-          </div>
-        </simplebar>
-        <div v-else class="chat-message-list">
-          <SimpleBar class="list-unstyled chat-list chat-user-list">
+        <div v-if="!chattab">
+          <SimpleBar class="list-unstyled chat-list">
             <div class="px-4 mb-4">
               <div class="search-box">
                 <input
@@ -364,6 +318,58 @@ export default {
             </li>
           </SimpleBar>
         </div>
+        <simplebar v-else class="chat-room-list" data-simplebar>
+          <div class="px-4 mb-4">
+            <div class="search-box">
+              <input
+                type="text"
+                class="form-control bg-light border-light"
+                placeholder="Search here..."
+              />
+              <i class="ri-search-2-line search-icon"></i>
+            </div>
+          </div>
+
+          <div class="chat-message-list">
+            <SimpleBar class="list-unstyled chat-list chat-user-list">
+              <li
+                class
+                v-for="data of chatData"
+                :key="data.id"
+                @click="chatUsername(data.name, data.image)"
+                :class="{ active: username == data.name }"
+              >
+                <BLink href="javascript: void(0);">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0"
+                    >
+                      <div class="avatar-xxs" v-if="data.image">
+                        <img
+                          :src="`${data.image}`"
+                          class="rounded-circle img-fluid userprofile"
+                          alt
+                        />
+                      </div>
+                      <div class="avatar-xxs" v-if="!data.image">
+                        <div
+                          class="avatar-title rounded-circle bg-danger userprofile"
+                        >
+                          {{ data.name.charAt(0) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 overflow-hidden">
+                      <p class="text-truncate mb-1">
+                        {{ data.name }}
+                      </p>
+                    </div>
+                  </div>
+                </BLink>
+              </li>
+            </SimpleBar>
+          </div>
+        </simplebar>
       </div>
       <div class="user-chat w-100 overflow-hidden">
         <div class="chat-content d-lg-flex">
@@ -991,10 +997,6 @@ export default {
 
 .suggestion {
   cursor: pointer;
-}
-
-.custom {
-  height: calc(100vh - 50px - 8px);
 }
 
 .messageinput {
