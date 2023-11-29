@@ -141,6 +141,13 @@ export default [
     component: () => import("../views/pages/action-pages/index"),
   },
   {
+    path: '/pages/action-pages/customizations:id', // Dynamic parameter for the child route
+    name: 'action-pages-customization',
+    component: () => import('../views/pages/action-pages/customizations/index'),
+    props: true,
+
+  },
+  {
     path: "/pages/hosting",
     name: "hosting",
     meta: {
