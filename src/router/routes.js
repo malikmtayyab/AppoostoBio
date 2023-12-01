@@ -56,16 +56,6 @@ export default [
       },
     },
   },
-  // New Pages Under the dashboard
-  {
-    path: "/",
-    name: "dashboard",
-    meta: {
-      title: "Dashboard",
-      authRequired: true,
-    },
-    component: () => import("../views/dashboard/index"),
-  },
 
   {
     path: "/logout",
@@ -81,6 +71,17 @@ export default [
     },
     component: () => import("../views/auth/logout/basic"),
   },
+  // New Pages Under the dashboard
+  {
+    path: "/",
+    name: "dashboard",
+    meta: {
+      title: "Dashboard",
+      authRequired: true,
+    },
+    component: () => import("../views/dashboard/index"),
+  },
+
   // ai
 
   {
@@ -275,24 +276,128 @@ export default [
 
   // Sendings
   {
-    path: "/integration/add-your-website",
-    name: "add-your-website",
+    path: "/sending/blacklist",
+    name: "blacklist",
     meta: {
-      title: "Add Your Website",
+      title: "Blacklist",
       authRequired: true,
     },
-    component: () => import("../views/integration/add-your-website/index"),
+    component: () => import("../views/sending/blacklist/index"),
   },
   {
-    path: "/integration/manage-connections",
-    name: "manage-connections",
+    path: "/sending/sending-domains",
+    name: "sending-domains",
     meta: {
-      title: "Add Your Website",
+      title: "Sending Domains",
       authRequired: true,
     },
-    component: () => import("../views/integration/manage-connections/index"),
+    component: () => import("../views/sending/sending-domains/index"),
+  },
+  {
+    path: "/sending/tracking-domains",
+    name: "tracking-domains",
+    meta: {
+      title: "Tracking Domains",
+      authRequired: true,
+    },
+    component: () => import("../views/sending/tracking-domains/index"),
   },
   // Sendings Ended
+
+  // Lists
+  {
+    path: "/lists/contacts",
+    name: "contacts",
+    meta: {
+      title: "Contacts",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/contacts/index"),
+  },
+  {
+    path: "/lists/forms",
+    name: "forms",
+    meta: {
+      title: "Forms",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/forms/index"),
+  },
+  {
+    path: "/lists/lists",
+    name: "lists",
+    meta: {
+      title: "Lists",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/lists/index"),
+  },
+  {
+    path: "/lists/overview",
+    name: "overview",
+    meta: {
+      title: "Overview",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/overview/index"),
+  },
+  {
+    path: "/lists/segments",
+    name: "segments",
+    meta: {
+      title: "Segments",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/segments/index"),
+  },
+  // Lists Ended
+  // campaigns
+  {
+    path: "/campaigns/automations",
+    name: "automations",
+    meta: {
+      title: "Automations",
+      authRequired: true,
+    },
+    component: () => import("../views/campaigns/automations/index"),
+  },
+  {
+    path: "/campaigns/campaign-api",
+    name: "campaign-api",
+    meta: {
+      title: "Campaign API",
+      authRequired: true,
+    },
+    component: () => import("../views/campaigns/campaign-api/index"),
+  },
+  {
+    path: "/campaigns/campaigns",
+    name: "campaigns",
+    meta: {
+      title: "Campaigns",
+      authRequired: true,
+    },
+    component: () => import("../views/campaigns/campaigns/index"),
+  },
+  {
+    path: "/campaigns/dashboard",
+    name: "dashboard",
+    meta: {
+      title: "Dashboard",
+      authRequired: true,
+    },
+    component: () => import("../views/campaigns/dashboard/index"),
+  },
+  {
+    path: "/campaigns/templates",
+    name: "templates",
+    meta: {
+      title: "Templates",
+      authRequired: true,
+    },
+    component: () => import("../views/campaigns/templates/index"),
+  },
+  // Lists Ended
 
   // Other Pages
   {

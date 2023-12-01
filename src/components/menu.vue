@@ -178,7 +178,13 @@ export default {
   <BContainer fluid>
     <div id="two-column-menu"></div>
 
-    <template v-if="layoutType === 'vertical' || layoutType === 'semibox' || rmenu==='vertical'">
+    <template
+      v-if="
+        layoutType === 'vertical' ||
+        layoutType === 'semibox' ||
+        rmenu === 'vertical'
+      "
+    >
       <ul class="navbar-nav h-100" id="navbar-nav">
         <!-- <li class="menu-title">
           <span data-key="t-menu"> {{ $t("t-menu") }}</span>
@@ -450,6 +456,212 @@ export default {
                   data-key="t-payments"
                 >
                   {{ $t("t-payments") }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="#integration"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="integration"
+          >
+            <i class="ri-git-merge-line"></i>
+            <span data-key="t-data-and-payments">{{
+              $t("t-integration")
+            }}</span>
+          </a>
+          <div class="collapse menu-dropdown" id="integration">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/integration/add-your-website"
+                  class="nav-link"
+                  data-key="t-add-your-website"
+                >
+                  {{ $t("t-add-your-website") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/integration/manage-connections"
+                  class="nav-link"
+                  data-key="t-manage-connections"
+                >
+                  {{ $t("t-manage-connections") }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="#sending"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="sending"
+          >
+            <i class="ri-send-plane-line"></i>
+            <span data-key="t-data-and-payments">{{ $t("t-sending") }}</span>
+          </a>
+          <div class="collapse menu-dropdown" id="sending">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/sending/blacklist"
+                  class="nav-link"
+                  data-key="t-blacklist"
+                >
+                  {{ $t("t-blacklist") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/sending/sending-domains"
+                  class="nav-link"
+                  data-key="t-sending-domains"
+                >
+                  {{ $t("t-sending-domains") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/sending/tracking-domains"
+                  class="nav-link"
+                  data-key="t-tracking-domains"
+                >
+                  {{ $t("t-tracking-domains") }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="#lists"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="lists"
+          >
+            <i class="ri-list-unordered"></i>
+            <span data-key="t-data-and-payments">{{ $t("t-lists") }}</span>
+          </a>
+          <div class="collapse menu-dropdown" id="lists">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/lists/contacts"
+                  class="nav-link"
+                  data-key="t-contacts"
+                >
+                  {{ $t("t-contacts") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/lists/forms"
+                  class="nav-link"
+                  data-key="t-forms"
+                >
+                  {{ $t("t-forms") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/lists/lists"
+                  class="nav-link"
+                  data-key="t-lists"
+                >
+                  {{ $t("t-lists") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/lists/overview"
+                  class="nav-link"
+                  data-key="t-overview"
+                >
+                  {{ $t("t-overview") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/lists/segments"
+                  class="nav-link"
+                  data-key="t-segments"
+                >
+                  {{ $t("t-segments") }}
+                </router-link>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link menu-link"
+            href="#campaigns"
+            data-bs-toggle="collapse"
+            role="button"
+            aria-expanded="false"
+            aria-controls="campaigns"
+          >
+            <i class="ri-tent-line"></i>
+            <span data-key="t-data-and-payments">{{ $t("t-campaigns") }}</span>
+          </a>
+          <div class="collapse menu-dropdown" id="campaigns">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <router-link
+                  to="/campaigns/automations"
+                  class="nav-link"
+                  data-key="t-automations"
+                >
+                  {{ $t("t-automations") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/campaigns/campaign-api"
+                  class="nav-link"
+                  data-key="t-campaign-api"
+                >
+                  {{ $t("t-campaign-api") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/campaigns/campaigns"
+                  class="nav-link"
+                  data-key="t-campaigns"
+                >
+                  {{ $t("t-campaigns") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/campaigns/dashboard"
+                  class="nav-link"
+                  data-key="t-dashboard"
+                >
+                  {{ $t("t-dashboard") }}
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link
+                  to="/campaigns/templates"
+                  class="nav-link"
+                  data-key="t-templates"
+                >
+                  {{ $t("t-templates") }}
                 </router-link>
               </li>
             </ul>

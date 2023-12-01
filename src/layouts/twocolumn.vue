@@ -441,6 +441,36 @@ export default {
                     <i class="ri-git-merge-line"></i>
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="#sending"
+                    class="nav-icon"
+                    role="button"
+                    @click.prevent="updateMenu('sending', $event)"
+                  >
+                    <i class="ri-send-plane-line"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#lists"
+                    class="nav-icon"
+                    role="button"
+                    @click.prevent="updateMenu('lists', $event)"
+                  >
+                    <i class="ri-list-unordered"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#campaigns"
+                    class="nav-icon"
+                    role="button"
+                    @click.prevent="updateMenu('campaigns', $event)"
+                  >
+                    <i class="ri-tent-line"></i>
+                  </a>
+                </li>
               </simplebar>
             </div>
             <template v-if="layoutType === 'twocolumn'">
@@ -656,7 +686,6 @@ export default {
                     </ul>
                   </div>
                 </li>
-
                 <li class="nav-item">
                   <div class="collapse menu-dropdown" id="integration">
                     <ul class="nav nav-sm flex-column">
@@ -679,6 +708,142 @@ export default {
                         </router-link>
                       </li>
                       <!-- Other Pages Start Ends Here -->
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="sending">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/sending/blacklist"
+                          class="nav-link"
+                          data-key="t-blacklist"
+                        >
+                          {{ $t("t-blacklist") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/sending/sending-domains"
+                          class="nav-link"
+                          data-key="t-sending-domains"
+                        >
+                          {{ $t("t-sending-domains") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/sending/tracking-domains"
+                          class="nav-link"
+                          data-key="t-tracking-domains"
+                        >
+                          {{ $t("t-tracking-domains") }}
+                        </router-link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="lists">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/lists/contacts"
+                          class="nav-link"
+                          data-key="t-contacts"
+                        >
+                          {{ $t("t-contacts") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/lists/forms"
+                          class="nav-link"
+                          data-key="t-forms"
+                        >
+                          {{ $t("t-forms") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/lists/lists"
+                          class="nav-link"
+                          data-key="t-lists"
+                        >
+                          {{ $t("t-lists") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/lists/overview"
+                          class="nav-link"
+                          data-key="t-overview"
+                        >
+                          {{ $t("t-overview") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/lists/segments"
+                          class="nav-link"
+                          data-key="t-segments"
+                        >
+                          {{ $t("t-segments") }}
+                        </router-link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="campaigns">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/campaigns/automations"
+                          class="nav-link"
+                          data-key="t-automations"
+                        >
+                          {{ $t("t-automations") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/campaigns/campaign-api"
+                          class="nav-link"
+                          data-key="t-campaign-api"
+                        >
+                          {{ $t("t-campaign-api") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/campaigns/campaigns"
+                          class="nav-link"
+                          data-key="t-campaigns"
+                        >
+                          {{ $t("t-campaigns") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/campaigns/dashboard"
+                          class="nav-link"
+                          data-key="t-dashboard"
+                        >
+                          {{ $t("t-dashboard") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/campaigns/templates"
+                          class="nav-link"
+                          data-key="t-templates"
+                        >
+                          {{ $t("t-templates") }}
+                        </router-link>
+                      </li>
                     </ul>
                   </div>
                 </li>

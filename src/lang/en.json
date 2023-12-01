@@ -10,8 +10,6 @@
   "t-hosting": "Hosting",
   "t-file-link": "File link",
   "t-ai": "AI",
-  "t-ecommerce": "Ecommerce",
-  "t-crypto": "Crypto",
   "t-projects": "Projects",
   "t-nft": "NFT",
   "t-job": "Job",
@@ -29,5 +27,18 @@
   "t-pages": "Pages",
   "t-links": "Links",
   "t-tools": "Tools",
-  "t-data-and-payments": "Data & Payments"
+  "t-data-and-payments": "Data & Payments",
+  "t-integration": "Integration",
+  "t-sending": "Sending",
+  "t-blacklist": "Blacklist",
+  "t-sending-domains": "Sending Domains",
+  "t-tracking-domains": "Tracking Domains",
+  "t-lists": "Lists",
+  "t-contacts": "Contacts",
+  "t-forms": "Forms",
+  "t-overview": "Overview",
+  "t-segments": "Segments",
+  "t-campaigns": "Campaigns",
+  "t-automations": "Automations",
+  "t-campaign-api": "Campaigns API"
 }
