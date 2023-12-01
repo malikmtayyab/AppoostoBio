@@ -400,7 +400,6 @@ export default {
                     <i class="ri-pages-line"></i>
                   </a>
                 </li>
-
                 <li>
                   <a
                     href="#links"
@@ -429,6 +428,17 @@ export default {
                     @click.prevent="updateMenu('data&payments', $event)"
                   >
                     <i class="ri-file-list-3-line"></i>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="#integration"
+                    class="nav-icon"
+                    role="button"
+                    @click.prevent="updateMenu('integration', $event)"
+                  >
+                    <i class="ri-git-merge-line"></i>
                   </a>
                 </li>
               </simplebar>
@@ -640,6 +650,32 @@ export default {
                           data-key="t-payments"
                         >
                           {{ $t("t-payments") }}
+                        </router-link>
+                      </li>
+                      <!-- Other Pages Start Ends Here -->
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <div class="collapse menu-dropdown" id="integration">
+                    <ul class="nav nav-sm flex-column">
+                      <li class="nav-item">
+                        <router-link
+                          to="/integration/add-your-website"
+                          class="nav-link"
+                          data-key="t-add-your-website"
+                        >
+                          {{ $t("t-add-your-website") }}
+                        </router-link>
+                      </li>
+                      <li class="nav-item">
+                        <router-link
+                          to="/integration/manage-connections"
+                          class="nav-link"
+                          data-key="t-manage-connections"
+                        >
+                          {{ $t("t-manage-connections") }}
                         </router-link>
                       </li>
                       <!-- Other Pages Start Ends Here -->

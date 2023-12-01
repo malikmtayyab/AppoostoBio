@@ -141,11 +141,10 @@ export default [
     component: () => import("../views/pages/action-pages/index"),
   },
   {
-    path: '/pages/action-pages/customizations:id', // Dynamic parameter for the child route
-    name: 'action-pages-customization',
-    component: () => import('../views/pages/action-pages/customizations/index'),
+    path: "/pages/action-pages/customizations:id", // Dynamic parameter for the child route
+    name: "action-pages-customization",
+    component: () => import("../views/pages/action-pages/customizations/index"),
     props: true,
-
   },
   {
     path: "/pages/hosting",
@@ -242,9 +241,6 @@ export default [
     meta: { title: "Payments", authRequired: true },
     component: () => import("../views/data-and-payments/payments/index"),
   },
-  // Data&Payments Ended
-
-  // New Pages
   {
     path: "/data-and-payments/data",
     name: "data",
@@ -254,7 +250,51 @@ export default [
     },
     component: () => import("../views/data-and-payments/data/index"),
   },
-  // New Pages Ended
+  // Data&Payments Ended
+
+  // Integrations
+  {
+    path: "/integration/add-your-website",
+    name: "add-your-website",
+    meta: {
+      title: "Add Your Website",
+      authRequired: true,
+    },
+    component: () => import("../views/integration/add-your-website/index"),
+  },
+  {
+    path: "/integration/manage-connections",
+    name: "manage-connections",
+    meta: {
+      title: "Add Your Website",
+      authRequired: true,
+    },
+    component: () => import("../views/integration/manage-connections/index"),
+  },
+  // Integrations Ended
+
+  // Sendings
+  {
+    path: "/integration/add-your-website",
+    name: "add-your-website",
+    meta: {
+      title: "Add Your Website",
+      authRequired: true,
+    },
+    component: () => import("../views/integration/add-your-website/index"),
+  },
+  {
+    path: "/integration/manage-connections",
+    name: "manage-connections",
+    meta: {
+      title: "Add Your Website",
+      authRequired: true,
+    },
+    component: () => import("../views/integration/manage-connections/index"),
+  },
+  // Sendings Ended
+
+  // Other Pages
   {
     path: "/faqs",
     name: "Faqs",

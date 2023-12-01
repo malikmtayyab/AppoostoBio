@@ -15,6 +15,6 @@ export default {
 
 <template>
   <Layout>
-    <PageHeader title="Add Your Website" pageTitle="Integration" />
+    <PageHeader title="Lists" pageTitle="Lists" />
   </Layout>
 </template>
