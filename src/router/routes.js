@@ -381,9 +381,9 @@ export default [
   },
   {
     path: "/campaigns/dashboard",
-    name: "dashboard",
+    name: "compaigndashboard",
     meta: {
-      title: "Dashboard",
+      title: "Compaignsdashboard",
       authRequired: true,
     },
     component: () => import("../views/campaigns/dashboard/index"),

@@ -33,7 +33,7 @@ export default {
       <BCol lg="8" xxl="9">
         <BCard style="min-height: calc(100vh - 178px)" no-body>
           <BCardBody>
-            <BTabs
+            <!-- <BTabs
               nav-class="nav-border-top nav-border-top-primary mb-3"
               content-class="text-muted"
             >
@@ -76,12 +76,12 @@ export default {
                   <i class="ri-advertisement-fill"></i> Advanced
                 </template>
               </BTab>
-            </BTabs>
+            </BTabs> -->
           </BCardBody>
         </BCard>
       </BCol>
 
-      <BCol
+      <!-- <BCol
         lg="4"
         xxl="3"
         style="max-height: calc(100vh - 178px)"
@@ -96,7 +96,7 @@ export default {
             min-height: 530px;
           "
         ></div>
-      </BCol>
+      </BCol> -->
     </BRow>
   </Layout>
 </template>
