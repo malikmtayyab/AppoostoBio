@@ -390,7 +390,7 @@ export default [
   },
   {
     path: "/campaigns/templates",
-    name: "templates",
+    name: "Campaign templates",
     meta: {
       title: "Templates",
       authRequired: true,
