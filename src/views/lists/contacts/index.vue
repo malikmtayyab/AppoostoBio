@@ -125,7 +125,7 @@ export default {
                           class="card-body card-primary text-center"
                         >
                           <h1 class="text-white">0.00%</h1>
-                          <h5 class="text-white opacity-60">
+                          <h5 class="text-white opacity-70">
                             Avg unsubscribe rate
                           </h5>
                         </BCard>
@@ -136,7 +136,7 @@ export default {
                           class="card-body card-primary text-center"
                         >
                           <h1 class="text-white">0.00%</h1>
-                          <h5 class="text-white opacity-60">
+                          <h5 class="text-white opacity-70">
                             Total unsubscribers
                           </h5>
                         </BCard>
@@ -147,7 +147,7 @@ export default {
                           class="card-body card-primary text-center"
                         >
                           <h1 class="text-white">0.00%</h1>
-                          <h5 class="text-white opacity-60">
+                          <h5 class="text-white opacity-70">
                             Total unconfirmed
                           </h5>
                         </BCard>
