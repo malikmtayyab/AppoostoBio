@@ -100,6 +100,35 @@ const projectWidgets1 = [{
     },
     ],
     date: "03 Aug, 2021",
+},
+{
+    id: 2,
+    time: "Last update : 08 May",
+    img: require("@/assets/images/brands/dribbble.png"),
+    color: "danger",
+    label: "Redesign - Landing page",
+    caption: "Resign a landing page design. as per abc minimal design.",
+    number: "22/56",
+    progressBar: "54%",
+    subItem: [{
+        id: 1,
+        imgFooter: require("@/assets/images/users/avatar-3.jpg")
+    },
+    {
+        id: 2,
+        imgNumber: "S",
+        bgColor: "secondary"
+    },
+    {
+        id: 3,
+        imgFooter: require("@/assets/images/users/avatar-4.jpg")
+    },
+    {
+        id: 4,
+        imgNumber: "+"
+    },
+    ],
+    date: "18 May, 2021",
 }];
 
 const projectWidgets2 = [{
@@ -187,6 +216,35 @@ const projectWidgets2 = [{
     },
     ],
     progressBar: "35%",
+},
+{
+    id: 5,
+    time: "Last update : 08 May",
+    img: require("@/assets/images/brands/dribbble.png"),
+    color: "danger",
+    label: "Redesign - Landing page",
+    caption: "Resign a landing page design. as per abc minimal design.",
+    number: "22/56",
+    progressBar: "54%",
+    subItem: [{
+        id: 1,
+        imgFooter: require("@/assets/images/users/avatar-3.jpg")
+    },
+    {
+        id: 2,
+        imgNumber: "S",
+        bgColor: "secondary"
+    },
+    {
+        id: 3,
+        imgFooter: require("@/assets/images/users/avatar-4.jpg")
+    },
+    {
+        id: 4,
+        imgNumber: "+"
+    },
+    ],
+    date: "18 May, 2021",
 }];
 
 const projectWidgets3 = [{
