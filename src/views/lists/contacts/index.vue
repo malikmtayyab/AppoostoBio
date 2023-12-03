@@ -6,6 +6,8 @@ export default {
   data() {
     return {
       subscriberAddClickFlag: false,
+      subscriberImportClickFlag: false,
+      subscriberExportClickFlag: false,
       showOffcanvas: false,
       creativity_levels: [
         "None (the most factual)",
@@ -24,8 +26,13 @@ export default {
   },
   methods: {
     handleSubscriberAddClick() {
-      console.log("in listner", this.subscriberAddClickFlag);
       this.subscriberAddClickFlag = !this.subscriberAddClickFlag;
+    },
+    handleSubscriberImportClick() {
+      this.subscriberImportClickFlag = !this.subscriberImportClickFlag;
+    },
+    handleSubscriberExportClick() {
+      this.subscriberExportClickFlag = !this.subscriberExportClickFlag;
     },
   },
 };
@@ -97,13 +104,13 @@ export default {
                         ></i>
                         Add</BDropdownItem
                       >
-                      <BDropdownItem
+                      <BDropdownItem @click="handleSubscriberImportClick"
                         ><i
                           class="ri-upload-line align-bottom text-muted me-2"
                         ></i>
                         Import</BDropdownItem
                       >
-                      <BDropdownItem
+                      <BDropdownItem @click="handleSubscriberExportClick"
                         ><i
                           class="ri-download-line align-bottom text-muted me-2"
                         ></i>
@@ -237,50 +244,126 @@ export default {
       body-class="border-0 p-0 overflow-hidden"
       style="background: #405189 !important"
     >
-      <!-- <div class="offcanvas-body profile-offcanvas p-0">
-        <div v-for="data of botData" :key="data.id" class="text-center">
-          <div v-if="data.name === botName">
-            <div class="m-5">
-              <img
-                :src="data.image"
-                alt=""
-                class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
-              />
-              <div class="mt-3">
-                <h5 class="fs-16 mb-1">
-                  <a
-                    href="javascript:void(0);"
-                    class="link-primary username text-white"
-                  >
-                    {{ data.name }}</a
-                  >
-                </h5>
-              </div>
-            </div>
-            <div class="p-3 text-white">
-              <div class="mb-3">
-                <p class="text-uppercase fw-medium fs-12 mb-1 text-white">
-                  {{ data.description }}
-                </p>
-              </div>
-            </div>
+      <template #title>
+        <span style="color: white"
+          ><i class="ri-add-line"></i> New Subscriber</span
+        >
+      </template>
+      <form>
+        <div class="m-3">
+          <label for="email" class="form-label text-white">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="m-3">
+          <label for="lastname" class="form-label text-white">Last Name</label>
+          <input type="text" class="form-control" id="lastname" />
+        </div>
+        <div class="text-center mt-5 m-3">
+          <BButton
+            class="w-100"
+            variant="primary"
+            type="button"
+            id="button-addon1"
+            style="background-color: white; color: black"
+            >Save</BButton
+          >
+        </div>
+      </form>
+    </BOffcanvas>
+    <BOffcanvas
+      v-model="subscriberImportClickFlag"
+      placement="end"
+      body-class="border-0 p-0 overflow-hidden"
+      style="background: #405189 !important"
+    >
+      <template #title>
+        <span style="color: white"
+          ><i class="ri-group-line"></i> Import Subscribers</span
+        >
+      </template>
+      <BAlert
+        :model-value="true"
+        variant="secondary"
+        class="border-0 mx-3"
+        show
+      >
+        Server's max upload file size is limited to <strong>1G</strong>. Make
+        sure your input file does not exceed this limit. Acceptable file type is
+        CSV with a header row containing the column / field names like EMAIL,
+        FIRST_NAME, LAST_NAME... You can download a sample input file
+        <a href="#"><strong>here (Sample.csv)</strong></a>
+      </BAlert>
+      <form>
+        <div class="mx-3 text-white">
+          <p>Choose file to upload</p>
+          <div>
+            <input class="form-control" id="formSizeDefault" type="file" />
           </div>
         </div>
-      </div> -->
-      <div class="m-3">
-        <label for="basiInput" class="form-label text-white">Chat Title</label>
-        <input type="text" class="form-control" id="basiInput" />
-      </div>
-      <div class="text-center mt-5 m-3">
-        <BButton
-          class="w-100"
-          variant="primary"
-          type="button"
-          id="button-addon1"
-          style="background-color: white; color: black"
-          >Create</BButton
+        <div class="text-center mt-5 m-3">
+          <BButton
+            class="w-100"
+            variant="primary"
+            type="button"
+            id="button-addon1"
+            style="background-color: white; color: black"
+            >Import</BButton
+          >
+        </div>
+      </form>
+    </BOffcanvas>
+    <BOffcanvas
+      v-model="subscriberExportClickFlag"
+      placement="end"
+      body-class="border-0 p-0 overflow-hidden"
+      style="background: #405189 !important"
+    >
+      <template #title>
+        <span style="color: white"
+          ><i class="ri-group-line"></i> Export Subscribers</span
         >
-      </div>
+      </template>
+      <p class="text-white mx-3">
+        Select what do you want to export then click the
+        <strong>Export</strong> button below to start export.
+      </p>
+      <BFormGroup class="form-radio-dark mb-2 text-white">
+        <div
+          style="
+            margin-left: 7%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          "
+        >
+          <BFormRadio
+            v-model="checkbox2"
+            name="formradiocolor8"
+            id="formradioRight2"
+            class="form-radio-dark"
+            style="font-size: 20px"
+            >Whole list (1 subscribers)</BFormRadio
+          >
+          <BFormRadio
+            v-model="checkbox2"
+            name="formradiocolor8"
+            id="formradioRight2"
+            class="form-radio-dark"
+            style="font-size: 20px"
+            >Choose segment</BFormRadio
+          >
+        </div>
+        <div class="text-center mt-5 m-3">
+          <BButton
+            class="w-100"
+            variant="primary"
+            type="button"
+            id="button-addon1"
+            style="background-color: white; color: black"
+            >Export</BButton
+          >
+        </div>
+      </BFormGroup>
     </BOffcanvas>
   </Layout>
 </template>
