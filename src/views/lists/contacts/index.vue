@@ -1,6 +1,8 @@
 <script>
 import Layout from "@/layouts/main.vue";
 
+import { zoomableChart } from "./data";
+
 export default {
   data() {
     return {
@@ -14,6 +16,8 @@ export default {
         "Custom",
       ],
       variants: ["1 variants", "2 variants", "3 variants"],
+
+      zoomableChart: zoomableChart,
     };
   },
   components: {
@@ -53,6 +57,131 @@ export default {
                   <i class="ri-tornado-line"></i>
                   Overview
                 </template>
+
+                <BRow>
+                  <BCol cols="12">
+                    <BRow class="mb-3">
+                      <h3>List Performance</h3>
+                    </BRow>
+                    <BRow class="mb-3">
+                      <BCol lg="6">
+                        <div class="d-flex justify-content-between">
+                          <h5>Average open rate</h5>
+                          <h5>34%</h5>
+                        </div>
+                        <div class="mt-auto">
+                          <div
+                            class="progress progress-sm animated-progess"
+                            style="height: 16px"
+                          >
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              aria-valuenow="34"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              :style="`width: ${34}%;`"
+                            ></div>
+                          </div>
+                        </div>
+                      </BCol>
+                      <BCol lg="6">
+                        <div class="d-flex justify-content-between">
+                          <h5>Average click rate</h5>
+                          <h5>34%</h5>
+                        </div>
+                        <div class="mt-auto">
+                          <div
+                            class="progress progress-sm animated-progess"
+                            style="height: 16px"
+                          >
+                            <div
+                              class="progress-bar bg-success"
+                              role="progressbar"
+                              aria-valuenow="34"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                              :style="`width: ${34}%;`"
+                            ></div>
+                          </div>
+                        </div>
+                      </BCol>
+                    </BRow>
+                    <BRow class="">
+                      <BCol xxl="3" lg="6">
+                        <BCard
+                          no-body
+                          class="card-body card-primary text-center"
+                        >
+                          <h1 class="text-white">0.00%</h1>
+                          <h5 class="text-white opacity-70">
+                            Avg subscribe rate
+                          </h5>
+                        </BCard>
+                      </BCol>
+                      <BCol xxl="3" lg="6">
+                        <BCard
+                          no-body
+                          class="card-body card-primary text-center"
+                        >
+                          <h1 class="text-white">0.00%</h1>
+                          <h5 class="text-white opacity-60">
+                            Avg unsubscribe rate
+                          </h5>
+                        </BCard>
+                      </BCol>
+                      <BCol xxl="3" lg="6">
+                        <BCard
+                          no-body
+                          class="card-body card-primary text-center"
+                        >
+                          <h1 class="text-white">0.00%</h1>
+                          <h5 class="text-white opacity-60">
+                            Total unsubscribers
+                          </h5>
+                        </BCard>
+                      </BCol>
+                      <BCol xxl="3" lg="6">
+                        <BCard
+                          no-body
+                          class="card-body card-primary text-center"
+                        >
+                          <h1 class="text-white">0.00%</h1>
+                          <h5 class="text-white opacity-60">
+                            Total unconfirmed
+                          </h5>
+                        </BCard>
+                      </BCol>
+                    </BRow>
+                    <BRow>
+                      <BCol lg="6">
+                        <BCard class="mb-0" no-body>
+                          <BCardHeader>
+                            <BCardTitle class="mb-0">List Growth</BCardTitle>
+                          </BCardHeader>
+                          <BCardBody>
+                            <apexchart
+                              class="apex-charts"
+                              height="350"
+                              dir="ltr"
+                              :series="zoomableChart.series"
+                              :options="zoomableChart.chartOptions"
+                            ></apexchart>
+                          </BCardBody>
+                        </BCard>
+                      </BCol>
+                      <BCol lg="6">
+                        <div
+                          class="bg-primary d-flex flex-column align-items-center justify-content-center"
+                          style="height: 100%; border-radius: 6px"
+                        >
+                          <i class="ri-bard-line text-white fs-1"></i>
+                          <h4 class="text-white">There are no logs yet</h4>
+                        </div>
+                      </BCol>
+                    </BRow>
+                  </BCol>
+                </BRow>
               </BTab>
               <BTab title="Settings">
                 <template v-slot:title>
@@ -102,6 +231,9 @@ export default {
 .subscriber-count {
   color: white;
   padding: 2px 6px;
+}
+.opacity-70 {
+  opacity: 70%;
 }
 
 @media (max-width: 1180px) {
