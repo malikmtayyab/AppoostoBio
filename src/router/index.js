@@ -28,9 +28,9 @@ const router = createRouter({
 router.beforeEach(async (routeTo, routeFrom, next) => {
 
   const authRequired = routeTo.matched.some((route) => route.meta.authRequired);
-  
+
   if (!authRequired) return next();
-  
+
   axios.defaults.headers.common['authorization'] = 'Bearer ' + localStorage.getItem('jwt'); // for all requests
   await axios.get('https://api-node.themesbrand.website/profile').then((data) => {
     localStorage.setItem('userdata', JSON.stringify(data.data.user));
@@ -44,11 +44,9 @@ router.beforeEach(async (routeTo, routeFrom, next) => {
 
 router.beforeEach((routeTo, routeFrom, next) => {
   if (process.env.VUE_APP_DEFAULT_AUTH === "firebase") {
-
     // Check if auth is required on this route
     // (including nested routes).
     const authRequired = routeTo.matched.some((route) => route.meta.authRequired);
-
     // If auth isn't required for the route, just continue.
     if (!authRequired) return next();
 
