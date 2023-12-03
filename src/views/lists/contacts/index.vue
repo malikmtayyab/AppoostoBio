@@ -1,9 +1,11 @@
 <script>
 import Layout from "@/layouts/main.vue";
+import { MoreVerticalIcon } from "@zhuowenli/vue-feather-icons";
 
 export default {
   data() {
     return {
+      subscriberAddClickFlag: false,
       showOffcanvas: false,
       creativity_levels: [
         "None (the most factual)",
@@ -17,9 +19,15 @@ export default {
     };
   },
   components: {
+    MoreVerticalIcon,
     Layout,
   },
-  methods: {},
+  methods: {
+    handleSubscriberAddClick() {
+      console.log("in listner", this.subscriberAddClickFlag);
+      this.subscriberAddClickFlag = !this.subscriberAddClickFlag;
+    },
+  },
 };
 </script>
 
@@ -64,18 +72,146 @@ export default {
               <BTab title="Subscribers">
                 <template v-slot:title>
                   <i class="ri-user-3-line"></i>Subscribers
+                  <li class="list-inline-item m-0">
+                    <BDropdown
+                      variant="link"
+                      toggle-class=" arrow-none py-0 px-0"
+                      menu-class="dropdown-menu"
+                      aria-haspopup="true"
+                    >
+                      <template #button-content>
+                        <!-- <i class="ri-more-2-fill"></i> -->
+                        <more-vertical-icon
+                          class="icon-sm"
+                        ></more-vertical-icon>
+                      </template>
+                      <BDropdownItem
+                        ><i
+                          class="ri-list-check align-bottom text-muted me-2"
+                        ></i>
+                        View all
+                      </BDropdownItem>
+                      <BDropdownItem @click="handleSubscriberAddClick"
+                        ><i
+                          class="ri-add-line align-bottom text-muted me-2"
+                        ></i>
+                        Add</BDropdownItem
+                      >
+                      <BDropdownItem
+                        ><i
+                          class="ri-upload-line align-bottom text-muted me-2"
+                        ></i>
+                        Import</BDropdownItem
+                      >
+                      <BDropdownItem
+                        ><i
+                          class="ri-download-line align-bottom text-muted me-2"
+                        ></i>
+                        Export</BDropdownItem
+                      >
+                    </BDropdown>
+                  </li>
                 </template>
               </BTab>
               <BTab title="Segments">
                 <template v-slot:title>
                   <i class="ri-building-3-line"></i>
                   Segments
+                  <li class="list-inline-item m-0">
+                    <BDropdown
+                      variant="link"
+                      toggle-class=" arrow-none py-0 px-0"
+                      menu-class="dropdown-menu"
+                      aria-haspopup="true"
+                    >
+                      <template #button-content>
+                        <!-- <i class="ri-more-2-fill"></i> -->
+                        <more-vertical-icon
+                          class="icon-sm"
+                        ></more-vertical-icon>
+                      </template>
+                      <BDropdownItem
+                        ><i
+                          class="ri-list-check align-bottom text-muted me-2"
+                        ></i>
+                        View all
+                      </BDropdownItem>
+                      <BDropdownItem
+                        ><i
+                          class="ri-add-line align-bottom text-muted me-2"
+                        ></i>
+                        Add</BDropdownItem
+                      >
+                    </BDropdown>
+                  </li>
                 </template>
               </BTab>
               <BTab title="Forms/Pages">
                 <template v-slot:title>
                   <i class="ri-survey-line"></i>
                   Forms/Pages
+                  <li class="list-inline-item m-0">
+                    <BButtonGroup>
+                      <BDropdown
+                        variant="link"
+                        toggle-class=" arrow-none py-0 px-0"
+                        menu-class="dropdown-menu"
+                        aria-haspopup="true"
+                      >
+                        <template #button-content>
+                          <!-- <i class="ri-more-2-fill"></i> -->
+                          <more-vertical-icon
+                            class="icon-sm"
+                          ></more-vertical-icon>
+                        </template>
+                        <BDropdownItem href="#"
+                          ><i class="ri-pages-line me-2"></i> Embedded
+                          Form</BDropdownItem
+                        >
+                        <BDropdownHeader style="background-color: #d9dede"
+                          ><i class="ri-user-follow-line me-2"></i> Subscribe
+                        </BDropdownHeader>
+                        <BDropdownItem href="#">Sign-up form</BDropdownItem>
+                        <BDropdownItem href="#"
+                          >Sign-up "Thank you" page</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Sign-up confirmation email</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Confirmation "Thank you" page</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Final "Welcome" email</BDropdownItem
+                        >
+                        <BDropdownHeader style="background-color: #d9dede"
+                          ><i class="ri-user-unfollow-line me-2"></i>Unsubscribe
+                        </BDropdownHeader>
+                        <BDropdownItem href="#">Unsubscribe form</BDropdownItem>
+                        <BDropdownItem href="#"
+                          >Unsubscribe success page</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Unsubscribe "Goodbye" email</BDropdownItem
+                        >
+                        <BDropdownHeader style="background-color: #d9dede"
+                          ><i class="ri-user-line me-2"></i> Update profile
+                        </BDropdownHeader>
+                        <BDropdownItem href="#"
+                          >Update profile email sent</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Update profile email</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Update profile form</BDropdownItem
+                        >
+                        <BDropdownItem href="#"
+                          >Update profile success page</BDropdownItem
+                        >
+                      </BDropdown>
+                    </BButtonGroup>
+                  </li>
                 </template>
               </BTab>
               <BTab title="Manage list fields">
@@ -95,10 +231,61 @@ export default {
         </BCard>
       </BCol>
     </BRow>
+    <BOffcanvas
+      v-model="subscriberAddClickFlag"
+      placement="end"
+      body-class="border-0 p-0 overflow-hidden"
+      style="background: #405189 !important"
+    >
+      <!-- <div class="offcanvas-body profile-offcanvas p-0">
+        <div v-for="data of botData" :key="data.id" class="text-center">
+          <div v-if="data.name === botName">
+            <div class="m-5">
+              <img
+                :src="data.image"
+                alt=""
+                class="avatar-lg img-thumbnail rounded-circle mx-auto profile-img"
+              />
+              <div class="mt-3">
+                <h5 class="fs-16 mb-1">
+                  <a
+                    href="javascript:void(0);"
+                    class="link-primary username text-white"
+                  >
+                    {{ data.name }}</a
+                  >
+                </h5>
+              </div>
+            </div>
+            <div class="p-3 text-white">
+              <div class="mb-3">
+                <p class="text-uppercase fw-medium fs-12 mb-1 text-white">
+                  {{ data.description }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="m-3">
+        <label for="basiInput" class="form-label text-white">Chat Title</label>
+        <input type="text" class="form-control" id="basiInput" />
+      </div>
+      <div class="text-center mt-5 m-3">
+        <BButton
+          class="w-100"
+          variant="primary"
+          type="button"
+          id="button-addon1"
+          style="background-color: white; color: black"
+          >Create</BButton
+        >
+      </div>
+    </BOffcanvas>
   </Layout>
 </template>
 
-<style>
+<style scoped>
 .subscriber-count {
   color: white;
   padding: 2px 6px;
