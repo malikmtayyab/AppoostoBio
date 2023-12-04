@@ -104,10 +104,10 @@ export default {
                       <template #button-content>
                         <MoreHorizontalIcon class="icon-sm"></MoreHorizontalIcon>
                       </template>
-                      <BDropdownItem to="/apps/projects-overview"><i
+                      <BDropdownItem to="/lists/lists/deatils/1"><i
                           class="ri-eye-fill align-bottom me-2 text-muted"></i>
                         View</BDropdownItem>
-                      <BDropdownItem to="/apps/projects-create"><i
+                      <BDropdownItem to="/lists/lists/deatils/1"><i
                           class="ri-pencil-fill align-bottom me-2 text-muted"></i>
                         Edit </BDropdownItem>
                       <div class="dropdown-divider"></div>
@@ -123,7 +123,7 @@ export default {
 
                 <div class="flex-grow-1">
                   <h5 class="mb-1 fs-15">
-                    <router-link to="/apps/projects-overview" class="text-body">{{ item.label }}</router-link>
+                    <router-link to="/lists/lists/deatils/1" class="text-body">{{ item.label }}</router-link>
                   </h5>
                   <p class="text-muted text-truncate-two-lines mb-3">
                     {{ item.caption }}

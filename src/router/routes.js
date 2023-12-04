@@ -333,6 +333,15 @@ export default [
     component: () => import("../views/lists/lists/index"),
   },
   {
+    path: "/lists/lists/deatils/:id",
+    name: "lists View",
+    meta: {
+      title: "Lists View",
+      authRequired: true,
+    },
+    component: () => import("../views/lists/lists/view/index"),
+  },
+  {
     path: "/lists/overview",
     name: "overview",
     meta: {
